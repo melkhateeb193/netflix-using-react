@@ -13,7 +13,7 @@ function Userprofile() {
               </a>
             </div>
             <p>
-              <a href="/Home/index.html">Mostafa Magdy</a>
+              <a href="/src/component/homepage/homepage.js">Mostafa Magdy</a>
             </p>
           </div>
           <div className="col-md text-center">

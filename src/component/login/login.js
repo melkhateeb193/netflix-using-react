@@ -47,9 +47,10 @@ function Login() {
       <button
         type="submit"
         className="btn  w-100 p-2 mb-3"
-        onclick="window.location.href='/profiles/index.html'"
+        onclick="window.location.href='/home'"
       >
-        Sign In
+        <a href='/home'>  Sign In</a>
+      
       </button>
       <div className="mb-3 form-check d-flex justify-content-between">
         <div>
