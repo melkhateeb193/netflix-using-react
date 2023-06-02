@@ -46,7 +46,7 @@ function Userprofile() {
               </a>
             </div>
             <p>
-              <a href="/Home/index.html">Mostafa ali</a>
+              <a href="/Home/index.html">Mostafa Ali</a>
             </p>
           </div>
           <div className="col-md text-center">
