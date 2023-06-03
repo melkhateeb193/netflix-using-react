@@ -1,0 +1,14 @@
+.cardbody {
+  display: none;
+}
+
+.Card:hover .cardbody {
+  display: flex;
+  position: relative;
+  z-index: 9999;
+}
+
+.cardbody .card-text {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.8);
+}
