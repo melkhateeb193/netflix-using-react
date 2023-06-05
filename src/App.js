@@ -1,4 +1,3 @@
- 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Mainpagebfl from './component/mainpagebeforlogin/mainpagebfl';
 import Login from './component/login/login';
