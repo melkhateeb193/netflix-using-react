@@ -1,6 +1,8 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Mainpagebfl from './component/mainpagebeforlogin/mainpagebfl';
-import Login from './component/login/login';
+// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+// import Mainpagebfl from './component/mainpagebeforlogin/mainpagebfl';
+// import Login from './component/login/login';
+// import Userprofile from './component/userprofile/userprofile';
+import SimpleSlider from './component/slider/slider';
 
 function App() {
   return (
@@ -11,7 +13,7 @@ function App() {
           <Route path="/login" element={<Login />} />
         </Routes>
       </div>
-    </Router> 
+    </Router>
   );
 }
 
