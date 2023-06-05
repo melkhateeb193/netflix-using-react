@@ -1,8 +1,62 @@
 import React, { useState } from "react";
 import "./login.css";
 function Login() {
-    return (
-<>
+ 
+  const [user, setUser] = useState([
+    {
+      email: "",
+      password: "",
+    },
+  ]);
+  const [error, setError] = useState([
+    {
+      emailError: "",
+      passError: "",
+    },
+  ]);
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+  };
+  const handleChange = (ev) => {
+    if (ev.target.name === "email") {
+      setUser({ ...user, email: ev.target.value });
+      setError({
+        ...error,
+        emailError:
+          ev.target.value.length === 0
+            ? "Enter Your Email"
+            : ev.target.value.length <= 10
+            ? "Email must be at least 10"
+            : !validateEmail(ev.target.value)
+            ? "Please enter a valid email"
+            : "",
+      });
+    } else if (ev.target.name === "password") {
+      setUser({ ...user, password: ev.target.value });
+      setError({
+        ...error,
+        passError:
+          ev.target.value.length === 0
+            ? "Enter Password "
+            : ev.target.value.length <= 8
+            ? "Password must be at least 8"
+            : !validatePassword(ev.target.value)
+            ? "Please enter a valid password"
+            : "",
+      });
+    }
+  };
+  const validateEmail = (email) => {
+    const re =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  };
+  const validatePassword = (pass) => {
+    const re = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+    return re.test(String(pass).toLowerCase());
+  };
+ 
+    return <>
   <header className="">
     <nav className="navbar">
       <div className="container" id="netflixLogoContainer">
@@ -47,9 +101,10 @@ function Login() {
       <button
         type="submit"
         className="btn  w-100 p-2 mb-3"
-        onclick="window.location.href='/profiles/index.html'"
+        onclick="window.location.href='/home'"
       >
-        Sign In
+        <a href='/home'>  Sign In</a>
+      
       </button>
       <div className="mb-3 form-check d-flex justify-content-between">
         <div>
@@ -139,10 +194,7 @@ function Login() {
       </ul>
     </div>
   </div>
-</footer>
-
+</footer> 
 </>
-    )
 }
-
-export default Login;
+   
