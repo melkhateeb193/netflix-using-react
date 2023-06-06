@@ -1,19 +1,24 @@
-.title {
-  margin: 10rem 0 0 0;
-  width: 100%;
-  background-image: url("/public/images/interstellar.webp");
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: 100% 50vw;
-  padding: 0 !important;
-  margin: 0 !important;
+.parent * {
+  margin: 0;
+  padding: 0;
+}
+
+.title * {
+  z-index: 50;
+}
+
+.title__image {
+  position: absolute;
+  z-index: 0 !important;
 }
 
 .title__space {
+  margin-top: 5rem;
   padding: 0;
 }
 
 .title__body {
+  margin-top: 10rem;
   padding: 0;
 }
 
@@ -39,6 +44,7 @@
 
 .title__body--button__element {
   margin-right: 0.5rem;
+  display: inline-block;
 }
 
 .title__body--button:hover {
@@ -86,9 +92,8 @@
   background-color: #808080;
 }
 
-
-.t{
-  height: 900;
-  width: 900;
+.t {
+  height: 2000px;
+  width: 900px;
   background-color: aquamarine;
 }
