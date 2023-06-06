@@ -2,15 +2,28 @@
 // import Mainpagebfl from './component/mainpagebeforlogin/mainpagebfl';
 // import Login from './component/login/login';
 // import Userprofile from './component/userprofile/userprofile';
-import SimpleSlider from './component/slider/slider';
+import Header from "./component/navbar/navbar";
+import HereSection from "./component/heroSection/heroSection";
+import SimpleSlider from "./component/slider/slider";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App bg-dark">
-    <SimpleSlider/>
-    <SimpleSlider/>
+    <>
+      <Header />
+      <HereSection />
+    </>
 
-    </div>
+
+
+
+
+    // <>
+    //   <div className="App bg-dark">
+    //     <SimpleSlider />
+    //     <SimpleSlider />
+    //   </div>
+    // </>
     // <Router>
     //   <div className="App">
     //     <Routes>
