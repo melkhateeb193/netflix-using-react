@@ -4,6 +4,7 @@
 // import Userprofile from './component/userprofile/userprofile';
 import Header from "./component/navbar/navbar";
 import HereSection from "./component/heroSection/heroSection";
+import Footer from "./component/footer/footer";
 import SimpleSlider from "./component/slider/slider";
 import "./App.css";
 
@@ -12,11 +13,8 @@ function App() {
     <>
       <Header />
       <HereSection />
+      <Footer />
     </>
-
-
-
-
 
     // <>
     //   <div className="App bg-dark">
