@@ -1,0 +1,50 @@
+footer .list-group {
+  list-style: none;
+  margin-left: 20px;
+}
+
+.footerIcon {
+  color: white;
+  margin: 0px 20px;
+  font-size: 23px;
+}
+
+#footerLinks {
+  margin-top: 10px;
+  margin-right: 20px;
+  padding-left: 28px;
+}
+
+.footerLinkItem {
+  display: block;
+  color: #808080 !important;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.footerLinkItem:link {
+  text-decoration: none;
+}
+
+.footerLinkItem:hover {
+  text-decoration: underline;
+}
+
+#serviceBtn {
+  margin-left: 28px;
+  padding: 5px;
+  color: #808080;
+  font-size: 14px;
+  border: 1px solid #808080;
+  border-radius: 0px;
+}
+
+#serviceBtn:hover {
+  color: white;
+}
+
+#INC {
+  margin-left: 28px;
+  color: #808080;
+  font-size: 11px;
+}

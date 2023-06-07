@@ -1,0 +1,222 @@
+@media only screen and (max-width: 700px) {
+  .navbar__brand,
+  .search,
+  .hide * {
+    display: none;
+  }
+}
+@media only screen and (max-width: 990px) {
+  .navbar__brand,
+  .search,
+  .hide * {
+    display: none;
+  }
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  background-color: transparent;
+}
+
+.scrolled {
+  background-color: rgb(20, 20, 20);
+}
+
+.navbar {
+  font-size: 0.8rem;
+  margin: 0 3rem;
+  padding: 0 3.5rem;
+}
+
+.navbar__logo {
+  width: 6rem;
+  margin: 0 1rem 0 0;
+}
+
+.nav__link {
+  color: white !important;
+  margin: 0 0 0 0.6rem;
+}
+
+/* search section */
+
+.search {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: transparent;
+}
+
+.search img {
+  border: none;
+  background-color: transparent;
+  padding: 1px 6px;
+  height: 1.5rem;
+  position: absolute;
+}
+
+.search__icon {
+  z-index: 99;
+  background-color: transparent;
+}
+
+.search__close {
+  display: none;
+  right: 0;
+  background-color: transparent;
+}
+
+.search input {
+  border: none;
+  font-family: inherit;
+  outline: none;
+  width: 2rem;
+  transition: 500ms width ease-in-out;
+  background-color: transparent;
+  color: #fff;
+}
+
+.search__open input {
+  width: 17rem;
+  height: 2.5rem;
+  outline: 1px solid #fff;
+  padding: 0 0 0 50px;
+  background-color: transparent;
+}
+
+/* notifications button */
+
+.notifications {
+  position: relative;
+  display: inline-block;
+  padding: 0.3rem;
+  margin-left: 0.6rem;
+}
+
+.notifications__body {
+  display: none;
+  position: absolute;
+  top: 3.125rem;
+  right: -0.8rem;
+  background: rgba(0, 0, 0, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-top: 3px solid white;
+  width: 25.625rem;
+  z-index: 1;
+}
+
+.notifications__body--arrow {
+  position: absolute;
+  right: 0.25rem;
+  top: -2rem;
+}
+
+.notifications__grid {
+  display: flex;
+  border-bottom: #fff 1px solid;
+}
+
+.notifications__grid--img {
+  padding: 1rem;
+  border-radius: 20px;
+}
+
+.notifications__grid--section {
+  padding: 1rem 1rem 1rem 0;
+}
+
+.notifications:hover .notifications__body {
+  display: block;
+}
+
+/* user dashboard access point */
+
+.profile {
+  position: relative;
+  display: inline-block;
+  margin-left: 1rem;
+}
+
+.profile__picture {
+  width: 1.875rem;
+  height: 1.875rem;
+  border-radius: 5px;
+  margin-top: 0.15rem;
+}
+
+.profile__menu {
+  display: none;
+  position: absolute;
+  top: 3.125rem;
+  right: 0;
+  background: rgba(0, 0, 0, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  width: 13.75rem;
+  z-index: 1;
+  font-size: 13px;
+}
+
+.profile__menu--arrow {
+  position: absolute;
+  right: 0.75rem;
+  top: -1.8rem;
+}
+
+.profile:hover .profile__menu {
+  display: block;
+}
+
+.profile__menu--list,
+.profile__menu--listEnd {
+  list-style-type: none;
+  padding: 0.625rem 0 0.313rem 0;
+  margin: 0;
+}
+
+.profile__menu--listItem {
+  width: 13.625rem;
+  padding: 0.313rem 0.625rem;
+}
+
+.profile__menu--listImg1 {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 4px;
+  margin-right: 0.625rem;
+  display: inline-block;
+}
+
+.profile__menu--listImg2 {
+  width: 2rem;
+  border-radius: 4px;
+  margin-right: 0.625rem;
+  display: inline-block;
+}
+
+.profile__menu--listEnd {
+  text-align: center;
+  border-top: 1px solid hsla(0, 0%, 100%, 0.25);
+}
+
+.profile__menu--btn {
+  text-decoration: none;
+  color: white;
+}
+.rotate{
+  transform: rotate(180deg);
+}
+.profile__menu--btn:hover {
+  text-decoration: underline;
+}
+
+.profile__menu--toggle {
+  transform: rotate(180deg);
+  transition: all 0.25s ease;
+}
+
+.arrow :hover {
+  transform: rotate(360deg);
+}

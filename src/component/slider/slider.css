@@ -1,11 +1,13 @@
 /* .cardbody {
   display: none;
+  transition: 3s !important;
 }
 
 .Card:hover .cardbody {
   display: flex;
   position: relative;
   z-index: 9999;
+  transition: 3s !important;
 }
 
 .cardbody .card-text {
