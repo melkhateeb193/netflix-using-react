@@ -78,7 +78,7 @@ function HereSection() {
             </button>
           </div>
           <div class="title__aside col">
-            <button class="title__aside--btn">
+            <button class="title__aside--btn text-center">
               <img
                 className="title__aside--btn__icon"
                 src="./icons/restart.svg"
