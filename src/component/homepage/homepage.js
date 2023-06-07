@@ -17,9 +17,7 @@ function Homepage(type) {
   },[movies])
 
   useEffect(() => {
-    dispatch(getAllMovies('NetflixClone'))
-    
-    
+    dispatch(getAllMovies('NetflixClone'));
   }, [])
 
   return (
