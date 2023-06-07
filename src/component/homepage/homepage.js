@@ -2,9 +2,7 @@ import React, { useEffect } from 'react'
 import './homepage.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useDispatch, useSelector } from 'react-redux';
-import getAllMovies from '../../store/actions/firestore';
-import HereSection from '../heroSection/heroSection';
-import Footer from '../Footer/footer';
+import getAllMovies from '../../store/actions/firestore'; 
 import Header from '../navbar/navbar';
 
 function Homepage(type) {

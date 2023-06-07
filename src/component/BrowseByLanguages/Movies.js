@@ -7,7 +7,7 @@ import Col from "react-bootstrap/Col";
 import "./edit.css";
 import Browse from "./Browse";
 import Header from "../navbar/navbar";
-import Footer from "../Footer/footer";
+import Footer from "../footer/footer";
 export default function Movies() {
   const movies = useSelector((state) => state.movies.movies);
   const dispatch = useDispatch();
