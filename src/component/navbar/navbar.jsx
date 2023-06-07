@@ -5,6 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 import NavLink from "react-bootstrap/NavLink";
 import Form from "react-bootstrap/Form";
 import "./navbar.css";
+import { Link } from "react-router-dom";
 
 function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -49,22 +50,22 @@ function Header() {
               className="navbar-collapse block"
             >
               <Nav className="me-auto  mb-2 mb-lg-0">
-                <NavLink className="nav__link" to="/">
+                <NavLink className="nav__link" as={Link} to="/">
                   Home
                 </NavLink>
-                <NavLink className="nav__link" to="">
+                <NavLink className="nav__link" as={Link} to="/login">
                   TV Shows
                 </NavLink>
-                <NavLink className="nav__link" to="">
+                <NavLink className="nav__link" as={Link} to="/user">
                   Movies
                 </NavLink>
-                <NavLink className="nav__link" to="">
+                <NavLink className="nav__link" as={Link} to="/home">
                   New & Popular
                 </NavLink>
-                <NavLink className="nav__link" to="">
+                <NavLink className="nav__link" as={Link} to="/movies">
                   My List
                 </NavLink>
-                <NavLink className="nav__link" to="/movies">
+                <NavLink className="nav__link" as={Link} to="/movies">
                   Browse by Languages
                 </NavLink>
               </Nav>
