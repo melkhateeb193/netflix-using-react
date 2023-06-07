@@ -1,29 +1,60 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./heroSection.css";
+import { useDispatch, useSelector } from "react-redux";
+import getAllMovies from "../../store/actions/firestore";
+import { async } from "q";
 
 function HereSection() {
+  const movies = useSelector((state) => state.movies.movies);
+  const dispatch = useDispatch();
+  const [imgLink, setImageLink] = useState("./images/interstellar.webp");
+
+  useEffect(()=>{
+    console.log(movies);
+    // movies.forEach(movie => {
+    //   console.log(movie.data());
+    // });
+    // console.log(movies[10].data().link);
+
+    let imgNum =  Math.floor(Math.random() * 50);
+    if(movies.length == 0){
+      console.log(true);
+    }else{
+      console.log(false);
+      setImageLink(movies[imgNum].data().link? movies[imgNum].data().link: movies[imgNum].data().Link)
+      console.log(movies[imgNum].data().name);
+      console.log(movies[imgNum].data());
+    }
+    
+  },[movies,imgLink])
+
+  useEffect(() => {
+    dispatch(getAllMovies('NetflixClone'));
+  }, [])
+
+
   return (
     <>
       <div className="parent">
-        <div class="title row">
+        <div className="title row">
           {/* changeable background  and data*/}
 
           <img
-            class="title__image"
+            className="title__image"
             src="./images/interstellar.webp"
             alt="background"
           />
 
-          <div class="title__space col-1"></div>
-          <div class="title__body col-7">
+          <div className="title__space col-1"></div>
+          <div className="title__body col-7">
             {/* this is for the logo */}
 
             <img
-              class="title__body--logo"
-              src="./images/Interstellar-logo.png"
+              className="title__body--logo"
+              src='./images/Interstellar-logo.png'
             />
 
-            <div class="title__body--description">
+            <div className="title__body--description">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
               tenetur error magni! Distinctio facere inventore iusto maxime,
               repudiandae ipsa molestiae aspernatur mollitia?
@@ -31,19 +62,19 @@ function HereSection() {
 
             {/* discription from api */}
 
-            <button class="title__body--button btn1">
+            <button className="title__body--button btn1">
               <img
-                class="title__body--button__element"
+                className="title__body--button__element"
                 src="./icons/play.svg"
               />
-              <span class="title__body--button__element btn1__text">Play</span>
+              <span className="title__body--button__element btn1__text">Play</span>
             </button>
-            <button class="title__body--button btn2">
+            <button className="title__body--button btn2">
               <img
-                class="title__body--button__element"
+                className="title__body--button__element"
                 src="./icons/info.svg"
               />
-              <span class="title__body--button__element">More Info</span>
+              <span className="title__body--button__element">More Info</span>
             </button>
           </div>
           <div class="title__aside col">
@@ -53,7 +84,7 @@ function HereSection() {
                 src="./icons/restart.svg"
               />
             </button>
-            <span class="title__aside--maturityRating">13+</span>
+            <span className="title__aside--maturityRating">13+</span>
           </div>
         </div>
       </div>
