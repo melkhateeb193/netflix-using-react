@@ -26,7 +26,7 @@ function Header() {
   return (
     <>
       <div className={isScrolled ? "sticky scrolled" : "sticky"}>
-        <Navbar className="navbar" expand="lg" id="navbar">
+        <Navbar className="navbar justify-content-around" expand="lg" id="navbar">
           <Container className="container-fluid m-0 p-0">
             <Navbar.Brand className="navbar__brand">
               <Nav.Link>
