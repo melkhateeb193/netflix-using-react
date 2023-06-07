@@ -203,7 +203,9 @@
   text-decoration: none;
   color: white;
 }
-
+.rotate{
+  transform: rotate(180deg);
+}
 .profile__menu--btn:hover {
   text-decoration: underline;
 }
