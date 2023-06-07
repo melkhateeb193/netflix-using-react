@@ -5,6 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 import NavLink from "react-bootstrap/NavLink";
 import Form from "react-bootstrap/Form";
 import "./navbar.css";
+import { Link } from "@mui/material";
 
 function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,6 +18,7 @@ function Header() {
         setIsScrolled(false);
       }
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -26,7 +28,11 @@ function Header() {
   return (
     <>
       <div className={isScrolled ? "sticky scrolled" : "sticky"}>
-        <Navbar className="navbar justify-content-around" expand="lg" id="navbar">
+        <Navbar
+          className="navbar justify-content-around"
+          expand="lg"
+          id="navbar"
+        >
           <Container className="container-fluid m-0 p-0">
             <Navbar.Brand className="navbar__brand">
               <Nav.Link>
@@ -49,22 +55,22 @@ function Header() {
               className="navbar-collapse block"
             >
               <Nav className="me-auto  mb-2 mb-lg-0">
-                <NavLink className="nav__link" to="/">
+                <NavLink className="nav__link" as={Link} to="/">
                   Home
                 </NavLink>
-                <NavLink className="nav__link" to="/">
+                <NavLink className="nav__link" as={Link} to="/">
                   TV Shows
                 </NavLink>
-                <NavLink className="nav__link" to="/">
+                <NavLink className="nav__link" as={Link} to="/">
                   Movies
                 </NavLink>
-                <NavLink className="nav__link" to="/">
+                <NavLink className="nav__link" as={Link} to="/">
                   New & Popular
                 </NavLink>
-                <NavLink className="nav__link" to="/">
+                <NavLink className="nav__link" as={Link} to="/">
                   My List
                 </NavLink>
-                <NavLink className="nav__link" to="/">
+                <NavLink className="nav__link" as={Link} to="/">
                   Browse by Languages
                 </NavLink>
               </Nav>
@@ -91,7 +97,7 @@ function Header() {
                 </Form>
                 {/* the end ot the search component */}
 
-                <NavLink className="nav__link" to="/">
+                <NavLink className="nav__link" as={Link} to="/">
                   Kids
                 </NavLink>
 
@@ -123,11 +129,11 @@ function Header() {
                 {/* this is the end of notifications part */}
 
                 {/* this is the user dashboard access point */}
-                <div className="nav-element profile">
-                  <a className="navbar__btn row">
+                <div className="nav-element profile arrowP">
+                  <a className="navbar__btn row arrowP">
                     {/* add a user profile here  */}
 
-                    <span className=" col p-0 m-0 d-flex justify-content-center">
+                    <span className=" col p-0 m-0 d-flex justify-content-center arrowP">
                       <img className="profile__picture " src="./icons/p4.png" />
                     </span>
                     <span className="col-4 p-0 m-0 d-flex justify-content-center arrow">

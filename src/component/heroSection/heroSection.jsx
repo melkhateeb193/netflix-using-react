@@ -9,49 +9,57 @@ function HereSection() {
   const dispatch = useDispatch();
   const [imgLink, setImageLink] = useState("./images/interstellar.webp");
 
-  useEffect(()=>{
+  useEffect(() => {
     console.log(movies);
     // movies.forEach(movie => {
     //   console.log(movie.data());
     // });
     // console.log(movies[10].data().link);
 
-    let imgNum =  Math.floor(Math.random() * 50);
-    if(movies.length == 0){
+    let imgNum = Math.floor(Math.random() * 50);
+    if (movies.length == 0) {
       console.log(true);
-    }else{
+    } else {
       console.log(false);
-      setImageLink(movies[imgNum].data().link? movies[imgNum].data().link: movies[imgNum].data().Link)
+      setImageLink(
+        movies[imgNum].data().link
+          ? movies[imgNum].data().link
+          : movies[imgNum].data().Link
+      );
       console.log(movies[imgNum].data().name);
       console.log(movies[imgNum].data());
     }
-    
-  },[movies,imgLink])
+  }, [movies, imgLink]);
 
   useEffect(() => {
-    dispatch(getAllMovies('NetflixClone'));
-  }, [])
-
+    dispatch(getAllMovies("NetflixClone"));
+  }, []);
 
   return (
     <>
       <div className="parent">
+        {/* changeable background  and data*/}
+
+        <div className="title__image ">
+          <video
+            id="background-video"
+            // loop
+            autoPlay
+          >
+            <source
+              src="https://www.w3schools.com/html/mov_bbb.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
         <div className="title row">
-          {/* changeable background  and data*/}
-
-          <img
-            className="title__image"
-            src="./images/interstellar.webp"
-            alt="background"
-          />
-
           <div className="title__space col-1"></div>
           <div className="title__body col-7">
             {/* this is for the logo */}
 
             <img
               className="title__body--logo"
-              src='./images/Interstellar-logo.png'
+              src="./images/Interstellar-logo.png"
             />
 
             <div className="title__body--description">
@@ -60,14 +68,16 @@ function HereSection() {
               repudiandae ipsa molestiae aspernatur mollitia?
             </div>
 
-            {/* discription from api */}
+            {/* description from api */}
 
             <button className="title__body--button btn1">
               <img
                 className="title__body--button__element"
                 src="./icons/play.svg"
               />
-              <span className="title__body--button__element btn1__text">Play</span>
+              <span className="title__body--button__element btn1__text">
+                Play
+              </span>
             </button>
             <button className="title__body--button btn2">
               <img
@@ -88,6 +98,7 @@ function HereSection() {
           </div>
         </div>
       </div>
+      <div className="t"></div>
     </>
   );
 }

@@ -1,10 +1,10 @@
 @media only screen and (max-width: 700px) {
-  .parent{
+  .parent {
     display: none;
   }
 }
 @media only screen and (max-width: 990px) {
-  .parent{
+  .parent {
     display: none;
   }
 }
@@ -12,6 +12,14 @@
 .parent * {
   margin: 0;
   padding: 0;
+}
+
+.parent {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(201, 201, 201, 0.52),
+    rgba(0, 0, 0, 0.73)
+  );
 }
 
 .title {
@@ -29,6 +37,11 @@
   margin: 0 !important;
   padding: 0 !important;
   z-index: 0 !important;
+  width: 100%;
+}
+
+#background-video {
+  width: 100%;
 }
 
 /* .title__space {
@@ -116,4 +129,10 @@
 
 .btn2 {
   background-color: #808080;
+}
+
+.t {
+  height: 1000px;
+  width: 1000px;
+  color: aquamarine;
 }
