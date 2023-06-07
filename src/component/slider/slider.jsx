@@ -3,6 +3,8 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
@@ -11,7 +13,7 @@ function SliderComponent() {
   var settings = {
     className: "center",
     infinite: true,
-    centerPadding: "60px",
+    centerPadding: "10px",
     slidesToShow: 5,
     swipeToSlide: true,
     afterChange: function(index) {
@@ -25,9 +27,25 @@ function SliderComponent() {
       <h1>What to watch</h1>
       <Row>
       <Slider {...settings}>
+        <Col className='custom-col'>
+          {/* Slide 1 */}
+          <Card className='Card' style={{ width: '16.5rem'}}>
+            <Card.Img variant="top" src="https://www.shutterstock.com/image-vector/online-cinema-art-movie-watching-260nw-586719869.jpg" />
+            <Card.Body className='cardbody'>
+              <div>
+              <FontAwesomeIcon icon="fa-solid fa-play"/>                
+              </div>
+              <Card.Title>Card Title</Card.Title>
+              <Card.Text>
+                Some quick example text to build on the card title and make up the bulk of the card's content.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      
         <Col className='col'>
           {/* Slide 1 */}
-          <Card className='Card' style={{ width: '18rem'}}>
+          <Card className='Card' style={{ width: '16.5rem'}}>
             <Card.Img variant="top" src="https://www.shutterstock.com/image-vector/online-cinema-art-movie-watching-260nw-586719869.jpg" />
             <Card.Body className='cardbody'>
               <Card.Title>Card Title</Card.Title>
@@ -39,7 +57,7 @@ function SliderComponent() {
         </Col>
         <Col className='col'>
           {/* Slide 1 */}
-          <Card className='Card' style={{ width: '18rem'}}>
+          <Card className='Card' style={{ width: '16.5rem'}}>
             <Card.Img variant="top" src="https://www.shutterstock.com/image-vector/online-cinema-art-movie-watching-260nw-586719869.jpg" />
             <Card.Body className='cardbody'>
               <Card.Title>Card Title</Card.Title>
@@ -51,7 +69,7 @@ function SliderComponent() {
         </Col>
         <Col className='col'>
           {/* Slide 1 */}
-          <Card className='Card' style={{ width: '18rem'}}>
+          <Card className='Card' style={{ width: '16.5rem'}}>
             <Card.Img variant="top" src="https://www.shutterstock.com/image-vector/online-cinema-art-movie-watching-260nw-586719869.jpg" />
             <Card.Body className='cardbody'>
               <Card.Title>Card Title</Card.Title>
@@ -63,7 +81,7 @@ function SliderComponent() {
         </Col>
         <Col className='col'>
           {/* Slide 1 */}
-          <Card className='Card' style={{ width: '18rem'}}>
+          <Card className='Card' style={{ width: '16.5rem'}}>
             <Card.Img variant="top" src="https://www.shutterstock.com/image-vector/online-cinema-art-movie-watching-260nw-586719869.jpg" />
             <Card.Body className='cardbody'>
               <Card.Title>Card Title</Card.Title>
@@ -75,19 +93,7 @@ function SliderComponent() {
         </Col>
         <Col className='col'>
           {/* Slide 1 */}
-          <Card className='Card' style={{ width: '18rem'}}>
-            <Card.Img variant="top" src="https://www.shutterstock.com/image-vector/online-cinema-art-movie-watching-260nw-586719869.jpg" />
-            <Card.Body className='cardbody'>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of the card's content.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col className='col'>
-          {/* Slide 1 */}
-          <Card className='Card' style={{ width: '18rem'}}>
+          <Card className='Card' style={{ width: '16.5rem'}}>
             <Card.Img variant="top" src="https://www.shutterstock.com/image-vector/online-cinema-art-movie-watching-260nw-586719869.jpg" />
             <Card.Body className='cardbody'>
               <Card.Title>Card Title</Card.Title>

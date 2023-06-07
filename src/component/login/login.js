@@ -1,8 +1,9 @@
 import React from 'react'
 import "./login.css";
+
 function Login() {
     return (
-<>
+<div className='Main'>
   <header className="">
     <nav className="navbar">
       <div className="container" id="netflixLogoContainer">
@@ -24,7 +25,7 @@ function Login() {
       </div>
     </nav>
   </header>
-  <main className="container p-5">
+  <main  className="container p-5" >
     <form className="text-white p-3">
       <div className="mb-3">
         <p className="signIn">Sign In</p>
@@ -118,7 +119,7 @@ function Login() {
     <div className="dropdown">
       <a
         className="btn btn-secondary dropdown-toggle"
-        href="#"
+        href="-"
         role="button"
         data-bs-toggle="dropdown"
         aria-expanded="false"
@@ -128,12 +129,12 @@ function Login() {
       </a>
       <ul className="dropdown-menu bg-white">
         <li>
-          <a className="dropdown-item" href="#">
+          <a className="dropdown-item" href="-">
             العربيه
           </a>
         </li>
         <li>
-          <a className="dropdown-item" href="#">
+          <a className="dropdown-item" href="-">
             English
           </a>
         </li>
@@ -142,7 +143,7 @@ function Login() {
   </div>
 </footer>
 
-</>
+</div>
     )
 }
 
