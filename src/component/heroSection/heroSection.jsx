@@ -57,7 +57,6 @@ function HereSection() {
           </div>
         </div>
       </div>
-      <div className="t"></div>
     </>
   );
 }
