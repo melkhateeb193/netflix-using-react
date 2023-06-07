@@ -1,0 +1,119 @@
+@media only screen and (max-width: 700px) {
+  .parent{
+    display: none;
+  }
+}
+@media only screen and (max-width: 990px) {
+  .parent{
+    display: none;
+  }
+}
+
+.parent * {
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.title * {
+  z-index: 50;
+}
+
+.title__image {
+  position: absolute;
+  margin: 0 !important;
+  padding: 0 !important;
+  z-index: 0 !important;
+}
+
+/* .title__space {
+  margin-top: 5rem !important;
+  padding: 0;
+} */
+
+.title__body {
+  margin-top: 10rem !important;
+  padding: 0;
+}
+
+.title__body--logo {
+  width: 32vw;
+  margin-bottom: 1rem;
+}
+
+.title__body--description {
+  width: 32vw;
+  margin-bottom: 1rem;
+}
+
+.title__body--button {
+  padding: 0.5rem 1.5rem;
+  margin: 0 0.675rem 0.675rem 0;
+  border-radius: 5px;
+  height: 2.7rem;
+  border: none;
+  background-color: transparent;
+  font-weight: bold;
+}
+
+.title__body--button__element {
+  margin-right: 0.5rem;
+  display: inline-block;
+}
+
+.title__body--button:hover {
+  opacity: 0.8;
+}
+
+.title__aside {
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex;
+  justify-content: end;
+  width: 5.875rem;
+  height: 2.159rem;
+  margin-top: 13rem !important;
+}
+
+.title__aside--maturityRating {
+  background-color: rgba(51, 51, 51, 0.6);
+  border-left: 3px solid #dcdcdc;
+  padding: 0.45rem 3.15rem 0.45rem 0.72rem;
+}
+
+.title__aside--btn {
+  background-color: transparent;
+  border: white solid 1px;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  opacity: 0.8;
+
+  margin-right: 1rem;
+}
+
+.title__aside--btn__icon {
+  /* margin: 0 !important; */
+  margin-left: 0.42rem;
+}
+
+.title__aside--btn:hover {
+  opacity: 1;
+}
+
+.btn1 {
+  background-color: #fff;
+}
+
+.btn1__text {
+  color: #141414;
+}
+
+.btn2 {
+  background-color: #808080;
+}

@@ -10,16 +10,14 @@ function Homepage(type) {
   const dispatch = useDispatch();
 
   useEffect(()=>{
-    console.log(movies);
+    // console.log(movies);
     movies.forEach(movie => {
-      console.log(movie.id);
+      console.log(movie.data());
     });
   },[movies])
 
   useEffect(() => {
-    dispatch(getAllMovies('NetflixClone'))
-    
-    
+    dispatch(getAllMovies('NetflixClone'));
   }, [])
 
   return (
