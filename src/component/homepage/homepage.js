@@ -3,6 +3,9 @@ import './homepage.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useDispatch, useSelector } from 'react-redux';
 import getAllMovies from '../../store/actions/firestore';
+import HereSection from '../heroSection/heroSection';
+import Footer from '../Footer/footer';
+import Header from '../navbar/navbar';
 
 function Homepage(type) {
 
@@ -22,6 +25,7 @@ function Homepage(type) {
 
   return (
     <>
+    <Header></Header> 
     <div className="featured">
       {type && (
         <div className="category">
@@ -70,7 +74,7 @@ function Homepage(type) {
           </button>
         </div>
       </div>
-    </div>
+    </div> 
     </>
   );
 }

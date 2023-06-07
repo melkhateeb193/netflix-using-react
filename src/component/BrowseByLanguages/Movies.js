@@ -1,10 +1,13 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import getAllMovies from "../../store/actions/firestore";
-import "./browse.css";
+import getAllMovies from "../../store/actions/firestore"; 
 import Card from "react-bootstrap/Card";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import "./edit.css";
 import Browse from "./Browse";
+import Header from "../navbar/navbar";
+import Footer from "../Footer/footer";
 export default function Movies() {
   const movies = useSelector((state) => state.movies.movies);
   const dispatch = useDispatch();
@@ -22,35 +25,23 @@ export default function Movies() {
 
   return (
     <>
+    <Header></Header>
       <Browse></Browse>
-      <div className="contain">
-        {movies.map((movie) => (
-          <Card
-            key={movie.data().id}
-            style={{
-              width: "18%",
-              marginLeft: "5px",
-              marginTop: "10px",
-              marginBottom: "50px",
-            }}
-          >
-            <Card.Img
-              variant="top"
-              className="immg"
-              style={{ position: "relative" }}
-              src={`${
-                movie.data().link ? movie.data().link : movie.data().Link
-              }`}
-            />
-            <Card.Body className="showHidn">
-              <Card.Title>
-                {movie.data().name ? movie.data().name : movie.data().Name}{" "}
-              </Card.Title>
-              <Card.Text>{movie.data().description}</Card.Text>
-            </Card.Body>
-          </Card>
-        ))}
-      </div>
+      <div className='container-fluid'>
+                <div className='list-body px-5 mt-4'> 
+                    <Row xs={5} md={5} className="main-design g-2  pt-4">
+                        {movies.map((movie) => (
+                            <Col key={movie.id}>
+                                <Card className='card-design'>
+                                    <Card.Img className='card-img' variant="top" src={movie.data().link?movie.data().link :movie.data().Link}></Card.Img>
+                                    
+                                </Card>
+                            </Col>
+                        ))}
+                    </Row>
+                </div>
+            </div>
+      <Footer></Footer>
     </>
   );
 }
