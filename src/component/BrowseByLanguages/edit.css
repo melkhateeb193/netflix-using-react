@@ -1,0 +1,14 @@
+
+.contain{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+  }
+.showHidn {
+    background-color: black;
+    display: none;
+    color: wheat;
+    width:100% ;
+    height:150px;
+    font-size: 0.5rem;
+        }

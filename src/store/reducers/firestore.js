@@ -8,7 +8,7 @@ export default function MoviesReducer(state = INTIAL_STATE, action) {
         case 'SET_ALL_MOVIES':
             return {
                 ...state,
-                movies: action.payload
+                movies: action.payload,
             }
         default:
             return state;

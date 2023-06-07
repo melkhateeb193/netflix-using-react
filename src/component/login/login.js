@@ -1,6 +1,7 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import "./login.css";
-function Login() {
+export default function Login() {
  
   const [user, setUser] = useState([
     {
@@ -79,7 +80,7 @@ function Login() {
     </nav>
   </header>
   <main className="container p-5">
-    <form className="text-white p-3">
+    <form className="text-white p-3" onSubmit={(ev)=>{handleSubmit(ev)}}>
       <div className="mb-3">
         <p className="signIn">Sign In</p>
         <input
@@ -88,6 +89,7 @@ function Login() {
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
           placeholder="Email or phone number"
+          onChange={(ev)=>handleChange(ev)}
         />
       </div>
       <div className="mb-5">
@@ -96,6 +98,7 @@ function Login() {
           className="form-control p-3"
           id="exampleInputPassword1"
           placeholder="password"
+          onChange={(ev)=>handleChange(ev)}
         />
       </div>
       <button
