@@ -77,15 +77,17 @@ function HereSection() {
               <span className="title__body--button__element">More Info</span>
             </button>
           </div>
-          <div className="title__aside col">
-            <button className="title__aside--btn">
-              <img src="./icons/restart.svg" />
+          <div class="title__aside col">
+            <button class="title__aside--btn">
+              <img
+                className="title__aside--btn__icon"
+                src="./icons/restart.svg"
+              />
             </button>
             <span className="title__aside--maturityRating">13+</span>
           </div>
         </div>
       </div>
-      <div className="t"></div>
     </>
   );
 }
