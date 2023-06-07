@@ -21,6 +21,7 @@ function Homepage(type) {
   }, [])
 
   return (
+    <>
     <div className="featured">
       {type && (
         <div className="category">
@@ -70,7 +71,8 @@ function Homepage(type) {
         </div>
       </div>
     </div>
-  )
+    </>
+  );
 }
 
 export default Homepage

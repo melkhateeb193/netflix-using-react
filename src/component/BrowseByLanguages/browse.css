@@ -40,9 +40,7 @@
  }
 .immg:hover{ 
     transform: scale(1.4,1.4 );
-.showHidn{
-         display: block !important;
-            }
+ 
 } 
  @media screen and (min-width : 901px) and (max-width : 1400px) {
 .immg2{

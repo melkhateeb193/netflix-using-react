@@ -25,7 +25,7 @@ function Header() {
 
   return (
     <>
-      <div className={isScrolled ? "sticky scrolled" : "sticky"}>
+      <div className={isScrolled ? "sticky scrolled" : "sticky" } style={{height:"50px" ,fontSize:40}}>
         <Navbar className="navbar justify-content-around" expand="lg" id="navbar">
           <Container className="container-fluid m-0 p-0">
             <Navbar.Brand className="navbar__brand">
@@ -52,19 +52,19 @@ function Header() {
                 <NavLink className="nav__link" to="/">
                   Home
                 </NavLink>
-                <NavLink className="nav__link" to="/">
+                <NavLink className="nav__link" to="">
                   TV Shows
                 </NavLink>
-                <NavLink className="nav__link" to="/">
+                <NavLink className="nav__link" to="">
                   Movies
                 </NavLink>
-                <NavLink className="nav__link" to="/">
+                <NavLink className="nav__link" to="">
                   New & Popular
                 </NavLink>
-                <NavLink className="nav__link" to="/">
+                <NavLink className="nav__link" to="">
                   My List
                 </NavLink>
-                <NavLink className="nav__link" to="/">
+                <NavLink className="nav__link" to="/movies">
                   Browse by Languages
                 </NavLink>
               </Nav>
