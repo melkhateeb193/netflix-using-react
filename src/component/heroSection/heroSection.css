@@ -93,10 +93,22 @@
   width: 2.5rem;
   height: 2.5rem;
   opacity: 0.8;
+<<<<<<<<< Temporary merge branch 1
+  margin: 0 !important;
 }
 
 .title__aside--btn__icon {
   margin: 0 !important;
+  padding: 0 !important;
+=========
+
+  margin-right: 1rem;
+}
+
+.title__aside--btn__icon {
+  /* margin: 0 !important; */
+  margin-left: 0.42rem;
+>>>>>>>>> Temporary merge branch 2
 }
 
 .title__aside--btn:hover {

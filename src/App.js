@@ -7,33 +7,24 @@ import HereSection from "./component/heroSection/heroSection";
 import Footer from "./component/footer/footer";
 import SimpleSlider from "./component/slider/slider";
 import "./App.css";
-import MyList from "./component/myList/myList";
 
 function App() {
   return (
     <>
-      <Header />
-      <HereSection />
-      <Footer />
+      <Provider store={store}>
+        <div className="App">
+          <Routes>
+            <Route path="/" element={<Mainpagebfl />} />
+            <Route path="/home" element={<Homepage />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/moviesb" element={<Movies />} />
+            <Route path="/Userprofile" element={<Userprofile />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
+      </Provider>
     </>
-
-    // <>
-    //   <div className="App bg-dark">
-    //     <SimpleSlider />
-    //     <SimpleSlider />
-    //   </div>
-    // </>
-    // <Router>
-    //   <div className="App">
-    //     <Routes>
-    // {/* //       <Route path="/" element={<Mainpagebfl />} />
-    // //       <Route path="/login" element={<Login />} />
-    // //       <Route path="/profile" element={<Userprofile />} />
-    // //       <Route path="/home" element={<Homepage/>} /> */}
-    //          {/* <Route path="/" element={<Homepage/>} /> */}
-    //     </Routes>
-    //    </div>
-    //  </Router>
   );
 }
 
