@@ -5,6 +5,8 @@ import getAllMovies from "../../store/actions/firestore";
 import { async } from "q";
 
 function HereSection() {
+  var videoPlaceHolder = "https://www.w3schools.com/html/mov_bbb.mp4";
+
   const movies = useSelector((state) => state.movies.movies);
   const dispatch = useDispatch();
   const [imgLink, setImageLink] = useState("./images/interstellar.webp");
@@ -57,10 +59,7 @@ function HereSection() {
             // currentTime={currentTime}
             // onTimeUpdate={(event) => setCurrentTime(event.target.currentTime)}
           >
-            <source
-              src="https://www.w3schools.com/html/mov_bbb.mp4"
-              type="video/mp4"
-            />
+            <source src={videoPlaceHolder} type="video/mp4" />
 
             {/* background video */}
           </video>
@@ -114,7 +113,7 @@ function HereSection() {
           </div>
         </div>
       </div>
-      <div className="t"></div>
+      {/* <div className="t"></div> */}
     </>
   );
 }
