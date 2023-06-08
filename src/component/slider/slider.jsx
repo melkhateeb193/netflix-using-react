@@ -55,12 +55,10 @@ const SliderProgress = () => {
     const progressBarItemCount = progressBar.children.length;
     if (handle.classList.contains("left-handle")) {
       if (sliderIndex - 1 < 0) {
-        console.log(sliderIndex +"1");
         slider.style.setProperty("--slider-index", progressBarItemCount - 1);
         progressBar.children[sliderIndex].classList.remove("active");
         progressBar.children[progressBarItemCount - 1].classList.add("active");
       } else {
-        console.log(sliderIndex +"2");
         slider.style.setProperty("--slider-index", sliderIndex - 1);
         progressBar.children[sliderIndex].classList.remove("active");
         progressBar.children[sliderIndex - 1].classList.add("active");
@@ -69,12 +67,10 @@ const SliderProgress = () => {
 
     if (handle.classList.contains("right-handle")) {
       if (sliderIndex + 1 >= progressBarItemCount) {
-        console.log(sliderIndex +"3");
         slider.style.setProperty("--slider-index", 0);
         progressBar.children[sliderIndex].classList.remove("active");
         progressBar.children[0].classList.add("active");
       } else {
-        console.log(sliderIndex +"4");
         slider.style.setProperty("--slider-index", sliderIndex + 1);
         progressBar.children[sliderIndex].classList.remove("active");
         progressBar.children[sliderIndex + 1].classList.add("active");
@@ -109,7 +105,7 @@ const SliderProgress = () => {
   const throttleProgressBar = throttle(() => {
     document.querySelectorAll(".progress-bar").forEach(calculateProgressBar);
   });
-let flag = true;
+
   useEffect(() => {
     document.addEventListener("click", (e) => {
       let handle;
@@ -119,15 +115,7 @@ let flag = true;
         handle = e.target.closest(".handle");
       }
       if (handle != null) {
-        if(flag){
-          flag = false;
-        }else{
-          flag = true;
-          onHandleClick(handle);
-        }
-        console.log(true);
-        // onHandleClick(handle);
-        
+        onHandleClick(handle);
       }
     });
 
@@ -153,24 +141,6 @@ let flag = true;
           <img src="https://via.placeholder.com/240/FFFFFF?text=4" alt="Slider Image" />
           <img src="https://via.placeholder.com/250/FFFFFF?text=5" alt="Slider Image" />
           <img src="https://via.placeholder.com/260/FFFFFF?text=6" alt="Slider Image" />
-          <img src="https://via.placeholder.com/270/FFFFFF?text=7" alt="Slider Image" />
-          <img src="https://via.placeholder.com/280/FFFFFF?text=8" alt="Slider Image" />
-          <img src="https://via.placeholder.com/290/FFFFFF?text=9" alt="Slider Image" />
-          <img src="https://via.placeholder.com/300/FFFFFF?text=10" alt="Slider Image" />
-          <img src="https://via.placeholder.com/310/FFFFFF?text=11" alt="Slider Image" />
-          <img src="https://via.placeholder.com/320/FFFFFF?text=12" alt="Slider Image" />
-          <img src="https://via.placeholder.com/210/FFFFFF?text=1" alt="Slider Image" />
-          <img src="https://via.placeholder.com/220/FFFFFF?text=2" alt="Slider Image" />
-          <img src="https://via.placeholder.com/230/FFFFFF?text=3" alt="Slider Image" />
-          <img src="https://via.placeholder.com/240/FFFFFF?text=4" alt="Slider Image" />
-          <img src="https://via.placeholder.com/250/FFFFFF?text=5" alt="Slider Image" />
-          <img src="https://via.placeholder.com/260/FFFFFF?text=6" alt="Slider Image" />
-          <img src="https://via.placeholder.com/270/FFFFFF?text=7" alt="Slider Image" />
-          <img src="https://via.placeholder.com/280/FFFFFF?text=8" alt="Slider Image" />
-          <img src="https://via.placeholder.com/290/FFFFFF?text=9" alt="Slider Image" />
-          <img src="https://via.placeholder.com/300/FFFFFF?text=10" alt="Slider Image" />
-          <img src="https://via.placeholder.com/310/FFFFFF?text=11" alt="Slider Image" />
-          <img src="https://via.placeholder.com/320/FFFFFF?text=12" alt="Slider Image" />
           <img src="https://via.placeholder.com/270/FFFFFF?text=7" alt="Slider Image" />
           <img src="https://via.placeholder.com/280/FFFFFF?text=8" alt="Slider Image" />
           <img src="https://via.placeholder.com/290/FFFFFF?text=9" alt="Slider Image" />
