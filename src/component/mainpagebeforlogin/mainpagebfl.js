@@ -4,10 +4,15 @@ import { Dropdown } from "react-bootstrap";
 import { FaGlobe } from "react-icons/fa";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Accordion from "react-bootstrap/Accordion";
+import { Link } from "react-router-dom";
+import Header from "../navbar/navbar";
+import HereSection from "../heroSection/heroSection";
 
 function Mainpagebfl() {
   return (
     <>
+    <Header></Header>
+    <HereSection></HereSection>
       <header className="contianer p-3 ps-4 pe-4">
         <nav className="navbar">
           <div className="container-fluid nav">
@@ -38,7 +43,7 @@ function Mainpagebfl() {
               </Dropdown>
               <button className="btn ms-3" type="submit">
                 {" "}
-                <a href="/login">Sign In</a>
+                <Link to="/login">sign In</Link> 
               </button>
             </div>
           </div>
@@ -62,8 +67,8 @@ function Mainpagebfl() {
                 placeholder="Email address"
               />
               <button className="d-flex justify-content-center align-items-center btn pe-4 ps-3">
-                {" "}
-                <a href="login/index.html">Get Started</a>{" "}
+              
+                <Link to="/login">Get Started</Link> 
                 <FontAwesomeIcon icon="fa-solid fa-chevron-right text-white" />
               </button>
             </div>
@@ -224,7 +229,7 @@ function Mainpagebfl() {
               />
               <button className="d-flex justify-content-center align-items-center btn pe-4 ps-3">
                 {" "}
-                <a href="login/index.html">Get Started</a>{" "}
+                <Link to="/login">Get Started</Link> 
                 <i className="fa-solid fa-chevron-right ms-1 text-white" />
               </button>
             </div>
@@ -283,6 +288,7 @@ function Mainpagebfl() {
     <p>Netflix Egypt</p>
   </div>
 </footer>
+
     </>
   );
 }

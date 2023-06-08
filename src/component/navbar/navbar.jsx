@@ -1,10 +1,11 @@
-import React, { Component, useEffect, useState } from "react";
+import React, {  useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavLink from "react-bootstrap/NavLink";
 import Form from "react-bootstrap/Form";
 import "./navbar.css";
+import { Link } from "react-router-dom";
 
 function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -25,7 +26,7 @@ function Header() {
 
   return (
     <>
-      <div className={isScrolled ? "sticky scrolled" : "sticky"}>
+      <div className={isScrolled ? "sticky scrolled" : "sticky" } style={{height:"50px" ,fontSize:40}}>
         <Navbar className="navbar justify-content-around" expand="lg" id="navbar">
           <Container className="container-fluid m-0 p-0">
             <Navbar.Brand className="navbar__brand">
@@ -49,22 +50,22 @@ function Header() {
               className="navbar-collapse block"
             >
               <Nav className="me-auto  mb-2 mb-lg-0">
-                <NavLink className="nav__link" to="/">
+                <NavLink className="nav__link" as={Link} to="/home">
                   Home
                 </NavLink>
-                <NavLink className="nav__link" to="/">
+                <NavLink className="nav__link" as={Link} to="/tvshow">
                   TV Shows
                 </NavLink>
-                <NavLink className="nav__link" to="/">
+                <NavLink className="nav__link" as={Link} to="/movies">
                   Movies
                 </NavLink>
-                <NavLink className="nav__link" to="/">
+                <NavLink className="nav__link" as={Link} to="/newpopular">
                   New & Popular
                 </NavLink>
-                <NavLink className="nav__link" to="/">
+                <NavLink className="nav__link" as={Link} to="/mylist">
                   My List
                 </NavLink>
-                <NavLink className="nav__link" to="/">
+                <NavLink className="nav__link" as={Link} to="/moviesb">
                   Browse by Languages
                 </NavLink>
               </Nav>
@@ -188,7 +189,7 @@ function Header() {
                           className="profile__menu--listImg2"
                           src="./icons/pen.svg"
                         />
-                        <a className="profile__menu--btn" href="#">
+                        <a className="profile__menu--btn" href="/Userprofile">
                           Manage Profiles
                         </a>
                       </li>

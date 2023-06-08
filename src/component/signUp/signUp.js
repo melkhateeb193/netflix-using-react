@@ -1,16 +1,20 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
+ 
 import React, { useState } from "react";
-import "./login.css";
+import "./SignUp.css";
 import { useNavigate } from "react-router-dom";
-export default function Login() {
+export default function SignUp() {
   const [user, setUser] = useState([
     {
+        name:"",
+        confirmpass:"",
       email: "",
       password: "",
     },
   ]);
   const [error, setError] = useState([
     {
+        nameerror:"",
+        confirmpasserror:"",
       emailError: "",
       passError: "",
     },
@@ -50,6 +54,32 @@ export default function Login() {
             : "",
       });
     }
+     else if (ev.target.name === "confirmpassword") {
+      setUser({ ...user, confirmpass: ev.target.value });
+      setError({
+        ...error,
+        confirmpasserror:
+          ev.target.value.length === 0
+            ? "Enter Password "
+            : ev.target.value.length <= 8
+            ? "Password must be at least 8"
+            : ev.target.value!==user.password
+            ? "the PassWord not confirmed"
+            : "",
+      });
+    }
+      else if (ev.target.name === "name") {
+      setUser({ ...user, name: ev.target.value });
+      setError({
+        ...error,
+        nameerror:
+          ev.target.value.length === 0
+            ? "Enter Name "
+            : ev.target.value.length <= 8
+            ? "Name must be at least 8"
+            :""
+      });
+    }
   };
   const validateEmail = (email) => {
     const re =
@@ -87,8 +117,23 @@ export default function Login() {
       <main className="container p-5">
         <form className="text-white p-3" onSubmit={handleSubmit}>
           <div className="mb-3">
-            <p className="signIn">Sign In</p>
+            <p className="signIn">Sign Up</p>
             <input
+              type="text"
+              name="name"
+              required
+              className="form-control p-3"
+              id="exampleInputname1"
+              placeholder="Mustafa Ali"
+              onChange={(e) => {
+                handleChange(e);
+              }} 
+            /> 
+            <p className="text-danger">{error.nameerror}</p>
+           
+          </div>
+          <div className="mb-3">
+          <input
               type="email"
               required
               className="form-control p-3"
@@ -99,10 +144,10 @@ export default function Login() {
               onChange={(e) => {
                 handleChange(e);
               }}
-            />
+            /> 
             <p className="text-danger">{error.emailError}</p>
           </div>
-          <div className="mb-5">
+          <div className="mb-3">
             <input
               type="password"
               name="password"
@@ -112,100 +157,29 @@ export default function Login() {
               placeholder="password"
               onChange={(e) => {
                 handleChange(e);
-              }}
-            />
+              }} 
+            /> 
             <p className="text-danger">{error.passError}</p>
           </div>
-          <button type="submit" className="btn  w-100 p-2 mb-3">Log In</button>
-          <div className="mb-3 form-check d-flex justify-content-between">
-            <div>
-              <input
-                type="checkbox"
-                className="form-check-input"
-                id="exampleCheck1"
-              />
-              <label className="form-check-label" htmlFor="exampleCheck1">
-                Remember me
-              </label>
-            </div>
-            <p id="needHelp">Need help?</p>
+          <div className="mb-5">
+            <input
+              type="password"
+              name="confirmpassword"
+              required
+              className="form-control p-3"
+              id="exampleInputPassword2"
+              placeholder="confirm password"
+              onChange={(e) => {
+                handleChange(e);
+              }} 
+            /> 
+            <p className="text-danger">{error.confirmpasserror}</p>
           </div>
-          <div className="underFormTxt">
-            <p id="textColor">
-              New to Netflix?{" "}
-              <span id="signUP">
-                {" "}
-                <a href="/signup">Sign up now.</a>
-              </span>
-            </p>
-            <p id="textColor">
-              This page is protected by Google reCAPTCHA to ensure you're not a
-              bot. <span id="learnMore"> Learn more.</span>
-            </p>
-          </div>
+          <button type="submit" className="btn  w-100 p-2 mb-3">Sign In</button>
+         
         </form>
       </main>
-      <footer className=" p-4 mt-5">
-        <div className="container p-4">
-          <div className="row ">
-            <p id="pFooter">Questions? Contact us.</p>
-            <div className="col-md-3 col-sm-3 ">
-              <ul>
-                <li id="liColor">FAQ</li>
-                <li id="liColor">Cookie Preferences</li>
-              </ul>
-            </div>
-            <div className="col-md-3 col-sm-3">
-              <ul>
-                <li li="" id="liColor">
-                  Help Center
-                </li>
-                <li li="" id="liColor">
-                  Corporate Information
-                </li>
-              </ul>
-            </div>
-            <div className="col-md-3 col-sm-3">
-              <ul>
-                <li li="" id="liColor">
-                  Terms of Use
-                </li>
-              </ul>
-            </div>
-            <div className="col-md-3 col-sm-3">
-              <ul>
-                <li li="" id="liColor">
-                  Privacy
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="dropdown">
-            <a
-              className="btn btn-secondary dropdown-toggle"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <i className="fa-solid fa-globe pe-1" />
-              English
-            </a>
-            <ul className="dropdown-menu bg-white">
-              <li>
-                <a className="dropdown-item" href="#">
-                  العربيه
-                </a>
-              </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  English
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </footer>
+      
     </>
   );
 }
