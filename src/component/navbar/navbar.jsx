@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { Component, useEffect, useRef, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -9,6 +9,9 @@ import { Link } from "@mui/material";
 
 function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpened, setIsOpened] = useState(false);
+  const [searchValue, setSearchValue] = useState(null);
+  const inputRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +27,20 @@ function Header() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const handleSearch = () => {
+    if ((inputRef.current.value === null) | (inputRef.current.value === "")) {
+      setIsOpened((currentState) => !currentState);
+    }
+  };
+  const handleInputFocus = () => {
+    inputRef.current.focus();
+  };
+  const handleSearchBar = () => {
+    handleSearch();
+    handleInputFocus();
+  };
+  const clearSearchInput = () => {};
 
   return (
     <>
@@ -77,20 +94,28 @@ function Header() {
 
               <Nav className="d-flex hide">
                 {/* search part */}
-                <Form className="search">
+                <Form className={isOpened ? "search search__open" : "search"}>
                   <img
                     className="search__icon"
                     src="./icons/search.svg"
                     alt="search"
+                    onClick={handleSearchBar}
                   />
-                  <Form.Control
+                  <input
                     type="text"
+                    ref={inputRef}
                     placeholder="Title, people, genres"
                     className="search__input"
                     aria-label="Search"
+                    onBlur={handleSearch}
+                    value={searchValue}
                   />
                   <img
-                    className="search__close"
+                    className={
+                      searchValue
+                        ? "search__close theSearchHasValue"
+                        : "search__close"
+                    }
                     src="./icons/close.svg"
                     alt="close"
                   />

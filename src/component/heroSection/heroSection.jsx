@@ -8,6 +8,14 @@ function HereSection() {
   const movies = useSelector((state) => state.movies.movies);
   const dispatch = useDispatch();
   const [imgLink, setImageLink] = useState("./images/interstellar.webp");
+  const [isMuted, setIsMuted] = useState(false);
+
+  const handelIsMuted = () => {
+    setIsMuted((currentState) => !currentState);
+  };
+
+  const [currentTime, setCurrentTime] = useState(0);
+  const restart = () => setCurrentTime(0);
 
   useEffect(() => {
     console.log(movies);
@@ -42,14 +50,19 @@ function HereSection() {
 
         <div className="title__image ">
           <video
-            id="background-video"
-            // loop
-            autoPlay
+            className="background-video"
+            loop={true}
+            autoPlay={true}
+            muted={isMuted}
+            // currentTime={currentTime}
+            // onTimeUpdate={(event) => setCurrentTime(event.target.currentTime)}
           >
             <source
               src="https://www.w3schools.com/html/mov_bbb.mp4"
               type="video/mp4"
             />
+
+            {/* background video */}
           </video>
         </div>
         <div className="title row">
@@ -88,7 +101,10 @@ function HereSection() {
             </button>
           </div>
           <div class="title__aside col">
-            <button class="title__aside--btn text-center">
+            <button
+              class="title__aside--btn text-center"
+              onClick={handelIsMuted}
+            >
               <img
                 className="title__aside--btn__icon"
                 src="./icons/restart.svg"

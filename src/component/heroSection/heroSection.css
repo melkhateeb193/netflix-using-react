@@ -40,17 +40,17 @@
   width: 100%;
 }
 
-#background-video {
+.background-video {
   width: 100%;
 }
 
-/* .title__space {
+.title__space {
   margin-top: 5rem !important;
   padding: 0;
-} */
+}
 
 .title__body {
-  margin-top: 10rem !important;
+  margin-top: 15rem !important;
   padding: 0;
 }
 
@@ -90,7 +90,7 @@
   justify-content: end;
   width: 5.875rem;
   height: 2.159rem;
-  margin-top: 13rem !important;
+  margin-top: 30rem !important;
 }
 
 .title__aside--maturityRating {
