@@ -9,8 +9,6 @@ import { Link } from "react-router-dom";
 function Mainpagebfl() {
   return (
     <>
-    <Header></Header>
-    <HereSection></HereSection>
       <header className="contianer p-3 ps-4 pe-4">
         <nav className="navbar">
           <div className="container-fluid nav">

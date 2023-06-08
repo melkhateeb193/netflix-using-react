@@ -99,7 +99,7 @@ navigate('/login');
       <header className="">
         <nav className="navbar">
           <div className="container" id="netflixLogoContainer">
-            <a className="navbar-brand" href="#">
+            <a className="navbar-brand" href="-">
               <svg
                 viewBox="0 0 111 30"
                 version="1.1"
