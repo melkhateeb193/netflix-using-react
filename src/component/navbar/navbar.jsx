@@ -43,7 +43,7 @@ function Header() {
   const handleSearchInput = (event) => {
     setSearchValue(event.target.value);
   };
-  
+
   const clearSearchInput = () => {
     setSearchValue("");
     handleInputFocus();

@@ -55,7 +55,7 @@ function HereSection() {
 
   return (
     <>
-      <div className="parent">
+      <div className="parent mb-5">
         {/* changeable background  and data*/}
 
         <div className="title__image ">
@@ -123,7 +123,6 @@ function HereSection() {
           </div>
         </div>
       </div>
-      {/* <div className="t"></div> */}
     </>
   );
 }

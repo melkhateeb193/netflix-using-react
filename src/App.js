@@ -17,10 +17,10 @@ function App() {
     <>
       {/* <Login /> */}
       {/* <SignUp /> */}
-      {/* <Header />
-      <HereSection /> */}
+      <Header />
+      <HereSection />
       <SliderProgress />
-      {/* <Footer /> */}
+      <Footer />
     </>
 
     // <>
