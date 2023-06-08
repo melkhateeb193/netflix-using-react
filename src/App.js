@@ -3,11 +3,12 @@ import { Provider } from "react-redux";
 import store from "./store/store/store";
 import { Route, Routes } from "react-router-dom";
 import Homepage from "./component/homepage/homepage";
-import Movies from "./component/BrowseByLanguages/Movies";
-import NotFound from "./component/NotFound/notFound";
+import Movies from "./component/BrowseByLanguages/Movies"; 
 import SignUp from "./component/signUp/signUp";
 import Userprofile from "./component/userprofile/userprofile";
 import Login from "./component/login/login";
+import NotFound from "./component/NotFound/notFound";
+import MyList from "./component/MyList/myList";
 
 function App() {
   return (
@@ -15,13 +16,14 @@ function App() {
       <Provider store={store}>
         <div className="App">
           <Routes>
-            <Route path="/" element={<Mainpagebfl />} />
-            <Route path="/home" element={<Homepage />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/moviesb" element={<Movies />} />
-            <Route path="/Userprofile" element={<Userprofile />} />
-            <Route path="/signup" element={<SignUp />} />
-            <Route path="*" element={<NotFound />} />
+            <Route path="/" element={<Mainpagebfl/>} />
+            <Route path="/home" element={<Homepage/>} />
+            <Route path="/login" element={<Login/>} />
+            <Route path="/moviesb" element={<Movies/>} />
+            <Route path="/Userprofile" element={<Userprofile/>} />
+            <Route path="/signup" element={<SignUp/>} />
+            <Route path="/MyList" element={<MyList/>} />
+            <Route path="*" element={<NotFound/>} />
           </Routes>
         </div>
       </Provider>

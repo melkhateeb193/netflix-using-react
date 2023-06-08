@@ -26,6 +26,9 @@ export default function SignUp() {
 
     navigate('/home');
   };
+  const LogInNav =()=>{
+navigate('/login');
+  }
   const handleChange = (ev) => {
     if (ev.target.name === "email") {
       setUser({ ...user, email: ev.target.value });
@@ -92,7 +95,7 @@ export default function SignUp() {
   };
 
   return (
-    <>
+    <div className="BackGround">
       <header className="">
         <nav className="navbar">
           <div className="container" id="netflixLogoContainer">
@@ -176,10 +179,11 @@ export default function SignUp() {
             <p className="text-danger">{error.confirmpasserror}</p>
           </div>
           <button type="submit" className="btn  w-100 p-2 mb-3">Sign In</button>
+          <button type="button" onClick={LogInNav} className="btn  w-100 p-2 mb-3">Logn In</button>
          
         </form>
       </main>
       
-    </>
+    </div>
   );
 }
