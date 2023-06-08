@@ -5,7 +5,7 @@ import "./footer.css";
 function Footer() {
   return (
     <>
-      <footer class="container-lg container-fluid mt-5 mb-lg-5">
+      <footer class="container-lg container-fluid mt-5">
         <div id="mainFotter" class=" text-white">
           <ul class="list-group list-group-horizontal">
             <li>

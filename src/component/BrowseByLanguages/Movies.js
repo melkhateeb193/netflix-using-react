@@ -11,10 +11,8 @@ import Footer from "../footer/footer";
 export default function Movies() {
   const movies = useSelector((state) => state.movies.movies);
   const dispatch = useDispatch();
-  useEffect(() => {
-    // console.log(movies);
-    movies.forEach((movie) => {
-      // console.log(movie._document.data.value.mapValue.fields);
+  useEffect(() => { 
+    movies.forEach((movie) => { 
       console.log(movie.data());
     });
   }, [movies]);

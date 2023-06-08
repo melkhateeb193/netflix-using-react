@@ -4,6 +4,7 @@
     color: white !important;
     border: 2px solid white !important; 
     width: 100% !important; 
+    background-color: black;
 }
 .btn11:hover{
     color: white !important;
@@ -86,3 +87,11 @@
      } 
 
          
+     select {
+        cursor: pointer;
+        background-color: black !important;
+        border: 1px solid white;
+        color: white;
+        margin-left: 20px;
+        padding: 5px;
+      }

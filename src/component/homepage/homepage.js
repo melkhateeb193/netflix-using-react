@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useDispatch, useSelector } from 'react-redux';
 import getAllMovies from '../../store/actions/firestore'; 
 import Header from '../navbar/navbar';
+import Footer from '../footer/footer';
 
 function Homepage(type) {
 
@@ -73,6 +74,7 @@ function Homepage(type) {
         </div>
       </div>
     </div> 
+    <Footer></Footer>
     </>
   );
 }
