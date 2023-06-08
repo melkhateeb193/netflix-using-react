@@ -4,9 +4,10 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import getAllMovies from "../../store/actions/firestore";
-import Header from "../navbar/navbar";
+import getAllMovies from "../../store/actions/firestore"; 
 import { removeFromList } from "../../store/actions/RemoveFromList";
+import Header from "../../component/navbar/navbar";
+import Footer from "../../component/footer/footer";
 
 function MyList() {
   const movies = useSelector((state) => state.movies.movies);
@@ -33,7 +34,7 @@ function MyList() {
   return (
     <>
       <Header></Header>
-      <div className="container-fluid">
+      <div className="container-fluid pt-5">
         <div className="list-body px-5 mt-4">
           <p className="my-list">My List</p>
           <Row xs={6} md={6} className="main-design g-2  pt-4">
@@ -53,6 +54,7 @@ function MyList() {
           </Row>
         </div>
       </div>
+      <Footer></Footer>
     </>
   );
 }

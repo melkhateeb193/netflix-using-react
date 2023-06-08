@@ -68,22 +68,22 @@ function Header() {
               className="navbar-collapse block"
             >
               <Nav className="me-auto  mb-2 mb-lg-0">
-                <NavLink className="nav__link" to="/">
+                <NavLink className="nav__link" as={Link} to="/home">
                   Home
                 </NavLink>
-                <NavLink className="nav__link" to="/">
+                <NavLink className="nav__link"  as={Link} to="/tvShow">
                   TV Shows
                 </NavLink>
-                <NavLink className="nav__link" to="/">
+                <NavLink className="nav__link"  as={Link} to="/movie">
                   Movies
                 </NavLink>
-                <NavLink className="nav__link" to="/">
+                <NavLink className="nav__link"  as={Link} to="/new">
                   New & Popular
                 </NavLink>
-                <NavLink className="nav__link" to="/">
+                <NavLink className="nav__link"  as={Link} to="/myList">
                   My List
                 </NavLink>
-                <NavLink className="nav__link" to="/">
+                <NavLink className="nav__link"as={Link} to="/movieby">
                   Browse by Languages
                 </NavLink>
               </Nav>
@@ -224,7 +224,7 @@ function Header() {
                           className="profile__menu--listImg2"
                           src="./icons/transfer.svg"
                         />
-                        <a className="profile__menu--btn" href="#">
+                        <a className="profile__menu--btn" href="/Userprofile">
                           Transfer Profile
                         </a>
                       </li>
@@ -233,7 +233,7 @@ function Header() {
                           className="profile__menu--listImg2"
                           src="./icons/profile.svg"
                         />
-                        <a className="profile__menu--btn" href="#">
+                        <a className="profile__menu--btn" href="/Userprofile">
                           Account
                         </a>
                       </li>

@@ -129,7 +129,7 @@
 }
 
 .notifications__body--arrow {
-  position: absolute;
+  position: absolute !important;
   right: 0.25rem;
   top: -2rem;
 }

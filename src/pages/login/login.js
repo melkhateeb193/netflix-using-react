@@ -18,9 +18,8 @@ export default function Login() {
   const navigate = useNavigate();
   const handleSubmit = (evt) => {
     evt.preventDefault();
-   
 
-    navigate('/home');
+    navigate("/home");
   };
   const handleChange = (ev) => {
     if (ev.target.name === "email") {
@@ -116,7 +115,9 @@ export default function Login() {
             />
             <p className="text-danger">{error.passError}</p>
           </div>
-          <button type="submit" className="btn  w-100 p-2 mb-3">Log In</button>
+          <button type="submit" className="btn  w-100 p-2 mb-3">
+            Log In
+          </button>
           <div className="mb-3 form-check d-flex justify-content-between">
             <div>
               <input

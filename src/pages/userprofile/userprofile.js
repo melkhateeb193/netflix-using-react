@@ -25,6 +25,7 @@ function Userprofile() {
             </div>
             <p>
               <a href="/Home/index.html">Abdelrahman alaa</a>
+              <img src="images/smile4.png" alt="" />{" "}
             </p>
           </div>
           <div className="col-md text-center">
@@ -47,6 +48,7 @@ function Userprofile() {
             </div>
             <p>
               <a href="/Home/index.html">Mostafa Ali</a>
+              <img src="images/smile4.png" alt="" />{" "}
             </p>
           </div>
           <div className="col-md text-center">

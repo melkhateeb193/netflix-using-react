@@ -4,7 +4,7 @@ import "./browse.css";
 export default function Browse() {
   return (
     <>
-      <div className="immg3 contianer-fluid m-4 ps-5 pe-5 pt-0 row ">
+      <div className="immg3 contianer-fluid m-4 ps-5 pe-5 pt-5 row ">
         <div className="col-md-3 immg4">
           <h3>Browse By Language</h3>
         </div>
