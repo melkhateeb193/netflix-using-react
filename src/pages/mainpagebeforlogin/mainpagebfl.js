@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 function Mainpagebfl() {
   return (
-    <> 
+    <>
       <header className="contianer p-3 ps-4 pe-4">
         <nav className="navbar">
           <div className="container-fluid nav">
@@ -232,7 +232,7 @@ function Mainpagebfl() {
           </div>
         </section>
       </main>
-      <footer className="mt-5 mb-5">
+      <footer className="mt-5">
   <div className="container pt-5">
     <p className="text-white pt-3 pb-3" id="QuestionFooter">
       Questions? Contact us.
@@ -281,7 +281,7 @@ function Mainpagebfl() {
                   <Dropdown.Item href="#">English</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
-    <p>Netflix Egypt</p>
+    <p className="mb-0">Netflix Egypt</p>
   </div>
 </footer>
 

@@ -1,16 +1,29 @@
+.Card {
+  position: relative;
+}
+
 .cardbody {
-  display: none;
-  transition: 3s !important;
+display: none !important;
+  visibility: hidden; 
 }
 
 .Card:hover .cardbody {
+  opacity: 1;
+  visibility: visible; 
+  display: block !important;
+}
+ .icon-container {
   display: flex;
-  position: relative;
-  z-index: 9999;
-  transition: 3s !important;
+  justify-content: center;
+  align-items: center;
+  width: 35px; 
+  height: 35px; 
+  border: 2px solid rgb(255, 255, 255); 
+  border-radius: 50%; 
+  margin: 0 auto; 
 }
 
-.cardbody .card-text {
-  position: relative;
-  background-color: rgba(255, 255, 255, 0.8);
+.cardbody .icon-container svg {
+  color: rgb(255, 255, 255);
+  font-size: 24px; 
 }

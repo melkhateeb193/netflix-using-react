@@ -62,7 +62,7 @@ export default function Login() {
   };
 
   return (
-    <div className="BackGround">
+    <>
       <header className="">
         <nav className="navbar">
           <div className="container" id="netflixLogoContainer">
@@ -206,6 +206,6 @@ export default function Login() {
           </div>
         </div>
       </footer>
-    </div>
+    </>
   );
 }

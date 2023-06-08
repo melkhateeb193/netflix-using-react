@@ -1,33 +1,43 @@
-import Mainpagebfl from "./component/mainpagebeforlogin/mainpagebfl";
-import { Provider } from "react-redux";
-import store from "./store/store/store";
-import { Route, Routes } from "react-router-dom";
-import Homepage from "./component/homepage/homepage";
-import Movies from "./component/BrowseByLanguages/Movies"; 
-import SignUp from "./component/signUp/signUp";
-import Userprofile from "./component/userprofile/userprofile";
+// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+// import Mainpagebfl from './component/mainpagebeforlogin/mainpagebfl';
+// import Login from './component/login/login';
+// import Userprofile from './component/userprofile/userprofile';
+import Header from "./component/navbar/navbar";
+import HereSection from "./component/heroSection/heroSection";
+import Footer from "./component/footer/footer";
+import SimpleSlider from "./component/slider/slider";
+import "./App.css";
 import Login from "./component/login/login";
-import NotFound from "./component/NotFound/notFound";
-import MyList from "./component/MyList/myList";
+import Mainpagebfl from "./component/mainpagebeforlogin/mainpagebfl";
+import SignUp from "./component/signUp/signUp";
 
 function App() {
   return (
     <>
-      <Provider store={store}>
-        <div className="App">
-          <Routes>
-            <Route path="/" element={<Mainpagebfl/>} />
-            <Route path="/home" element={<Homepage/>} />
-            <Route path="/login" element={<Login/>} />
-            <Route path="/moviesb" element={<Movies/>} />
-            <Route path="/Userprofile" element={<Userprofile/>} />
-            <Route path="/signup" element={<SignUp/>} />
-            <Route path="/MyList" element={<MyList/>} />
-            <Route path="*" element={<NotFound/>} />
-          </Routes>
-        </div>
-      </Provider>
+    {/* <Login/> */}
+    {/* <SignUp/> */}
+      {/* <Header /> */}
+      {/* <HereSection />
+      <Footer /> */}
     </>
+
+    // <>
+    //   <div className="App bg-dark">
+    //     <SimpleSlider />
+    //     <SimpleSlider />
+    //   </div>
+    // </>
+    // <Router>
+    //   <div className="App">
+    //     <Routes>
+    // {/* //       <Route path="/" element={<Mainpagebfl />} />
+    // //       <Route path="/login" element={<Login />} />
+    // //       <Route path="/profile" element={<Userprofile />} />
+    // //       <Route path="/home" element={<Homepage/>} /> */}
+    //          {/* <Route path="/" element={<Homepage/>} /> */}
+    //     </Routes>
+    //    </div>
+    //  </Router>
   );
 }
 

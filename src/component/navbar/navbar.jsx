@@ -1,4 +1,4 @@
-import React, {  useEffect, useState } from "react";
+import React, {  useEffect, useRef, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -9,6 +9,9 @@ import { Link } from "react-router-dom";
 
 function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpened, setIsOpened] = useState(false);
+  const [searchValue, setSearchValue] = useState(null);
+  const inputRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,15 +21,30 @@ function Header() {
         setIsScrolled(false);
       }
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
+  const handleSearch = () => {
+    if ((inputRef.current.value === null) | (inputRef.current.value === "")) {
+      setIsOpened((currentState) => !currentState);
+    }
+  };
+  const handleInputFocus = () => {
+    inputRef.current.focus();
+  };
+  const handleSearchBar = () => {
+    handleSearch();
+    handleInputFocus();
+  };
+  const clearSearchInput = () => {};
+
   return (
     <>
-      <div className={isScrolled ? "sticky scrolled" : "sticky" } style={{height:"50px" ,fontSize:40}}>
+      <div className={isScrolled ? "sticky scrolled" : "sticky"}>
         <Navbar className="navbar justify-content-around" expand="lg" id="navbar">
           <Container className="container-fluid m-0 p-0">
             <Navbar.Brand className="navbar__brand">
@@ -50,49 +68,57 @@ function Header() {
               className="navbar-collapse block"
             >
               <Nav className="me-auto  mb-2 mb-lg-0">
-                <NavLink className="nav__link" as={Link} to="/home">
+                <NavLink className="nav__link" to="/">
                   Home
                 </NavLink>
-                <NavLink className="nav__link" as={Link} to="/tvshow">
+                <NavLink className="nav__link" to="/">
                   TV Shows
                 </NavLink>
-                <NavLink className="nav__link" as={Link} to="/movies">
+                <NavLink className="nav__link" to="/">
                   Movies
                 </NavLink>
-                <NavLink className="nav__link" as={Link} to="/newpopular">
+                <NavLink className="nav__link" to="/">
                   New & Popular
                 </NavLink>
-                <NavLink className="nav__link" as={Link} to="/MyList">
+                <NavLink className="nav__link" to="/">
                   My List
                 </NavLink>
-                <NavLink className="nav__link" as={Link} to="/moviesb">
+                <NavLink className="nav__link" to="/">
                   Browse by Languages
                 </NavLink>
               </Nav>
 
               <Nav className="d-flex hide">
                 {/* search part */}
-                <Form className="search">
+                <Form className={isOpened ? "search search__open" : "search"}>
                   <img
                     className="search__icon"
                     src="./icons/search.svg"
                     alt="search"
+                    onClick={handleSearchBar}
                   />
-                  <Form.Control
+                  <input
                     type="text"
+                    ref={inputRef}
                     placeholder="Title, people, genres"
                     className="search__input"
                     aria-label="Search"
+                    onBlur={handleSearch}
+                    value={searchValue}
                   />
                   <img
-                    className="search__close"
+                    className={
+                      searchValue
+                        ? "search__close theSearchHasValue"
+                        : "search__close"
+                    }
                     src="./icons/close.svg"
                     alt="close"
                   />
                 </Form>
                 {/* the end ot the search component */}
 
-                <NavLink className="nav__link" to="/">
+                <NavLink className="nav__link" as={Link} to="/">
                   Kids
                 </NavLink>
 
@@ -124,11 +150,11 @@ function Header() {
                 {/* this is the end of notifications part */}
 
                 {/* this is the user dashboard access point */}
-                <div className="nav-element profile">
-                  <a className="navbar__btn row">
+                <div className="nav-element profile arrowP">
+                  <a className="navbar__btn row arrowP">
                     {/* add a user profile here  */}
 
-                    <span className=" col p-0 m-0 d-flex justify-content-center">
+                    <span className=" col p-0 m-0 d-flex justify-content-center arrowP">
                       <img className="profile__picture " src="./icons/p4.png" />
                     </span>
                     <span className="col-4 p-0 m-0 d-flex justify-content-center arrow">

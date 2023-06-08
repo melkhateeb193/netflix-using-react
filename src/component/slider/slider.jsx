@@ -7,11 +7,18 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import '../slider/slider.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlay } from '@fortawesome/free-solid-svg-icons';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+
+
 function SliderComponent() {
   var settings = {
     className: "center",
     infinite: true,
-    centerPadding: "60px",
+    centerPadding: "10px",
     slidesToShow: 5,
     swipeToSlide: true,
     afterChange: function(index) {
@@ -25,75 +32,220 @@ function SliderComponent() {
       <h1>What to watch</h1>
       <Row>
       <Slider {...settings}>
-        <Col className='col'>
+        <Col className='custom-col'>
           {/* Slide 1 */}
-          <Card className='Card' style={{ width: '18rem'}}>
-            <Card.Img variant="top" src="https://www.shutterstock.com/image-vector/online-cinema-art-movie-watching-260nw-586719869.jpg" />
-            <Card.Body className='cardbody'>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of the card's content.
-              </Card.Text>
+          <Card className='Card' style={{ width: '16.5rem'}}>
+            <Card.Img  variant="top" src="https://www.shutterstock.com/image-vector/online-cinema-art-movie-watching-260nw-586719869.jpg" />
+            {/* <Card.Img  variant="top" src="/public/images/anime images/commi-can't-communicate.jpg" /> */}
+            <Card.Body className='cardbody bg-dark'>
+              <div className='d-flex'>
+                <div className='d-flex'>
+              <span className='icon-container me-2'>
+              <FontAwesomeIcon icon={faPlay} />
+              </span>
+              <span className='icon-container me-2'>
+              <FontAwesomeIcon icon={faPlus} />    
+              </span>
+              <span className='icon-container me-2'>
+              <FontAwesomeIcon icon={faThumbsUp} style={{color: "#ffffff",}} />   
+              </span>
+              </div>
+              <span className='icon-container me-2 '>
+              <FontAwesomeIcon icon={faChevronDown} style={{color: "#ffffff",}} /> 
+                </span>
+              </div>
+              <Card.Title className='text-white mt-2'>98% match</Card.Title>
+             <div className='mt-2'>
+              <span className='Age text-white border border-1 me-1'>18+</span>
+              <span className='Age text-white'>number of episodes</span>
+             </div>
+              <span className='Age text-white'>Genre</span>
             </Card.Body>
           </Card>
         </Col>
-        <Col className='col'>
+        <Col className='custom-col'>
           {/* Slide 1 */}
-          <Card className='Card' style={{ width: '18rem'}}>
-            <Card.Img variant="top" src="https://www.shutterstock.com/image-vector/online-cinema-art-movie-watching-260nw-586719869.jpg" />
-            <Card.Body className='cardbody'>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of the card's content.
-              </Card.Text>
+          <Card className='Card' style={{ width: '16.5rem'}}>
+            <Card.Img  variant="top" src="https://www.shutterstock.com/image-vector/online-cinema-art-movie-watching-260nw-586719869.jpg" />
+            {/* <Card.Img  variant="top" src="/public/images/anime images/commi-can't-communicate.jpg" /> */}
+            <Card.Body className='cardbody bg-dark'>
+              <div className='d-flex'>
+                <div className='d-flex'>
+              <span className='icon-container me-2'>
+              <FontAwesomeIcon icon={faPlay} />
+              </span>
+              <span className='icon-container me-2'>
+              <FontAwesomeIcon icon={faPlus} />    
+              </span>
+              <span className='icon-container me-2'>
+              <FontAwesomeIcon icon={faThumbsUp} style={{color: "#ffffff",}} />   
+              </span>
+              </div>
+              <span className='icon-container me-2 '>
+              <FontAwesomeIcon icon={faChevronDown} style={{color: "#ffffff",}} /> 
+                </span>
+              </div>
+              <Card.Title className='text-white mt-2'>98% match</Card.Title>
+             <div className='mt-2'>
+              <span className='Age text-white border border-1 me-1'>18+</span>
+              <span className='Age text-white'>number of episodes</span>
+             </div>
+              <span className='Age text-white'>Genre</span>
             </Card.Body>
           </Card>
         </Col>
-        <Col className='col'>
+        <Col className='custom-col'>
           {/* Slide 1 */}
-          <Card className='Card' style={{ width: '18rem'}}>
-            <Card.Img variant="top" src="https://www.shutterstock.com/image-vector/online-cinema-art-movie-watching-260nw-586719869.jpg" />
-            <Card.Body className='cardbody'>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of the card's content.
-              </Card.Text>
+          <Card className='Card' style={{ width: '16.5rem'}}>
+            <Card.Img  variant="top" src="https://www.shutterstock.com/image-vector/online-cinema-art-movie-watching-260nw-586719869.jpg" />
+            {/* <Card.Img  variant="top" src="/public/images/anime images/commi-can't-communicate.jpg" /> */}
+            <Card.Body className='cardbody bg-dark'>
+              <div className='d-flex'>
+                <div className='d-flex'>
+              <span className='icon-container me-2'>
+              <FontAwesomeIcon icon={faPlay} />
+              </span>
+              <span className='icon-container me-2'>
+              <FontAwesomeIcon icon={faPlus} />    
+              </span>
+              <span className='icon-container me-2'>
+              <FontAwesomeIcon icon={faThumbsUp} style={{color: "#ffffff",}} />   
+              </span>
+              </div>
+              <span className='icon-container me-2 '>
+              <FontAwesomeIcon icon={faChevronDown} style={{color: "#ffffff",}} /> 
+                </span>
+              </div>
+              <Card.Title className='text-white mt-2'>98% match</Card.Title>
+             <div className='mt-2'>
+              <span className='Age text-white border border-1 me-1'>18+</span>
+              <span className='Age text-white'>number of episodes</span>
+             </div>
+              <span className='Age text-white'>Genre</span>
             </Card.Body>
           </Card>
         </Col>
-        <Col className='col'>
+        <Col className='custom-col'>
           {/* Slide 1 */}
-          <Card className='Card' style={{ width: '18rem'}}>
-            <Card.Img variant="top" src="https://www.shutterstock.com/image-vector/online-cinema-art-movie-watching-260nw-586719869.jpg" />
-            <Card.Body className='cardbody'>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of the card's content.
-              </Card.Text>
+          <Card className='Card' style={{ width: '16.5rem'}}>
+            <Card.Img  variant="top" src="https://www.shutterstock.com/image-vector/online-cinema-art-movie-watching-260nw-586719869.jpg" />
+            {/* <Card.Img  variant="top" src="/public/images/anime images/commi-can't-communicate.jpg" /> */}
+            <Card.Body className='cardbody bg-dark'>
+              <div className='d-flex'>
+                <div className='d-flex'>
+              <span className='icon-container me-2'>
+              <FontAwesomeIcon icon={faPlay} />
+              </span>
+              <span className='icon-container me-2'>
+              <FontAwesomeIcon icon={faPlus} />    
+              </span>
+              <span className='icon-container me-2'>
+              <FontAwesomeIcon icon={faThumbsUp} style={{color: "#ffffff",}} />   
+              </span>
+              </div>
+              <span className='icon-container me-2 '>
+              <FontAwesomeIcon icon={faChevronDown} style={{color: "#ffffff",}} /> 
+                </span>
+              </div>
+              <Card.Title className='text-white mt-2'>98% match</Card.Title>
+             <div className='mt-2'>
+              <span className='Age text-white border border-1 me-1'>18+</span>
+              <span className='Age text-white'>number of episodes</span>
+             </div>
+              <span className='Age text-white'>Genre</span>
             </Card.Body>
           </Card>
         </Col>
-        <Col className='col'>
+        <Col className='custom-col'>
           {/* Slide 1 */}
-          <Card className='Card' style={{ width: '18rem'}}>
-            <Card.Img variant="top" src="https://www.shutterstock.com/image-vector/online-cinema-art-movie-watching-260nw-586719869.jpg" />
-            <Card.Body className='cardbody'>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of the card's content.
-              </Card.Text>
+          <Card className='Card' style={{ width: '16.5rem'}}>
+            <Card.Img  variant="top" src="https://www.shutterstock.com/image-vector/online-cinema-art-movie-watching-260nw-586719869.jpg" />
+            {/* <Card.Img  variant="top" src="/public/images/anime images/commi-can't-communicate.jpg" /> */}
+            <Card.Body className='cardbody bg-dark'>
+              <div className='d-flex'>
+                <div className='d-flex'>
+              <span className='icon-container me-2'>
+              <FontAwesomeIcon icon={faPlay} />
+              </span>
+              <span className='icon-container me-2'>
+              <FontAwesomeIcon icon={faPlus} />    
+              </span>
+              <span className='icon-container me-2'>
+              <FontAwesomeIcon icon={faThumbsUp} style={{color: "#ffffff",}} />   
+              </span>
+              </div>
+              <span className='icon-container me-2 '>
+              <FontAwesomeIcon icon={faChevronDown} style={{color: "#ffffff",}} /> 
+                </span>
+              </div>
+              <Card.Title className='text-white mt-2'>98% match</Card.Title>
+             <div className='mt-2'>
+              <span className='Age text-white border border-1 me-1'>18+</span>
+              <span className='Age text-white'>number of episodes</span>
+             </div>
+              <span className='Age text-white'>Genre</span>
             </Card.Body>
           </Card>
         </Col>
-        <Col className='col'>
+        <Col className='custom-col'>
           {/* Slide 1 */}
-          <Card className='Card' style={{ width: '18rem'}}>
-            <Card.Img variant="top" src="https://www.shutterstock.com/image-vector/online-cinema-art-movie-watching-260nw-586719869.jpg" />
-            <Card.Body className='cardbody'>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of the card's content.
-              </Card.Text>
+          <Card className='Card' style={{ width: '16.5rem'}}>
+            <Card.Img  variant="top" src="https://www.shutterstock.com/image-vector/online-cinema-art-movie-watching-260nw-586719869.jpg" />
+            {/* <Card.Img  variant="top" src="/public/images/anime images/commi-can't-communicate.jpg" /> */}
+            <Card.Body className='cardbody bg-dark'>
+              <div className='d-flex'>
+                <div className='d-flex'>
+              <span className='icon-container me-2'>
+              <FontAwesomeIcon icon={faPlay} />
+              </span>
+              <span className='icon-container me-2'>
+              <FontAwesomeIcon icon={faPlus} />    
+              </span>
+              <span className='icon-container me-2'>
+              <FontAwesomeIcon icon={faThumbsUp} style={{color: "#ffffff",}} />   
+              </span>
+              </div>
+              <span className='icon-container me-2 '>
+              <FontAwesomeIcon icon={faChevronDown} style={{color: "#ffffff",}} /> 
+                </span>
+              </div>
+              <Card.Title className='text-white mt-2'>98% match</Card.Title>
+             <div className='mt-2'>
+              <span className='Age text-white border border-1 me-1'>18+</span>
+              <span className='Age text-white'>number of episodes</span>
+             </div>
+              <span className='Age text-white'>Genre</span>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col className='custom-col'>
+          {/* Slide 1 */}
+          <Card className='Card' style={{ width: '16.5rem'}}>
+            <Card.Img  variant="top" src="https://www.shutterstock.com/image-vector/online-cinema-art-movie-watching-260nw-586719869.jpg" />
+            {/* <Card.Img  variant="top" src="/public/images/anime images/commi-can't-communicate.jpg" /> */}
+            <Card.Body className='cardbody bg-dark'>
+              <div className='d-flex'>
+                <div className='d-flex'>
+              <span className='icon-container me-2'>
+              <FontAwesomeIcon icon={faPlay} />
+              </span>
+              <span className='icon-container me-2'>
+              <FontAwesomeIcon icon={faPlus} />    
+              </span>
+              <span className='icon-container me-2'>
+              <FontAwesomeIcon icon={faThumbsUp} style={{color: "#ffffff",}} />   
+              </span>
+              </div>
+              <span className='icon-container me-2 '>
+              <FontAwesomeIcon icon={faChevronDown} style={{color: "#ffffff",}} /> 
+                </span>
+              </div>
+              <Card.Title className='text-white mt-2'>98% match</Card.Title>
+             <div className='mt-2'>
+              <span className='Age text-white border border-1 me-1'>18+</span>
+              <span className='Age text-white'>number of episodes</span>
+             </div>
+              <span className='Age text-white'>Genre</span>
             </Card.Body>
           </Card>
         </Col>
