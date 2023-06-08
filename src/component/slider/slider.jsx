@@ -126,7 +126,6 @@ let flag = true;
     });
 
     window.addEventListener("resize", throttleProgressBar);
-
     document.querySelectorAll(".progress-bar").forEach(calculateProgressBar);
   }, []);
 
@@ -164,8 +163,7 @@ let flag = true;
           <img src="https://via.placeholder.com/290/FFFFFF?text=9" alt="Slider Image" />
           <img src="https://via.placeholder.com/300/FFFFFF?text=10" alt="Slider Image" />
           <img src="https://via.placeholder.com/310/FFFFFF?text=11" alt="Slider Image" />
-          <img src="https://via.placeholder.com/320/FFFFFF?text=12" alt="Slider Image" />
-          
+          <img src="https://via.placeholder.com/320/FFFFFF?text=12" alt="Slider Image" />          
         </div>
         <div className="handle right-handle" onClick={(e) => onHandleClick(e.target)}>
           <div className="text">›</div>
@@ -176,3 +174,4 @@ let flag = true;
 };
 
 export default SliderProgress;
+

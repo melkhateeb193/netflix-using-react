@@ -34,6 +34,7 @@ display: none !important;
   --img-gap: .25rem;
 }
 
+
 .slider-container {
   display: flex;
   justify-content: center;
@@ -94,6 +95,7 @@ display: none !important;
 .handle:focus .text {
   transform: scale(1.2);
 }
+
 
 .header-slider {
   z-index: 50;
@@ -174,3 +176,4 @@ display: none !important;
 .margin {
   margin: 3rem 0;
 }
+

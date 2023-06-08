@@ -10,7 +10,11 @@ import "./App.css";
 import Login from "./pages/login/login";
 import Mainpagebfl from "./pages/mainpagebeforlogin/mainpagebfl";
 import SignUp from "./pages/signUp/signUp";
+
 import Homepage from "./pages/homepage/homepage";
+
+import SliderProgress from "./component/slider/slider";
+
 
 function App() {
   return (
