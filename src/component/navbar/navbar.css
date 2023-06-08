@@ -14,14 +14,18 @@
 }
 
 .sticky {
-  position: sticky;
+  position: absolute;
   top: 0;
   z-index: 99;
-  background-color: transparent;
+  background-color: transparent !important;
+  width: 100%;
+  padding: 0 !important;
+  transition-timing-function: ease-in-out;
 }
 
 .scrolled {
-  background-color: rgb(20, 20, 20);
+  background-color: rgb(20, 20, 20) !important;
+  position: sticky;
 }
 
 .navbar {
@@ -38,6 +42,8 @@
 .nav__link {
   color: white !important;
   margin: 0 0 0 0.6rem;
+  text-decoration: none !important;
+  cursor: pointer;
 }
 
 /* search section */
@@ -68,23 +74,36 @@
   right: 0;
   background-color: transparent;
 }
+.theSearchHasValue{
+  display: block;
+}
 
 .search input {
   border: none;
-  font-family: inherit;
   outline: none;
   width: 2rem;
-  transition: 500ms width ease-in-out;
+  transition: 300ms width ease-in-out;
   background-color: transparent;
   color: #fff;
 }
 
+.search__input::placeholder{
+  color: transparent;
+}
+
 .search__open input {
   width: 17rem;
-  height: 2.5rem;
+  height: 2rem;
   outline: 1px solid #fff;
+  border-radius: 0;
   padding: 0 0 0 50px;
+  color: white;
   background-color: transparent;
+  
+}
+
+.search__open input::placeholder{
+  color: white;
 }
 
 /* notifications button */
@@ -106,6 +125,7 @@
   border-top: 3px solid white;
   width: 25.625rem;
   z-index: 1;
+  cursor: pointer;
 }
 
 .notifications__body--arrow {
@@ -205,7 +225,7 @@
   text-decoration: none;
   color: white;
 }
-.rotate{
+.rotate {
   transform: rotate(180deg);
 }
 .profile__menu--btn:hover {
@@ -218,5 +238,9 @@
 }
 
 .arrow :hover {
+  transform: rotate(360deg);
+}
+
+.arrowP:hover .arrow {
   transform: rotate(360deg);
 }
