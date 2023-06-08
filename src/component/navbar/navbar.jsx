@@ -10,7 +10,7 @@ import { Link } from "@mui/material";
 function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpened, setIsOpened] = useState(false);
-  const [searchValue, setSearchValue] = useState(null);
+  const [searchValue, setSearchValue] = useState("");
   const inputRef = useRef(null);
 
   useEffect(() => {
@@ -40,17 +40,25 @@ function Header() {
     handleSearch();
     handleInputFocus();
   };
-  const clearSearchInput = () => {};
+  const handleSearchInput = (event) => {
+    setSearchValue(event.target.value);
+  };
 
+  const clearSearchInput = () => {
+    setSearchValue("");
+    handleInputFocus();
+  };
+
+  console.log(searchValue);
   return (
     <>
       <div className={isScrolled ? "sticky scrolled" : "sticky"}>
         <Navbar
-          className="navbar justify-content-around"
+          className="navbar justify-content-around "
           expand="lg"
           id="navbar"
         >
-          <Container className="container-fluid m-0 p-0">
+          <Container className="container-fluid m-0 p-0 navbarContainer">
             <Navbar.Brand className="navbar__brand">
               <Nav.Link>
                 <img
@@ -109,15 +117,17 @@ function Header() {
                     aria-label="Search"
                     onBlur={handleSearch}
                     value={searchValue}
+                    onChange={handleSearchInput}
                   />
                   <img
                     className={
-                      searchValue
+                      searchValue !== ""
                         ? "search__close theSearchHasValue"
                         : "search__close"
                     }
                     src="./icons/close.svg"
                     alt="close"
+                    onClick={clearSearchInput}
                   />
                 </Form>
                 {/* the end ot the search component */}

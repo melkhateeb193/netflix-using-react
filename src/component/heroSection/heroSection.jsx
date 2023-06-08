@@ -5,17 +5,10 @@ import getAllMovies from "../../store/actions/firestore";
 import { async } from "q";
 
 function HereSection() {
+  // kareem's work start here
   const movies = useSelector((state) => state.movies.movies);
   const dispatch = useDispatch();
   const [imgLink, setImageLink] = useState("./images/interstellar.webp");
-  const [isMuted, setIsMuted] = useState(false);
-
-  const handelIsMuted = () => {
-    setIsMuted((currentState) => !currentState);
-  };
-
-  const [currentTime, setCurrentTime] = useState(0);
-  const restart = () => setCurrentTime(0);
 
   useEffect(() => {
     console.log(movies);
@@ -42,6 +35,16 @@ function HereSection() {
   useEffect(() => {
     dispatch(getAllMovies("NetflixClone"));
   }, []);
+  // kareem's work start here
+
+  const [isMuted, setIsMuted] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+
+  const handelIsMuted = () => {
+    setIsMuted((currentState) => !currentState);
+  };
+
+  const restart = () => setCurrentTime(0);
 
   return (
     <>
