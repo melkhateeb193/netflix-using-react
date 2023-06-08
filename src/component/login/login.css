@@ -1,9 +1,9 @@
-/* body {
+.BackGround {
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${../../../../../public/images/backgroundimahe.jpg); 
     background-position: center center;
     background-size: cover;
 
-} */
+}
 .default-ltr-cache-mv4tc2 {
     width: 9.25rem;
     height: 2.5rem;
