@@ -3,21 +3,28 @@ import "./heroSection.css";
 import { useDispatch, useSelector } from "react-redux";
 import getAllMovies from "../../store/actions/firestore";
 import { async } from "q";
+import { useForkRef } from "@mui/material";
 
 function HereSection() {
   var videoPlaceHolder = "https://www.w3schools.com/html/mov_bbb.mp4";
-
-  const movies = useSelector((state) => state.movies.movies);
-  const dispatch = useDispatch();
-  const [imgLink, setImageLink] = useState("./images/interstellar.webp");
   const [isMuted, setIsMuted] = useState(false);
+  const videoRef = useForkRef(null);
 
   const handelIsMuted = () => {
     setIsMuted((currentState) => !currentState);
   };
 
-  const [currentTime, setCurrentTime] = useState(0);
-  const restart = () => setCurrentTime(0);
+  // const [currentTime, setCurrentTime] = useState(0);
+
+  const handleRestart = () => {
+    videoRef.current.currentTime = 0;
+    videoRef.current.play();
+  };
+
+  // kareem's work stars here
+  const movies = useSelector((state) => state.movies.movies);
+  const dispatch = useDispatch();
+  const [imgLink, setImageLink] = useState("./images/interstellar.webp");
 
   useEffect(() => {
     console.log(movies);
@@ -44,6 +51,7 @@ function HereSection() {
   useEffect(() => {
     dispatch(getAllMovies("NetflixClone"));
   }, []);
+  // kareem's work end here
 
   return (
     <>
@@ -53,6 +61,7 @@ function HereSection() {
         <div className="title__image ">
           <video
             className="background-video"
+            ref={videoRef}
             loop={true}
             autoPlay={true}
             muted={isMuted}
@@ -103,6 +112,7 @@ function HereSection() {
             <button
               class="title__aside--btn text-center"
               onClick={handelIsMuted}
+              // onClick={handleRestart}
             >
               <img
                 className="title__aside--btn__icon"
