@@ -105,7 +105,7 @@ const SliderProgress = () => {
   const throttleProgressBar = throttle(() => {
     document.querySelectorAll(".progress-bar").forEach(calculateProgressBar);
   });
-
+let flag = true;
   useEffect(() => {
     document.addEventListener("click", (e) => {
       let handle;
@@ -115,22 +115,27 @@ const SliderProgress = () => {
         handle = e.target.closest(".handle");
       }
       if (handle != null) {
-        onHandleClick(handle);
+        if(flag){
+          flag = false;
+        }else{
+          flag = true;
+          onHandleClick(handle);
+        }
+        
       }
     });
 
     window.addEventListener("resize", throttleProgressBar);
-
     document.querySelectorAll(".progress-bar").forEach(calculateProgressBar);
   }, []);
 
   return (
     <div className="row container-fluid">
-      <div className="header">
+      <div className="header-slider">
         <h3 className="slider__title">Top Picks for User</h3>
         <div className="progress-bar" ref={progressBarRef} />
       </div>
-      <div className="container">
+      <div className="container slider-container">
         <div className="handle left-handle" onClick={(e) => onHandleClick(e.target)}>
           <div className="text">‹</div>
         </div>
@@ -147,6 +152,18 @@ const SliderProgress = () => {
           <img src="https://via.placeholder.com/300/FFFFFF?text=10" alt="Slider Image" />
           <img src="https://via.placeholder.com/310/FFFFFF?text=11" alt="Slider Image" />
           <img src="https://via.placeholder.com/320/FFFFFF?text=12" alt="Slider Image" />
+          <img src="https://via.placeholder.com/210/FFFFFF?text=1" alt="Slider Image" />
+          <img src="https://via.placeholder.com/220/FFFFFF?text=2" alt="Slider Image" />
+          <img src="https://via.placeholder.com/230/FFFFFF?text=3" alt="Slider Image" />
+          <img src="https://via.placeholder.com/240/FFFFFF?text=4" alt="Slider Image" />
+          <img src="https://via.placeholder.com/250/FFFFFF?text=5" alt="Slider Image" />
+          <img src="https://via.placeholder.com/260/FFFFFF?text=6" alt="Slider Image" />
+          <img src="https://via.placeholder.com/270/FFFFFF?text=7" alt="Slider Image" />
+          <img src="https://via.placeholder.com/280/FFFFFF?text=8" alt="Slider Image" />
+          <img src="https://via.placeholder.com/290/FFFFFF?text=9" alt="Slider Image" />
+          <img src="https://via.placeholder.com/300/FFFFFF?text=10" alt="Slider Image" />
+          <img src="https://via.placeholder.com/310/FFFFFF?text=11" alt="Slider Image" />
+          <img src="https://via.placeholder.com/320/FFFFFF?text=12" alt="Slider Image" />          
         </div>
         <div className="handle right-handle" onClick={(e) => onHandleClick(e.target)}>
           <div className="text">›</div>
@@ -157,3 +174,4 @@ const SliderProgress = () => {
 };
 
 export default SliderProgress;
+
