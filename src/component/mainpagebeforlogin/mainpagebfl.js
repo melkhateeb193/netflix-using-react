@@ -4,15 +4,13 @@ import { Dropdown } from "react-bootstrap";
 import { FaGlobe } from "react-icons/fa";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Accordion from "react-bootstrap/Accordion";
-import { Link } from "react-router-dom";
-import Header from "../navbar/navbar";
-import HereSection from "../heroSection/heroSection";
+import { Link } from "react-router-dom"; 
 
 function Mainpagebfl() {
   return (
     <>
-    {/* <Header></Header>
-    <HereSection></HereSection> */}
+    <Header></Header>
+    <HereSection></HereSection>
       <header className="contianer p-3 ps-4 pe-4">
         <nav className="navbar">
           <div className="container-fluid nav">

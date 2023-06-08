@@ -62,7 +62,7 @@ function Header() {
                 <NavLink className="nav__link" as={Link} to="/newpopular">
                   New & Popular
                 </NavLink>
-                <NavLink className="nav__link" as={Link} to="/mylist">
+                <NavLink className="nav__link" as={Link} to="/MyList">
                   My List
                 </NavLink>
                 <NavLink className="nav__link" as={Link} to="/moviesb">
