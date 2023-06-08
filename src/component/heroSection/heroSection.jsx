@@ -113,8 +113,7 @@ function HereSection() {
             <span className="title__aside--maturityRating">13+</span>
           </div>
         </div>
-      </div>
-      <div className="t"></div>
+      </div> 
     </>
   );
 }

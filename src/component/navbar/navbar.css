@@ -13,6 +13,10 @@
   }
 }
 
+.navbar *{
+  font-size: medium;
+}
+
 .sticky {
   position: absolute;
   top: 0;
@@ -28,10 +32,15 @@
   position: sticky;
 }
 
+.navbarContainer {
+  min-width: 100% !important;
+}
+
 .navbar {
   font-size: 0.8rem;
   margin: 0 3rem;
   padding: 0 3.5rem;
+  min-width: 100vh;
 }
 
 .navbar__logo {
@@ -74,7 +83,7 @@
   right: 0;
   background-color: transparent;
 }
-.theSearchHasValue{
+.theSearchHasValue {
   display: block;
 }
 
@@ -87,8 +96,12 @@
   color: #fff;
 }
 
-.search__input::placeholder{
-  color: transparent;
+.search__input::placeholder {
+  color: transparent !important;
+}
+
+.search__open .search__input::placeholder {
+  color: gray !important;
 }
 
 .search__open input {
@@ -99,10 +112,9 @@
   padding: 0 0 0 50px;
   color: white;
   background-color: transparent;
-  
 }
 
-.search__open input::placeholder{
+.search__open input::placeholder {
   color: white;
 }
 
@@ -129,7 +141,7 @@
 }
 
 .notifications__body--arrow {
-  position: absolute !important;
+  position: absolute;
   right: 0.25rem;
   top: -2rem;
 }
@@ -237,10 +249,8 @@
   transition: all 0.25s ease;
 }
 
-.arrow :hover {
-  transform: rotate(360deg);
-}
 
-.arrowP:hover .arrow {
-  transform: rotate(360deg);
+.arrowP:hover .profile__menu--toggle{
+  transform: rotate(0deg);
+  transition: all 0.25s ease;
 }

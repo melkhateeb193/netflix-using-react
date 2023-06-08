@@ -11,11 +11,7 @@ function Homepage() {
   const movies = useSelector((state) => state.movies.movies);
   const dispatch = useDispatch();
 
-  useEffect(()=>{
-    // console.log(movies);
-    // movies.forEach(movie => {
-    //   console.log(movie.data());
-    // });
+  useEffect(()=>{ 
   },[movies])
 
   useEffect(() => {

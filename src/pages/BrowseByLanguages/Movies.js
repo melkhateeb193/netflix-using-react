@@ -10,14 +10,10 @@ import Header from "../../component/navbar/navbar";
 import Footer from "../../component/footer/footer";
  
 export default function Movies() {
-  const movies = useSelector((state) => state.movies.movies);
+  const movies = useSelector((state) => state.movies.movies); 
   const dispatch = useDispatch();
-  useEffect(() => { 
-    movies.forEach((movie) => { 
-      console.log(movie.data());
-    });
-  }, [movies]);
-
+  useEffect(() => {   
+  }, [movies]); 
   useEffect(() => {
     dispatch(getAllMovies("NetflixClone"));
   }, []);

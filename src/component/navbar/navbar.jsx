@@ -6,11 +6,15 @@ import NavLink from "react-bootstrap/NavLink";
 import Form from "react-bootstrap/Form";
 import "./navbar.css";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { changeLoader } from "../../store/actions/loader";
 
 function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpened, setIsOpened] = useState(false);
   const [searchValue, setSearchValue] = useState(null);
+  var loader = useSelector((state) => state.loader.loader);
+  const dispatch =useDispatch();
   const inputRef = useRef(null);
 
   useEffect(() => {
@@ -40,8 +44,14 @@ function Header() {
     handleSearch();
     handleInputFocus();
   };
-  const clearSearchInput = () => {};
-
+  const clearSearchInput = () => {
+    setSearchValue("");
+    handleInputFocus();
+  };
+  const handleloader = () => { 
+    dispatch(changeLoader(loader= false )); 
+    
+  };
   return (
     <>
       <div className={isScrolled ? "sticky scrolled" : "sticky"}>
@@ -114,6 +124,7 @@ function Header() {
                     }
                     src="./icons/close.svg"
                     alt="close"
+                    onClick={clearSearchInput}
                   />
                 </Form>
                 {/* the end ot the search component */}
@@ -249,7 +260,7 @@ function Header() {
                     </ul>
                     <ul className="profile__menu--listEnd">
                       <li className="profile__menu--listItem">
-                        <a className="profile__menu--btn" href="/index.html">
+                        <a className="profile__menu--btn" href="/" onClick={handleloader}>
                           Sign out of Netflix
                         </a>
                       </li>

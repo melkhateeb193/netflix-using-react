@@ -12,14 +12,8 @@ import Footer from "../../component/footer/footer";
 function MyList() {
   const movies = useSelector((state) => state.movies.movies);
   const dispatch = useDispatch();
-  useEffect(() => {
-    // console.log(movies);
-    movies.forEach((movie) => {
-      // console.log(movie._document.data.value.mapValue.fields);
-      console.log(movie.data());
-    });
-  }, [movies]);
-
+  useEffect(() => { 
+  }, [movies]); 
   useEffect(() => {
     dispatch(getAllMovies("NetflixClone"));
   }, []);
