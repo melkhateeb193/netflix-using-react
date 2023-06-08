@@ -7,6 +7,7 @@ import HereSection from "./component/heroSection/heroSection";
 import Footer from "./component/footer/footer";
 import SimpleSlider from "./component/slider/slider";
 import "./App.css";
+import MyList from "./component/myList/myList";
 
 function App() {
   return (

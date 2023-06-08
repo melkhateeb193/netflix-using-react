@@ -11,9 +11,9 @@ function Homepage(type) {
 
   useEffect(()=>{
     // console.log(movies);
-    movies.forEach(movie => {
-      console.log(movie.data());
-    });
+    // movies.forEach(movie => {
+    //   console.log(movie.data());
+    // });
   },[movies])
 
   useEffect(() => {
