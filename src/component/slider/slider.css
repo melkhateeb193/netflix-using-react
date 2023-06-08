@@ -34,7 +34,8 @@ display: none !important;
   --img-gap: .25rem;
 }
 
-.container {
+
+.slider-container {
   display: flex;
   justify-content: center;
   overflow: hidden;
@@ -95,7 +96,9 @@ display: none !important;
   transform: scale(1.2);
 }
 
-.header {
+
+.header-slider {
+  z-index: 50;
   display: flex;
   justify-content: space-between;
   padding: 0.5rem calc(var(--img-gap) * 2 + var(--handle-size));
@@ -103,6 +106,7 @@ display: none !important;
 }
 
 .slider__title {
+  z-index: inherit;
   font-size: 1.2rem;
   margin: 0 1rem;
 }
@@ -172,3 +176,4 @@ display: none !important;
 .margin {
   margin: 3rem 0;
 }
+
