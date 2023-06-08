@@ -15,11 +15,7 @@
 }
 
 .parent {
-  background-image: linear-gradient(
-    to bottom,
-    rgba(201, 201, 201, 0.52),
-    rgba(0, 0, 0, 0.73)
-  );
+background-image: linear-gradient(center bottom center, #0071eb);  
 }
 
 .title {
@@ -42,6 +38,7 @@
 
 .background-video {
   width: 100%;
+  height: fit-content !important;
 }
 
 .title__space {
@@ -106,22 +103,17 @@
   width: 2.5rem;
   height: 2.5rem;
   opacity: 0.8;
-<<<<<<<<< Temporary merge branch 1
   margin: 0 !important;
 }
 
 .title__aside--btn__icon {
-  margin: 0 !important;
   padding: 0 !important;
-=========
-
-  margin-right: 1rem;
+  margin-right: 1rem !important;
 }
 
 .title__aside--btn__icon {
   /* margin: 0 !important; */
   margin-left: 0.42rem;
->>>>>>>>> Temporary merge branch 2
 }
 
 .title__aside--btn:hover {

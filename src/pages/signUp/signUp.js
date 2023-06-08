@@ -183,7 +183,67 @@ navigate('/login');
          
         </form>
       </main>
-      
+      <footer className=" p-4 mt-5">
+        <div className="container p-4">
+          <div className="row ">
+            <p id="pFooter">Questions? Contact us.</p>
+            <div className="col-md-3 col-sm-3 ">
+              <ul>
+                <li id="liColor">FAQ</li>
+                <li id="liColor">Cookie Preferences</li>
+              </ul>
+            </div>
+            <div className="col-md-3 col-sm-3">
+              <ul>
+                <li li="" id="liColor">
+                  Help Center
+                </li>
+                <li li="" id="liColor">
+                  Corporate Information
+                </li>
+              </ul>
+            </div>
+            <div className="col-md-3 col-sm-3">
+              <ul>
+                <li li="" id="liColor">
+                  Terms of Use
+                </li>
+              </ul>
+            </div>
+            <div className="col-md-3 col-sm-3">
+              <ul>
+                <li li="" id="liColor">
+                  Privacy
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="dropdown">
+            <a
+              className="btn btn-secondary dropdown-toggle"
+              href="-"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i className="fa-solid fa-globe pe-1" />
+              English
+            </a>
+            <ul className="dropdown-menu bg-white">
+              <li>
+                <a className="dropdown-item" href="-">
+                  العربيه
+                </a>
+              </li>
+              <li>
+                <a className="dropdown-item" href="-">
+                  English
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

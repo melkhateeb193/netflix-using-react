@@ -7,13 +7,18 @@ import HereSection from "./component/heroSection/heroSection";
 import Footer from "./component/footer/footer";
 import SimpleSlider from "./component/slider/slider";
 import "./App.css";
+import Login from "./component/login/login";
+import Mainpagebfl from "./component/mainpagebeforlogin/mainpagebfl";
+import SignUp from "./component/signUp/signUp";
 
 function App() {
   return (
     <>
-      <Header />
-      <HereSection />
-      <Footer />
+    {/* <Login/> */}
+    {/* <SignUp/> */}
+      {/* <Header /> */}
+      {/* <HereSection />
+      <Footer /> */}
     </>
 
     // <>
