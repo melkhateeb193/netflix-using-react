@@ -1,354 +1,178 @@
-import React from 'react';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Card from 'react-bootstrap/Card';
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
+// import React from 'react';
+// import Container from 'react-bootstrap/Container';
+// import Row from 'react-bootstrap/Row';
+// import Col from 'react-bootstrap/Col';
+// import Card from 'react-bootstrap/Card';
+// import Slider from "react-slick";
+// import "slick-carousel/slick/slick.css"; 
+// import "slick-carousel/slick/slick-theme.css";
+// import '../slider/slider.css';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faPlay } from '@fortawesome/free-solid-svg-icons';
+// import { faPlus } from '@fortawesome/free-solid-svg-icons';
+// import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
+// import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import React, { useEffect, useRef } from 'react';
 import '../slider/slider.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay } from '@fortawesome/free-solid-svg-icons';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
+const SliderProgress = () => {
+  const progressBarRef = useRef(null);
+  const sliderRef = useRef(null);
 
-function SliderComponent() {
-  var settings = {
-    className: "center",
-    infinite: true,
-    centerPadding: "10px",
-    slidesToShow: 5,
-    swipeToSlide: true,
-    afterChange: function(index) {
-      console.log(
-        `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
-      );
+  const calculateProgressBar = (progressBar) => {
+    progressBar.innerHTML = "";
+    const slider = progressBar.closest(".row").querySelector(".slider");
+    const itemCount = slider.children.length;
+    const itemsPerScreen = parseInt(
+      getComputedStyle(slider).getPropertyValue("--items-per-screen")
+    );
+    let sliderIndex = parseInt(
+      getComputedStyle(slider).getPropertyValue("--slider-index")
+    );
+    const progressBarItemCount = Math.ceil(itemCount / itemsPerScreen);
+
+    if (sliderIndex >= progressBarItemCount) {
+      slider.style.setProperty("--slider-index", progressBarItemCount - 1);
+      sliderIndex = progressBarItemCount - 1;
+    }
+
+    for (let i = 0; i < progressBarItemCount; i++) {
+      const barItem = document.createElement("div");
+      barItem.classList.add("progress-item");
+      if (i === sliderIndex) {
+        barItem.classList.add("active");
+      }
+      progressBar.append(barItem);
     }
   };
+
+  const onHandleClick = (handle) => {
+    const progressBar = handle.closest(".row").querySelector(".progress-bar");
+    const slider = handle.closest(".container").querySelector(".slider");
+    const sliderIndex = parseInt(
+      getComputedStyle(slider).getPropertyValue("--slider-index")
+    );
+    const progressBarItemCount = progressBar.children.length;
+    if (handle.classList.contains("left-handle")) {
+      if (sliderIndex - 1 < 0) {
+        slider.style.setProperty("--slider-index", progressBarItemCount - 1);
+        progressBar.children[sliderIndex].classList.remove("active");
+        progressBar.children[progressBarItemCount - 1].classList.add("active");
+      } else {
+        slider.style.setProperty("--slider-index", sliderIndex - 1);
+        progressBar.children[sliderIndex].classList.remove("active");
+        progressBar.children[sliderIndex - 1].classList.add("active");
+      }
+    }
+
+    if (handle.classList.contains("right-handle")) {
+      if (sliderIndex + 1 >= progressBarItemCount) {
+        slider.style.setProperty("--slider-index", 0);
+        progressBar.children[sliderIndex].classList.remove("active");
+        progressBar.children[0].classList.add("active");
+      } else {
+        slider.style.setProperty("--slider-index", sliderIndex + 1);
+        progressBar.children[sliderIndex].classList.remove("active");
+        progressBar.children[sliderIndex + 1].classList.add("active");
+      }
+    }
+  };
+
+  const throttle = (cb) => {
+    let shouldWait = false;
+    let waitingArgs;
+
+    return (...args) => {
+      if (shouldWait) {
+        waitingArgs = args;
+        return;
+      }
+
+      cb(...args);
+      shouldWait = true;
+
+      requestAnimationFrame(() => {
+        shouldWait = false;
+        if (waitingArgs) {
+          cb(...waitingArgs);
+          waitingArgs = null;
+          shouldWait = true;
+        }
+      });
+    };
+  };
+
+  const throttleProgressBar = throttle(() => {
+    document.querySelectorAll(".progress-bar").forEach(calculateProgressBar);
+  });
+let flag = true;
+  useEffect(() => {
+    document.addEventListener("click", (e) => {
+      let handle;
+      if (e.target.matches(".handle")) {
+        handle = e.target;
+      } else {
+        handle = e.target.closest(".handle");
+      }
+      if (handle != null) {
+        if(flag){
+          flag = false;
+        }else{
+          flag = true;
+          onHandleClick(handle);
+        }
+        
+      }
+    });
+
+    window.addEventListener("resize", throttleProgressBar);
+
+    document.querySelectorAll(".progress-bar").forEach(calculateProgressBar);
+  }, []);
+
   return (
-    <Container fluid className='p-5'>
-      <h1>What to watch</h1>
-      <Row>
-      <Slider {...settings}>
-        <Col className='custom-col'>
-          {/* Slide 1 */}
-          <Card className='Card' style={{ width: '16.5rem'}}>
-            <Card.Img  variant="top" src="https://www.shutterstock.com/image-vector/online-cinema-art-movie-watching-260nw-586719869.jpg" />
-            {/* <Card.Img  variant="top" src="/public/images/anime images/commi-can't-communicate.jpg" /> */}
-            <Card.Body className='cardbody bg-dark'>
-              <div className='d-flex'>
-                <div className='d-flex'>
-              <span className='icon-container me-2'>
-              <FontAwesomeIcon icon={faPlay} />
-              </span>
-              <span className='icon-container me-2'>
-              <FontAwesomeIcon icon={faPlus} />    
-              </span>
-              <span className='icon-container me-2'>
-              <FontAwesomeIcon icon={faThumbsUp} style={{color: "#ffffff",}} />   
-              </span>
-              </div>
-              <span className='icon-container me-2 '>
-              <FontAwesomeIcon icon={faChevronDown} style={{color: "#ffffff",}} /> 
-                </span>
-              </div>
-              <Card.Title className='text-white mt-2'>98% match</Card.Title>
-             <div className='mt-2'>
-              <span className='Age text-white border border-1 me-1'>18+</span>
-              <span className='Age text-white'>number of episodes</span>
-             </div>
-              <span className='Age text-white'>Genre</span>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col className='custom-col'>
-          {/* Slide 1 */}
-          <Card className='Card' style={{ width: '16.5rem'}}>
-            <Card.Img  variant="top" src="https://www.shutterstock.com/image-vector/online-cinema-art-movie-watching-260nw-586719869.jpg" />
-            {/* <Card.Img  variant="top" src="/public/images/anime images/commi-can't-communicate.jpg" /> */}
-            <Card.Body className='cardbody bg-dark'>
-              <div className='d-flex'>
-                <div className='d-flex'>
-              <span className='icon-container me-2'>
-              <FontAwesomeIcon icon={faPlay} />
-              </span>
-              <span className='icon-container me-2'>
-              <FontAwesomeIcon icon={faPlus} />    
-              </span>
-              <span className='icon-container me-2'>
-              <FontAwesomeIcon icon={faThumbsUp} style={{color: "#ffffff",}} />   
-              </span>
-              </div>
-              <span className='icon-container me-2 '>
-              <FontAwesomeIcon icon={faChevronDown} style={{color: "#ffffff",}} /> 
-                </span>
-              </div>
-              <Card.Title className='text-white mt-2'>98% match</Card.Title>
-             <div className='mt-2'>
-              <span className='Age text-white border border-1 me-1'>18+</span>
-              <span className='Age text-white'>number of episodes</span>
-             </div>
-              <span className='Age text-white'>Genre</span>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col className='custom-col'>
-          {/* Slide 1 */}
-          <Card className='Card' style={{ width: '16.5rem'}}>
-            <Card.Img  variant="top" src="https://www.shutterstock.com/image-vector/online-cinema-art-movie-watching-260nw-586719869.jpg" />
-            {/* <Card.Img  variant="top" src="/public/images/anime images/commi-can't-communicate.jpg" /> */}
-            <Card.Body className='cardbody bg-dark'>
-              <div className='d-flex'>
-                <div className='d-flex'>
-              <span className='icon-container me-2'>
-              <FontAwesomeIcon icon={faPlay} />
-              </span>
-              <span className='icon-container me-2'>
-              <FontAwesomeIcon icon={faPlus} />    
-              </span>
-              <span className='icon-container me-2'>
-              <FontAwesomeIcon icon={faThumbsUp} style={{color: "#ffffff",}} />   
-              </span>
-              </div>
-              <span className='icon-container me-2 '>
-              <FontAwesomeIcon icon={faChevronDown} style={{color: "#ffffff",}} /> 
-                </span>
-              </div>
-              <Card.Title className='text-white mt-2'>98% match</Card.Title>
-             <div className='mt-2'>
-              <span className='Age text-white border border-1 me-1'>18+</span>
-              <span className='Age text-white'>number of episodes</span>
-             </div>
-              <span className='Age text-white'>Genre</span>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col className='custom-col'>
-          {/* Slide 1 */}
-          <Card className='Card' style={{ width: '16.5rem'}}>
-            <Card.Img  variant="top" src="https://www.shutterstock.com/image-vector/online-cinema-art-movie-watching-260nw-586719869.jpg" />
-            {/* <Card.Img  variant="top" src="/public/images/anime images/commi-can't-communicate.jpg" /> */}
-            <Card.Body className='cardbody bg-dark'>
-              <div className='d-flex'>
-                <div className='d-flex'>
-              <span className='icon-container me-2'>
-              <FontAwesomeIcon icon={faPlay} />
-              </span>
-              <span className='icon-container me-2'>
-              <FontAwesomeIcon icon={faPlus} />    
-              </span>
-              <span className='icon-container me-2'>
-              <FontAwesomeIcon icon={faThumbsUp} style={{color: "#ffffff",}} />   
-              </span>
-              </div>
-              <span className='icon-container me-2 '>
-              <FontAwesomeIcon icon={faChevronDown} style={{color: "#ffffff",}} /> 
-                </span>
-              </div>
-              <Card.Title className='text-white mt-2'>98% match</Card.Title>
-             <div className='mt-2'>
-              <span className='Age text-white border border-1 me-1'>18+</span>
-              <span className='Age text-white'>number of episodes</span>
-             </div>
-              <span className='Age text-white'>Genre</span>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col className='custom-col'>
-          {/* Slide 1 */}
-          <Card className='Card' style={{ width: '16.5rem'}}>
-            <Card.Img  variant="top" src="https://www.shutterstock.com/image-vector/online-cinema-art-movie-watching-260nw-586719869.jpg" />
-            {/* <Card.Img  variant="top" src="/public/images/anime images/commi-can't-communicate.jpg" /> */}
-            <Card.Body className='cardbody bg-dark'>
-              <div className='d-flex'>
-                <div className='d-flex'>
-              <span className='icon-container me-2'>
-              <FontAwesomeIcon icon={faPlay} />
-              </span>
-              <span className='icon-container me-2'>
-              <FontAwesomeIcon icon={faPlus} />    
-              </span>
-              <span className='icon-container me-2'>
-              <FontAwesomeIcon icon={faThumbsUp} style={{color: "#ffffff",}} />   
-              </span>
-              </div>
-              <span className='icon-container me-2 '>
-              <FontAwesomeIcon icon={faChevronDown} style={{color: "#ffffff",}} /> 
-                </span>
-              </div>
-              <Card.Title className='text-white mt-2'>98% match</Card.Title>
-             <div className='mt-2'>
-              <span className='Age text-white border border-1 me-1'>18+</span>
-              <span className='Age text-white'>number of episodes</span>
-             </div>
-              <span className='Age text-white'>Genre</span>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col className='custom-col'>
-          {/* Slide 1 */}
-          <Card className='Card' style={{ width: '16.5rem'}}>
-            <Card.Img  variant="top" src="https://www.shutterstock.com/image-vector/online-cinema-art-movie-watching-260nw-586719869.jpg" />
-            {/* <Card.Img  variant="top" src="/public/images/anime images/commi-can't-communicate.jpg" /> */}
-            <Card.Body className='cardbody bg-dark'>
-              <div className='d-flex'>
-                <div className='d-flex'>
-              <span className='icon-container me-2'>
-              <FontAwesomeIcon icon={faPlay} />
-              </span>
-              <span className='icon-container me-2'>
-              <FontAwesomeIcon icon={faPlus} />    
-              </span>
-              <span className='icon-container me-2'>
-              <FontAwesomeIcon icon={faThumbsUp} style={{color: "#ffffff",}} />   
-              </span>
-              </div>
-              <span className='icon-container me-2 '>
-              <FontAwesomeIcon icon={faChevronDown} style={{color: "#ffffff",}} /> 
-                </span>
-              </div>
-              <Card.Title className='text-white mt-2'>98% match</Card.Title>
-             <div className='mt-2'>
-              <span className='Age text-white border border-1 me-1'>18+</span>
-              <span className='Age text-white'>number of episodes</span>
-             </div>
-              <span className='Age text-white'>Genre</span>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col className='custom-col'>
-          {/* Slide 1 */}
-          <Card className='Card' style={{ width: '16.5rem'}}>
-            <Card.Img  variant="top" src="https://www.shutterstock.com/image-vector/online-cinema-art-movie-watching-260nw-586719869.jpg" />
-            {/* <Card.Img  variant="top" src="/public/images/anime images/commi-can't-communicate.jpg" /> */}
-            <Card.Body className='cardbody bg-dark'>
-              <div className='d-flex'>
-                <div className='d-flex'>
-              <span className='icon-container me-2'>
-              <FontAwesomeIcon icon={faPlay} />
-              </span>
-              <span className='icon-container me-2'>
-              <FontAwesomeIcon icon={faPlus} />    
-              </span>
-              <span className='icon-container me-2'>
-              <FontAwesomeIcon icon={faThumbsUp} style={{color: "#ffffff",}} />   
-              </span>
-              </div>
-              <span className='icon-container me-2 '>
-              <FontAwesomeIcon icon={faChevronDown} style={{color: "#ffffff",}} /> 
-                </span>
-              </div>
-              <Card.Title className='text-white mt-2'>98% match</Card.Title>
-             <div className='mt-2'>
-              <span className='Age text-white border border-1 me-1'>18+</span>
-              <span className='Age text-white'>number of episodes</span>
-             </div>
-              <span className='Age text-white'>Genre</span>
-            </Card.Body>
-          </Card>
-        </Col>
-      
-      </Slider>
-      </Row>
-    </Container>
+    <div className="row container-fluid">
+      <div className="header-slider">
+        <h3 className="slider__title">Top Picks for User</h3>
+        <div className="progress-bar" ref={progressBarRef} />
+      </div>
+      <div className="container slider-container">
+        <div className="handle left-handle" onClick={(e) => onHandleClick(e.target)}>
+          <div className="text">‹</div>
+        </div>
+        <div className="slider" ref={sliderRef}>
+          <img src="https://via.placeholder.com/210/FFFFFF?text=1" alt="Slider Image" />
+          <img src="https://via.placeholder.com/220/FFFFFF?text=2" alt="Slider Image" />
+          <img src="https://via.placeholder.com/230/FFFFFF?text=3" alt="Slider Image" />
+          <img src="https://via.placeholder.com/240/FFFFFF?text=4" alt="Slider Image" />
+          <img src="https://via.placeholder.com/250/FFFFFF?text=5" alt="Slider Image" />
+          <img src="https://via.placeholder.com/260/FFFFFF?text=6" alt="Slider Image" />
+          <img src="https://via.placeholder.com/270/FFFFFF?text=7" alt="Slider Image" />
+          <img src="https://via.placeholder.com/280/FFFFFF?text=8" alt="Slider Image" />
+          <img src="https://via.placeholder.com/290/FFFFFF?text=9" alt="Slider Image" />
+          <img src="https://via.placeholder.com/300/FFFFFF?text=10" alt="Slider Image" />
+          <img src="https://via.placeholder.com/310/FFFFFF?text=11" alt="Slider Image" />
+          <img src="https://via.placeholder.com/320/FFFFFF?text=12" alt="Slider Image" />
+          <img src="https://via.placeholder.com/210/FFFFFF?text=1" alt="Slider Image" />
+          <img src="https://via.placeholder.com/220/FFFFFF?text=2" alt="Slider Image" />
+          <img src="https://via.placeholder.com/230/FFFFFF?text=3" alt="Slider Image" />
+          <img src="https://via.placeholder.com/240/FFFFFF?text=4" alt="Slider Image" />
+          <img src="https://via.placeholder.com/250/FFFFFF?text=5" alt="Slider Image" />
+          <img src="https://via.placeholder.com/260/FFFFFF?text=6" alt="Slider Image" />
+          <img src="https://via.placeholder.com/270/FFFFFF?text=7" alt="Slider Image" />
+          <img src="https://via.placeholder.com/280/FFFFFF?text=8" alt="Slider Image" />
+          <img src="https://via.placeholder.com/290/FFFFFF?text=9" alt="Slider Image" />
+          <img src="https://via.placeholder.com/300/FFFFFF?text=10" alt="Slider Image" />
+          <img src="https://via.placeholder.com/310/FFFFFF?text=11" alt="Slider Image" />
+          <img src="https://via.placeholder.com/320/FFFFFF?text=12" alt="Slider Image" />
+          
+        </div>
+        <div className="handle right-handle" onClick={(e) => onHandleClick(e.target)}>
+          <div className="text">›</div>
+        </div>
+      </div>
+    </div>
   );
-}
+};
 
-export default SliderComponent;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// export default class Responsive extends Component {
-//   render() {
-
-
-
-    
-//     var settings = {
-//       dots: true,
-//       infinite: false,
-//       speed: 500,
-//       slidesToShow: 4,
-//       slidesToScroll: 4,
-//       initialSlide: 0,
-
-//       responsive: [
-//         {
-//           breakpoint: 1024,
-//           settings: {
-//             slidesToShow: 3,
-//             slidesToScroll: 3,
-//             infinite: true,
-//             dots: true
-//           }
-//         },
-//         {
-//           breakpoint: 600,
-//           settings: {
-//             slidesToShow: 2,
-//             slidesToScroll: 2,
-//             initialSlide: 2
-//           }
-//         },
-//         {
-//           breakpoint: 480,
-//           settings: {
-//             slidesToShow: 1,
-//             slidesToScroll: 1
-//           }
-//         }
-//       ]
-//     };
-//     return (
-//       <div className="container bg-warning">
-//         <h2> What to watch </h2>
-//         <Slider {...settings}>
-//           {[1,2,3,4,5,6,7,8,9,10].map((items,index)=>{return   <div className="" key={index}>{items}</div>})}
-//           <div></div>
-//           {/* <div>
-//             <h3>1</h3>
-//           </div>
-//           <div>
-//             <h3>2</h3>
-//           </div>
-//           <div>
-//             <h3>3</h3>
-//           </div>
-//           <div>
-//             <h3>4</h3>
-//           </div>
-//           <div>
-//             <h3>5</h3>
-//           </div>
-//           <div>
-//             <h3>6</h3>
-//           </div>
-//           <div>
-//             <h3>7</h3>
-//           </div>
-//           <div>
-//             <h3>8</h3>
-//           </div> */}
-//         </Slider>
-//       </div>
-//     );
-//   }
-// }
-
-
+export default SliderProgress;

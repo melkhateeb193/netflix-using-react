@@ -10,16 +10,14 @@ import "./App.css";
 import Login from "./pages/login/login";
 import Mainpagebfl from "./pages/mainpagebeforlogin/mainpagebfl";
 import SignUp from "./pages/signUp/signUp";
+import Homepage from "./pages/homepage/homepage";
 
 function App() {
   return (
     <>
       {/* <Login /> */}
       {/* <SignUp /> */}
-      <Header />
-      <HereSection />
-      <SimpleSlider />
-      <Footer />
+      <Homepage/>
     </>
 
     // <>
