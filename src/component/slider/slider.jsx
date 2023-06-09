@@ -189,45 +189,11 @@ const SliderProgress = (props) => {
           <div className="slider" ref={sliderRef}>
 
             {loader.loader ? <>
-              <Card className="card-design">
-                <Card.Img
-                  className="card-img"
-                  variant="top"
-                  src={'https://image.tmdb.org/t/p/w500/'}
-                ></Card.Img>
-              </Card>
-              <Card className="card-design">
-                <Card.Img
-                  className="card-img"
-                  variant="top"
-                  src={'https://image.tmdb.org/t/p/w500/'}
-                >
-                </Card.Img>
-              </Card><Card className="card-design">
-                <Card.Img
-                  className="card-img"
-                  variant="top"
-                  src={'https://image.tmdb.org/t/p/w500/'}
-                ></Card.Img>
-              </Card><Card className="card-design">
-                <Card.Img
-                  className="card-img"
-                  variant="top"
-                  src={'https://image.tmdb.org/t/p/w500/'}
-                ></Card.Img>
-              </Card><Card className="card-design">
-                <Card.Img
-                  className="card-img"
-                  variant="top"
-                  src={'https://image.tmdb.org/t/p/w500/'}
-                ></Card.Img>
-              </Card><Card className="card-design">
-                <Card.Img
-                  className="card-img"
-                  variant="top"
-                  src={'https://image.tmdb.org/t/p/w500/'}
-                ></Card.Img>
-              </Card>
+              <div className='d-flex justify-content-center'>
+          <Spinner animation="border" role="status" className='row'>
+            <span className="visually-hidden col text-center">Loading...</span>
+          </Spinner>
+        </div>
             </> : newMoviesPass.map((movie, index) => {
               // console.log(movie);
               return (
