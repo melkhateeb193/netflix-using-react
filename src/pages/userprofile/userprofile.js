@@ -17,7 +17,7 @@ function Userprofile() {
           <div className="box">
             <a href="/login">
               {" "}
-              <img src="images/smile1.png" alt="" />
+              <img className="img" src="images/smile1.png" alt="" />
             </a>
           </div>
           <p>
@@ -28,7 +28,7 @@ function Userprofile() {
           <div className="box">
             <a href="/login">
               {" "}
-              <img src="images/smile1.png" alt="" />
+              <img className="img"src="images/smile1.png" alt="" />
             </a>
           </div>
           <p>
@@ -39,7 +39,7 @@ function Userprofile() {
           <div className="box">
             <a href="/login">
               {" "}
-              <img src="images/smile1.png" alt="" />
+              <img className="img"src="images/smile1.png" alt="" />
             </a>
           </div>
           <p>
@@ -50,7 +50,7 @@ function Userprofile() {
           <div className="box">
             <a href="/login">
               {" "}
-              <img src="images/smile1.png" alt="" />
+              <img className="img"src="images/smile1.png" alt="" />
             </a>
           </div>
           <p>
