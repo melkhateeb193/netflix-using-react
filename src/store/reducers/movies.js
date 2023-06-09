@@ -4,7 +4,7 @@ const INTIAL_STATE = {
 };
 
 
-export default function moviesReducer(state = INTIAL_STATE, action){
+export default function MoviesReducerdb(state = INTIAL_STATE, action){
     switch(action.type){
             case 'SET_MOVIES':
                 return {

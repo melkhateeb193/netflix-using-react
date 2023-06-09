@@ -20,30 +20,30 @@ function HereSection() {
   const restart = () => setCurrentTime(0);
 
   useEffect(() => {
-    console.log(movies);
+    // console.log(movies);
     // movies.forEach(movie => {
     //   console.log(movie.data());
     // });
     // console.log(movies[10].data().link);
 
-    let imgNum = Math.floor(Math.random() * 50);
-    if (movies.length == 0) {
-      console.log(true);
-    } else {
-      console.log(false);
-      setImageLink(
-        movies[imgNum].data().link
-          ? movies[imgNum].data().link
-          : movies[imgNum].data().Link
-      );
-      console.log(movies[imgNum].data().name);
-      console.log(movies[imgNum].data());
-    }
+    // let imgNum = Math.floor(Math.random() * 50);
+    // if (movies.length == 0) {
+    //   // console.log(true);
+    // } else {
+    //   console.log(false);
+    //   setImageLink(
+    //     movies[imgNum].data().link
+    //       ? movies[imgNum].data().link
+    //       : movies[imgNum].data().Link
+    //   );
+    //   console.log(movies[imgNum].data().name);
+    //   console.log(movies[imgNum].data());
+    // }
   }, [movies, imgLink]);
 
-  useEffect(() => {
-    dispatch(getAllMovies("NetflixClone"));
-  }, []);
+  // useEffect(() => {
+  //   dispatch(getAllMovies("NetflixClone"));
+  // }, []);
 
   return (
     <>

@@ -49,7 +49,7 @@ function Header() {
     handleInputFocus();
   };
 
-  console.log(searchValue);
+  // console.log(searchValue);
   return (
     <>
       <div className={isScrolled ? "sticky scrolled" : "sticky"}>

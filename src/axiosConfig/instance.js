@@ -1,4 +1,6 @@
 import axios from "axios";
+import store from "../store/store/store";
+import changeLoader from "../store/actions/loader";
 
 
 
@@ -13,6 +15,31 @@ const axiosInstance = axios.create({
     }
 
 });
+axiosInstance.interceptors.request.use((req) => {
+    // if(req.method === 'POST'){
 
+    // }else if(req.method == 'GET'){
+    //     req.headers = {}
+    // }
+
+    store.dispatch(changeLoader(true));
+    console.log("Request Send");
+
+    return req;
+}, (err) => {
+    return Promise.reject(err);
+});
+
+
+axiosInstance.interceptors.response.use((res) => {
+
+    console.log("Response received");
+    store.dispatch(changeLoader(false));
+
+    return res;
+
+}, (err) => {
+    return Promise.reject(err);
+})
 
 export default axiosInstance;
