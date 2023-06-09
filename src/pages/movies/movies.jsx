@@ -206,7 +206,6 @@ function Movies() {
           <HereSection />
         </div>
         <div className="movies__body">
-          {/* <SliderProgress />
           <SliderProgress />
           <SliderProgress />
           <SliderProgress />
@@ -221,7 +220,8 @@ function Movies() {
           <SliderProgress />
           <SliderProgress />
           <SliderProgress />
-          <SliderProgress /> */}
+          <SliderProgress />
+          <SliderProgress />
           <Footer />
         </div>
       </div>
