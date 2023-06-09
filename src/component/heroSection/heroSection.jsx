@@ -16,10 +16,10 @@ function HereSection() {
 
   // const [currentTime, setCurrentTime] = useState(0);
 
-  const handleRestart = () => {
-    videoRef.current.currentTime = 0;
-    videoRef.current.play();
-  };
+  // const handleRestart = () => {
+  //   videoRef.current.currentTime = 0;
+  //   videoRef.current.play();
+  // };
 
   // kareem's work stars here
   const movies = useSelector((state) => state.movies.movies);

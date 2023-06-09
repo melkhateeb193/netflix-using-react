@@ -1,3 +1,7 @@
+.footer{
+  background-color: transparent !important;
+}
+
 footer .list-group {
   list-style: none;
   margin-left: 20px;

@@ -15,9 +15,8 @@
 }
 
 .parent {
-background-image: linear-gradient(center bottom center, #0071eb);  
-margin-bottom: 10rem;
-
+  background-image: linear-gradient(center bottom center, #0071eb);
+  margin-bottom: 10rem;
 }
 
 .title {
@@ -45,12 +44,12 @@ margin-bottom: 10rem;
 }
 
 .title__space {
-  margin-top: 5rem !important;
+  margin-top: 15rem !important;
   padding: 0;
 }
 
 .title__body {
-  margin-top: 15rem !important;
+  margin-top: 17rem !important;
   padding: 0;
 }
 
@@ -61,7 +60,7 @@ margin-bottom: 10rem;
 
 .title__body--description {
   width: 32vw;
-  margin-bottom: 1rem;
+  margin-bottom: 5rem;
 }
 
 .title__body--button {
@@ -90,7 +89,7 @@ margin-bottom: 10rem;
   justify-content: end;
   width: 5.875rem;
   height: 2.159rem;
-  margin-top: 30rem !important;
+  margin-top: 35rem !important;
 }
 
 .title__aside--maturityRating {
@@ -111,7 +110,6 @@ margin-bottom: 10rem;
 
 .title__aside--btn__icon {
   padding: 0 !important;
-  
 }
 
 .title__aside--btn__icon {

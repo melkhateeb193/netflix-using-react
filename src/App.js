@@ -14,7 +14,7 @@ import SignUp from "./pages/signUp/signUp";
 import Homepage from "./pages/homepage/homepage";
 
 import SliderProgress from "./component/slider/slider";
-
+import Movies from "./pages/movies/movies";
 
 function App() {
   return (
@@ -22,7 +22,8 @@ function App() {
       {/* <Login /> */}
       {/* <SignUp /> */}
       <Header />
-      <HereSection />
+      <Movies />
+      {/* <HereSection /> */}
       <SliderProgress />
       <Footer />
     </>
