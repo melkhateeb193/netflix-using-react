@@ -21,6 +21,8 @@ import MyList from "./pages/myList/myList";
 import NotFound from "./pages/NotFound/notFound";
 import Movies from "./pages/movies/movies";
 import TvShows from "./pages/Tv Show/tvShow";
+import NewPopular from "./pages/new  & popular/new-popular";
+import BrowseMovies from "./pages/BrowseByLanguages/browseMovies";
 
 function App() {
   return (
@@ -33,9 +35,11 @@ function App() {
           <Route element={<ProtectedRoute />}>
             <Route path="/Userprofile" element={<Userprofile />} />
             <Route path="/home" element={<Homepage />} />
-            <Route path="/mylist" element={<MyList />} />
-            <Route path="/movies" element={<Movies />} />
             <Route path="/tvShows" element={<TvShows />} />
+            <Route path="/movies" element={<Movies />} />
+            <Route path="/new" element={<NewPopular />} />
+            <Route path="/mylist" element={<MyList />} />
+            <Route path="/movieby" element={<BrowseMovies />} />
           </Route>
 
           <Route path="*" element={<NotFound />} />

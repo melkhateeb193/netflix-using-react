@@ -50,7 +50,7 @@ function MyList() {
 
   return (
     <>
-      <Header></Header>
+      <Header />
 
       <nav className={isScrolled ? "nav2 scrolledNav2" : "nav2"}>
         <a className="navbar-brand brand2" href="#">
