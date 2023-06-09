@@ -12,9 +12,11 @@ import Movies from "./pages/BrowseByLanguages/Movies";
 import Userprofile from "./pages/userprofile/userprofile";
 import { Route, Routes } from "react-router-dom";
 import { useSelector } from "react-redux";
+import ProtectedRoute, { UseAuth } from "./privateRaoute/protectedRoutes";
+import { useEffect } from "react";
 
 function App() {
-  var loader = useSelector((state) => state.loader.loader);
+
   return (
     <>
       <div className="App">
@@ -22,19 +24,21 @@ function App() {
           <Route path="/" element={<Mainpagebfl />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
- 
-          <Route path="/Userprofile" element={<Userprofile />} />
-          {loader && (<>  <Route path="/home" element={<Homepage />} />
+          <Route element={<ProtectedRoute />}>
+            <Route path="/Userprofile" element={<Userprofile />} />
+            <Route path="/home" element={<Homepage />} />
             <Route path="/myList" element={<MyList />} />
             <Route path="/tvShow" element={<TvShow />} />
             <Route path="/new" element={<NewPopular />} />
             <Route path="/movie" element={<Moovies />} />
             <Route path="/movieby" element={<Movies />} />
-           
-            <Route path="*" element={<NotFound />} />
-            </>)}
-          </Routes>
-        
+          </Route>
+
+
+          <Route path="*" element={<NotFound />} />
+
+        </Routes>
+
       </div>
     </>
   );

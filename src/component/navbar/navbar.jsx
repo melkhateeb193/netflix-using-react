@@ -1,20 +1,18 @@
-import React, {  useEffect, useRef, useState } from "react";
+import React, { Component, useEffect, useRef, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavLink from "react-bootstrap/NavLink";
 import Form from "react-bootstrap/Form";
 import "./navbar.css";
-import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { changeLoader } from "../../store/actions/loader";
+import { Link } from "@mui/material";
+import { UseAuth } from "../../privateRaoute/protectedRoutes";
+import { fa0 } from "@fortawesome/free-solid-svg-icons";
 
 function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpened, setIsOpened] = useState(false);
-  const [searchValue, setSearchValue] = useState(null);
-  var loader = useSelector((state) => state.loader.loader);
-  const dispatch =useDispatch();
+  const [searchValue, setSearchValue] = useState("");
   const inputRef = useRef(null);
 
   useEffect(() => {
@@ -44,19 +42,25 @@ function Header() {
     handleSearch();
     handleInputFocus();
   };
+  const handleSearchInput = (event) => {
+    setSearchValue(event.target.value);
+  };
+  
   const clearSearchInput = () => {
     setSearchValue("");
     handleInputFocus();
   };
-  const handleloader = () => { 
-    dispatch(changeLoader(loader= false )); 
-    
-  };
+
+  // console.log(searchValue);
   return (
     <>
       <div className={isScrolled ? "sticky scrolled" : "sticky"}>
-        <Navbar className="navbar justify-content-around" expand="lg" id="navbar">
-          <Container className="container-fluid m-0 p-0">
+        <Navbar
+          className="navbar justify-content-around "
+          expand="lg"
+          id="navbar"
+        >
+          <Container className="container-fluid my-1 p-0 navbarContainer">
             <Navbar.Brand className="navbar__brand">
               <Nav.Link>
                 <img
@@ -78,22 +82,22 @@ function Header() {
               className="navbar-collapse block"
             >
               <Nav className="me-auto  mb-2 mb-lg-0">
-                <NavLink className="nav__link" as={Link} to="/home">
+                <NavLink className="nav__link" as={Link} to="/">
                   Home
                 </NavLink>
-                <NavLink className="nav__link"  as={Link} to="/tvShow">
+                <NavLink className="nav__link" as={Link} to="/">
                   TV Shows
                 </NavLink>
-                <NavLink className="nav__link"  as={Link} to="/movie">
+                <NavLink className="nav__link" as={Link} to="/">
                   Movies
                 </NavLink>
-                <NavLink className="nav__link"  as={Link} to="/new">
+                <NavLink className="nav__link" as={Link} to="/">
                   New & Popular
                 </NavLink>
-                <NavLink className="nav__link"  as={Link} to="/myList">
+                <NavLink className="nav__link" as={Link} to="/">
                   My List
                 </NavLink>
-                <NavLink className="nav__link"as={Link} to="/movieby">
+                <NavLink className="nav__link" as={Link} to="/">
                   Browse by Languages
                 </NavLink>
               </Nav>
@@ -115,10 +119,11 @@ function Header() {
                     aria-label="Search"
                     onBlur={handleSearch}
                     value={searchValue}
+                    onChange={handleSearchInput}
                   />
                   <img
                     className={
-                      searchValue
+                      searchValue !== ""
                         ? "search__close theSearchHasValue"
                         : "search__close"
                     }
@@ -162,7 +167,7 @@ function Header() {
 
                 {/* this is the user dashboard access point */}
                 <div className="nav-element profile arrowP">
-                  <a className="navbar__btn row arrowP">
+                  <a className="navbar__btn row ">
                     {/* add a user profile here  */}
 
                     <span className=" col p-0 m-0 d-flex justify-content-center arrowP">
@@ -226,7 +231,7 @@ function Header() {
                           className="profile__menu--listImg2"
                           src="./icons/pen.svg"
                         />
-                        <a className="profile__menu--btn" href="/Userprofile">
+                        <a className="profile__menu--btn" href="#">
                           Manage Profiles
                         </a>
                       </li>
@@ -235,7 +240,7 @@ function Header() {
                           className="profile__menu--listImg2"
                           src="./icons/transfer.svg"
                         />
-                        <a className="profile__menu--btn" href="/Userprofile">
+                        <a className="profile__menu--btn" href="#">
                           Transfer Profile
                         </a>
                       </li>
@@ -244,7 +249,7 @@ function Header() {
                           className="profile__menu--listImg2"
                           src="./icons/profile.svg"
                         />
-                        <a className="profile__menu--btn" href="/Userprofile">
+                        <a className="profile__menu--btn" href="#">
                           Account
                         </a>
                       </li>
@@ -260,7 +265,11 @@ function Header() {
                     </ul>
                     <ul className="profile__menu--listEnd">
                       <li className="profile__menu--listItem">
-                        <a className="profile__menu--btn" href="/" onClick={handleloader}>
+                        <a className="profile__menu--btn" href="/login" onClick={
+                          ()=>{
+                            
+                          }
+                        }>
                           Sign out of Netflix
                         </a>
                       </li>

@@ -4,9 +4,9 @@ import "./login.css";
 import { useNavigate } from "react-router-dom"; 
 import { useDispatch, useSelector } from "react-redux"; 
 import { changeLoader } from "../../store/actions/loader";
+import ProtectedRoute, { UseAuth } from "../../privateRaoute/protectedRoutes";
 export default function Login() { 
 
-  var loader = useSelector((state) => state.loader.loader);
   const dispatch =useDispatch();
   const [user, setUser] = useState([
     {
@@ -20,17 +20,18 @@ export default function Login() {
       passError: "",
     },
   ]);
-  console.log(loader);
   const navigate = useNavigate();
   const handleSubmit = (evt) => {
     evt.preventDefault();
     navigate("/home");  
+
+  };
+  const handleAuth = () => {
+
     
   };
-  const handleloader = () => { 
-    dispatch(changeLoader(loader= true )); 
-    
-  };
+
+
   const handleChange = (ev) => {
     if (ev.target.name === "email") {
       setUser({ ...user, email: ev.target.value });
@@ -125,7 +126,7 @@ export default function Login() {
             />
             <p className="text-danger">{error.passError}</p>
           </div>
-          <button type="submit" className="btn  w-100 p-2 mb-3" onClick={handleloader}>
+          <button type="submit" className="btn  w-100 p-2 mb-3" onClick={handleAuth}>
             Log In
           </button>
           <div className="mb-3 form-check d-flex justify-content-between">
