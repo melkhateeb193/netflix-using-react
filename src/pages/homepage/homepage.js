@@ -29,7 +29,9 @@ function Homepage(type) {
       <Header />
       <HereSection />
       <div className='slider-progress'>
-      <SliderProgress />
+      <SliderProgress title={"New pupliched"} />
+      <SliderProgress title={"New relase"} />
+      <SliderProgress title={" top 10"} />
       </div>
     
       <Footer />
