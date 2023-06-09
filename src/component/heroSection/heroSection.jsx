@@ -22,35 +22,35 @@ function HereSection() {
   // };
 
   // kareem's work stars here
-  const movies = useSelector((state) => state.movies.movies);
-  const dispatch = useDispatch();
-  const [imgLink, setImageLink] = useState("./images/interstellar.webp");
+  // const movies = useSelector((state) => state.movies.movies);
+  // const dispatch = useDispatch();
+  // const [imgLink, setImageLink] = useState("./images/interstellar.webp");
 
-  useEffect(() => {
-    console.log(movies);
-    // movies.forEach(movie => {
-    //   console.log(movie.data());
-    // });
-    // console.log(movies[10].data().link);
+  // useEffect(() => {
+  //   console.log(movies);
+  //   // movies.forEach(movie => {
+  //   //   console.log(movie.data());
+  //   // });
+  //   // console.log(movies[10].data().link);
 
-    let imgNum = Math.floor(Math.random() * 50);
-    if (movies.length == 0) {
-      console.log(true);
-    } else {
-      console.log(false);
-      setImageLink(
-        movies[imgNum].data().link
-          ? movies[imgNum].data().link
-          : movies[imgNum].data().Link
-      );
-      console.log(movies[imgNum].data().name);
-      console.log(movies[imgNum].data());
-    }
-  }, [movies, imgLink]);
+  //   let imgNum = Math.floor(Math.random() * 50);
+  //   if (movies.length == 0) {
+  //     console.log(true);
+  //   } else {
+  //     console.log(false);
+  //     setImageLink(
+  //       movies[imgNum].data().link
+  //         ? movies[imgNum].data().link
+  //         : movies[imgNum].data().Link
+  //     );
+  //     console.log(movies[imgNum].data().name);
+  //     console.log(movies[imgNum].data());
+  //   }
+  // }, [movies, imgLink]);
 
-  useEffect(() => {
-    dispatch(getAllMovies("NetflixClone"));
-  }, []);
+  // useEffect(() => {
+  //   dispatch(getAllMovies("NetflixClone"));
+  // }, []);
   // kareem's work end here
 
   return (
@@ -116,7 +116,7 @@ function HereSection() {
             >
               <img
                 className="title__aside--btn__icon"
-                src="./icons/restart.svg"
+                src="./icons/sound up.svg"
               />
             </button>
             <span className="title__aside--maturityRating">13+</span>

@@ -10,7 +10,7 @@
 .movies__secondaryNavbar {
   position: absolute;
   top: 4rem;
-  z-index: 99;
+  z-index: 90;
   width: 100%;
   background-color: transparent;
 }
@@ -113,6 +113,6 @@
   width: 0;
 }
 
-.SliderProgress{
-    
+.displayNone {
+  display: none !important;
 }

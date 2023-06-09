@@ -7,6 +7,7 @@ import Header from "../../component/navbar/navbar";
 
 function Movies() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isList, setIsList] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,7 +43,11 @@ function Movies() {
                 </a>
               </div>
               <div className="col">
-                <div className="genres" role="button" onclick="openGenres()">
+                <div
+                  className={isList ? "genres displayNone" : "genres"}
+                  role="button"
+                  //  onclick="openGenres()"
+                >
                   <label className="genres__label">Genres</label>
                   <span className="genres__arrow">
                     <img src="./icons/arrow down.svg" />
@@ -167,7 +172,7 @@ function Movies() {
             </div>
 
             <div className="group">
-              <div className="group__btn">
+              <div className="group__btn" onClick={() => setIsList(false)}>
                 <input
                   type="radio"
                   name="style"
@@ -179,7 +184,7 @@ function Movies() {
                   <img className="group__btn--icon" src="./icons/list.svg" />
                 </label>
               </div>
-              <div className="group__btn">
+              <div className="group__btn" onClick={() => setIsList(true)}>
                 <input
                   type="radio"
                   name="style"
@@ -193,7 +198,13 @@ function Movies() {
             </div>
           </nav>
         </div>
-        <HereSection className="movies__mainNavbar" />
+        <div
+          className={
+            isList ? "movies__mainNavbar displayNone" : "movies__mainNavbar"
+          }
+        >
+          <HereSection />
+        </div>
         <div className="movies__body">
           {/* <SliderProgress />
           <SliderProgress />
