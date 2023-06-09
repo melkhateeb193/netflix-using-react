@@ -14,36 +14,35 @@ import SignUp from "./pages/signUp/signUp";
 import Homepage from "./pages/homepage/homepage";
 
 import SliderProgress from "./component/slider/slider";
-import Movies from "./pages/movies/movies";
+import { Route, Routes } from "react-router-dom";
+import ProtectedRoute from "./privateRaoute/protectedRoutes";
+import Userprofile from "./pages/userprofile/userprofile";
+import MyList from "./pages/myList/myList";
+import NotFound from "./pages/NotFound/notFound";
+
 
 function App() {
+
   return (
     <>
-      {/* <Login /> */}
-      {/* <SignUp /> */}
-      {/* <Header /> */}
-      <Movies />
-      {/* <HereSection /> */}
-      {/* <Footer /> */}
-    </>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Mainpagebfl />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route element={<ProtectedRoute />}>
+            <Route path="/Userprofile" element={<Userprofile />} />
+            <Route path="/home" element={<Homepage />} />
+            <Route path="/mylist" element={<MyList />} />
+          </Route>
 
-    // <>
-    //   <div className="App bg-dark">
-    //     <SimpleSlider />
-    //     <SimpleSlider />
-    //   </div>
-    // </>
-    // <Router>
-    //   <div className="App">
-    //     <Routes>
-    // {/* //       <Route path="/" element={<Mainpagebfl />} />
-    // //       <Route path="/login" element={<Login />} />
-    // //       <Route path="/profile" element={<Userprofile />} />
-    // //       <Route path="/home" element={<Homepage/>} /> */}
-    //          {/* <Route path="/" element={<Homepage/>} /> */}
-    //     </Routes>
-    //    </div>
-    //  </Router>
+
+          <Route path="*" element={<NotFound />} />
+
+        </Routes>
+
+      </div>
+    </>
   );
 }
 

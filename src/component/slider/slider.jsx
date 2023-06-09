@@ -27,37 +27,37 @@ const Responsive = (props) => {
       <h2 className="SliderContainer">{props.title}</h2>
       <Slider {...settings}>
         <div style={{ margin: '0 5px' }}>
-          <Card style={{ width: '15.5rem' }}>
+          <Card style={{ width: '18.5rem' }}>
             <Card.Img variant="top" src="http://occ-0-6661-55.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABdMUFn_qx4wIfV8BL5FfRORBtxn9xZduOUYHpID0GPRUPkxlQl-MSCWXLYzNiIhTbQIiu4fjJhbFJOpgxmmeskNzuhAJXWNPfKU.webp?r=c6c" />
           </Card>
         </div>
         <div style={{ margin: '0 5px' }}>
-          <Card style={{ width: '15.5rem' }}>
+          <Card style={{ width: '18.5rem' }}>
             <Card.Img variant="top" src="http://occ-0-6661-55.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABdMUFn_qx4wIfV8BL5FfRORBtxn9xZduOUYHpID0GPRUPkxlQl-MSCWXLYzNiIhTbQIiu4fjJhbFJOpgxmmeskNzuhAJXWNPfKU.webp?r=c6c" />
           </Card>
         </div>
         <div style={{ margin: '0 5px' }}>
-          <Card style={{ width: '15.5rem' }}>
+          <Card style={{ width: '18.5rem' }}>
             <Card.Img variant="top" src="http://occ-0-6661-55.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABdMUFn_qx4wIfV8BL5FfRORBtxn9xZduOUYHpID0GPRUPkxlQl-MSCWXLYzNiIhTbQIiu4fjJhbFJOpgxmmeskNzuhAJXWNPfKU.webp?r=c6c" />
           </Card>
         </div>
         <div style={{ margin: '0 5px' }}>
-          <Card style={{ width: '15.5rem' }}>
+          <Card style={{ width: '18.5rem' }}>
             <Card.Img variant="top" src="http://occ-0-6661-55.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABdMUFn_qx4wIfV8BL5FfRORBtxn9xZduOUYHpID0GPRUPkxlQl-MSCWXLYzNiIhTbQIiu4fjJhbFJOpgxmmeskNzuhAJXWNPfKU.webp?r=c6c" />
           </Card>
         </div>
         <div style={{ margin: '0 5px' }}>
-          <Card style={{ width: '15.5rem' }}>
+          <Card style={{ width: '18.5rem' }}>
             <Card.Img variant="top" src="http://occ-0-6661-55.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABdMUFn_qx4wIfV8BL5FfRORBtxn9xZduOUYHpID0GPRUPkxlQl-MSCWXLYzNiIhTbQIiu4fjJhbFJOpgxmmeskNzuhAJXWNPfKU.webp?r=c6c" />
           </Card>
         </div>
         <div style={{ margin: '0 5px' }}>
-          <Card style={{ width: '15.5rem' }}>
+          <Card style={{ width: '18.5rem' }}>
             <Card.Img variant="top" src="http://occ-0-6661-55.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABdMUFn_qx4wIfV8BL5FfRORBtxn9xZduOUYHpID0GPRUPkxlQl-MSCWXLYzNiIhTbQIiu4fjJhbFJOpgxmmeskNzuhAJXWNPfKU.webp?r=c6c" />
           </Card>
         </div>
         <div style={{ margin: '0 5px' }}>
-          <Card style={{ width: '15.5rem' }}>
+          <Card style={{ width: '18.5rem' }}>
             <Card.Img variant="top" src="http://occ-0-6661-55.1.nflxso.net/dnm/api/v6/6gmvu2hxdfnQ55LZZjyzYR4kzGk/AAAABdMUFn_qx4wIfV8BL5FfRORBtxn9xZduOUYHpID0GPRUPkxlQl-MSCWXLYzNiIhTbQIiu4fjJhbFJOpgxmmeskNzuhAJXWNPfKU.webp?r=c6c" />
           </Card>
         </div>
