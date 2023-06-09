@@ -1,16 +1,21 @@
 .Card {
   position: relative;
+  transform: scale(1.2);
+  z-index: 100;
 }
 
 .cardbody {
 display: none !important;
   visibility: hidden; 
 }
-
+.list-body{
+  margin-top: 7rem !important;
+}
 .Card:hover .cardbody {
   opacity: 1;
   visibility: visible; 
   display: block !important;
+  
 }
  .icon-container {
   display: flex;
