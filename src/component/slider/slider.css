@@ -1,0 +1,7 @@
+.slider__element {
+  margin: 0.75rem 0;
+}
+
+.slider__element--child {
+  margin: 0 0.5rem;
+}
