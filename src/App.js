@@ -21,11 +21,10 @@ function App() {
     <>
       {/* <Login /> */}
       {/* <SignUp /> */}
-      <Header />
+      {/* <Header /> */}
       <Movies />
       {/* <HereSection /> */}
-      <SliderProgress />
-      <Footer />
+      {/* <Footer /> */}
     </>
 
     // <>

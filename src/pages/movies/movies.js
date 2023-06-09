@@ -3,13 +3,14 @@ import HereSection from "../../component/heroSection/heroSection";
 import "./movies.css";
 import Footer from "../../component/footer/footer";
 import SliderProgress from "../../component/slider/slider";
+import Header from "../../component/navbar/navbar";
 
 function Movies() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.pageYOffset > 3) {
+      if (window.pageYOffset > 2) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -24,6 +25,7 @@ function Movies() {
 
   return (
     <>
+      <Header />
       <div className="movies">
         <div
           className={
@@ -209,6 +211,7 @@ function Movies() {
           <SliderProgress />
           <SliderProgress />
           <SliderProgress />
+          <Footer />
         </div>
       </div>
     </>
