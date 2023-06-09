@@ -2,7 +2,7 @@ import "./mylist.css";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import getAllMovies from "../../store/actions/firestore";
 import Header from "../../component/navbar/navbar";
@@ -30,17 +30,47 @@ function MyList() {
   //     dispatch(removeFromList(movieId));
   //   };
 
+  //the navbar section
+  const [isScrolled, setIsScrolled] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.pageYOffset > 2) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  //the end of the navbar section
+
   return (
     <>
-      
       <Header></Header>
+
+      <nav
+        className={isScrolled ? "nav2 scrolledNav2" : "nav2"}
+        // className="nav2"
+      >
+        <div className="row">
+          <div className="col">
+            <a className="navbar-brand brand2" href="#">
+              My List
+            </a>
+          </div>
+        </div>
+      </nav>
 
       <div className="container-fluid mt-5">
         <div className="list-body px-5 mt-4">
-          <div className="row">
-          <p className="my-list mt-4">My List</p>
-          </div>
-          
+          {/* <div className="row nav2">
+            <p className="my-list mt-4">My List</p>
+          </div> */}
+
           <Row xs={6} md={6} className="main-design g-2  pt-4">
             {movies.map((movie) => (
               <Col key={movie.id}>

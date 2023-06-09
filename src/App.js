@@ -19,10 +19,10 @@ import ProtectedRoute from "./privateRaoute/protectedRoutes";
 import Userprofile from "./pages/userprofile/userprofile";
 import MyList from "./pages/myList/myList";
 import NotFound from "./pages/NotFound/notFound";
-
+import Movies from "./pages/movies/movies";
+import TvShows from "./pages/Tv Show/tvShow";
 
 function App() {
-
   return (
     <>
       <div className="App">
@@ -34,13 +34,12 @@ function App() {
             <Route path="/Userprofile" element={<Userprofile />} />
             <Route path="/home" element={<Homepage />} />
             <Route path="/mylist" element={<MyList />} />
+            <Route path="/movies" element={<Movies />} />
+            <Route path="/tvShows" element={<TvShows />} />
           </Route>
 
-
           <Route path="*" element={<NotFound />} />
-
         </Routes>
-
       </div>
     </>
   );

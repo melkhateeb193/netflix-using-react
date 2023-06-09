@@ -1,21 +1,35 @@
-.my-list{
-    font-size: 2.3rem;
+.my-list {
+  font-size: 2.3rem;
 }
-.main-design{
-    margin-top: 7rem !important;
+.main-design {
+  margin-top: 7rem !important;
 }
-.card-img{
-    height: 10rem; 
+.card-img {
+  height: 10rem;
 }
-.card-design{
-    height: 10rem; 
-    border: none !important;
-    margin-bottom: 5rem;
-    transition: 0.5s ease-in-out;
-    /* z-index: 99; */
+.card-design {
+  height: 10rem;
+  border: none !important;
+  margin-bottom: 5rem;
+  transition: 0.5s ease-in-out;
+  /* z-index: 99; */
 }
 
-.card-design:hover{
-    transform: scale(1.2);
-    z-index: 99;
+.card-design:hover {
+  transform: scale(1.2);
+  z-index: 50;
+}
+
+.nav2 {
+  position: absolute;
+  top: 4rem;
+  z-index: 90;
+  width: 100%;
+  background-color: transparent;
+  margin-left: 3rem;
+}
+
+.scrolledNav2 {
+  position: sticky !important;
+  background-color: rgb(20, 20, 20) !important;
 }

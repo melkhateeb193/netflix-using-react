@@ -116,3 +116,11 @@
 .displayNone {
   display: none !important;
 }
+
+.movies__body {
+  position: relative;
+}
+
+.page__footer {
+  margin-left: 5rem;
+}

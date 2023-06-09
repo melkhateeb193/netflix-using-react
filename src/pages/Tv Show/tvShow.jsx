@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import HereSection from "../../component/heroSection/heroSection";
-import "./movies.css";
+import "./tvShow.css";
 import Footer from "../../component/footer/footer";
 import SliderProgress from "../../component/slider/slider";
 import Header from "../../component/navbar/navbar";
 
-function Movies() {
+function TvShows() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isList, setIsList] = useState(false);
   const [isOpened, setIsOpened] = useState(false);
@@ -32,19 +32,19 @@ function Movies() {
   return (
     <>
       <Header />
-      <div className="movies">
+      <div className="tvShows">
         <div
           className={
             isScrolled
-              ? "movies__secondaryNavbar movies__scrolled"
-              : "movies__secondaryNavbar"
+              ? "tvShows__secondaryNavbar tvShows__scrolled"
+              : "tvShows__secondaryNavbar"
           }
         >
           <nav className="navbar">
             <div className="row">
               <div className="col">
                 <a className="navbar-brand brand2" href="#">
-                  Movies
+                  tvShows
                 </a>
               </div>
               <div className="col">
@@ -100,7 +100,7 @@ function Movies() {
                   </div>
                   <div className="genres__grid--item">
                     <a className="genres__grid--link" href="#">
-                      Egyptian Movies
+                      Egyptian tvShows
                     </a>
                   </div>
                   <div className="genres__grid--item">
@@ -209,30 +209,30 @@ function Movies() {
         </div>
         <div
           className={
-            isList ? "movies__mainNavbar displayNone" : "movies__mainNavbar"
+            isList ? "tvShows__mainNavbar displayNone" : "tvShows__mainNavbar"
           }
         >
           <HereSection />
         </div>
-        <div className="movies__body">
+        <div className="tvShows__body">
           <SliderProgress title="Top Picks for you" />
           <SliderProgress title="Trending Now" />
-          <SliderProgress title="Middle Eastern Movies" />
-          <SliderProgress title="Modern Classic Movies based on Books" />
-          <SliderProgress title="Blockbuster Movies" />
-          <SliderProgress title="Mystery Movies" />
+          <SliderProgress title="Middle Eastern tvShows" />
+          <SliderProgress title="Modern Classic tvShows based on Books" />
+          <SliderProgress title="Blockbuster tvShows" />
+          <SliderProgress title="Mystery tvShows" />
           <SliderProgress title="Continue Watching for Elsa" />
           <SliderProgress title="Comedies" />
-          <SliderProgress title="Movies Based on Real Life" />
-          <SliderProgress title="Romantic Drama Movies" />
-          <SliderProgress title="Top 10 Movies in Egypt Today" />
+          <SliderProgress title="tvShows Based on Real Life" />
+          <SliderProgress title="Romantic Drama tvShows" />
+          <SliderProgress title="Top 10 tvShows in Egypt Today" />
           <SliderProgress title="Award-Winning Films" />
-          <SliderProgress title="Egyptian Movies" />
-          <SliderProgress title="Comedy Movies" />
-          <SliderProgress title="Feel-good Movies" />
-          <SliderProgress title="Raunchy Comedy Movies" />
-          <SliderProgress title="Emotional Movies" />
-          <SliderProgress title="Critically-acclaimed Heartfelt Movies" />
+          <SliderProgress title="Egyptian tvShows" />
+          <SliderProgress title="Comedy tvShows" />
+          <SliderProgress title="Feel-good tvShows" />
+          <SliderProgress title="Raunchy Comedy tvShows" />
+          <SliderProgress title="Emotional tvShows" />
+          <SliderProgress title="Critically-acclaimed Heartfelt tvShows" />
           <SliderProgress title="My List" />
         </div>
       </div>
@@ -243,4 +243,4 @@ function Movies() {
   );
 }
 
-export default Movies;
+export default TvShows;

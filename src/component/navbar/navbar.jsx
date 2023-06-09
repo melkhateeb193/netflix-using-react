@@ -85,10 +85,10 @@ function Header() {
                 <NavLink className="nav__link" as={Link} to="/home">
                   Home
                 </NavLink>
-                <NavLink className="nav__link" as={Link} to="/tvShow">
+                <NavLink className="nav__link" as={Link} to="/tvShows">
                   TV Shows
                 </NavLink>
-                <NavLink className="nav__link" as={Link} to="/movie">
+                <NavLink className="nav__link" as={Link} to="/movies">
                   Movies
                 </NavLink>
                 <NavLink className="nav__link" as={Link} to="/new">
@@ -265,11 +265,11 @@ function Header() {
                     </ul>
                     <ul className="profile__menu--listEnd">
                       <li className="profile__menu--listItem">
-                        <a className="profile__menu--btn" href="/login" onClick={
-                          ()=>{
-                            
-                          }
-                        }>
+                        <a
+                          className="profile__menu--btn"
+                          href="/login"
+                          onClick={() => {}}
+                        >
                           Sign out of Netflix
                         </a>
                       </li>
