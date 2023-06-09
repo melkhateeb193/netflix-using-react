@@ -3,9 +3,12 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Card from 'react-bootstrap/Card';
+import { PropaneSharp } from "@mui/icons-material";
 
 
-const Responsive = () => {
+const Responsive = (props) => {
+
+
   const settings = {
     className: "center",
     infinite: true,
@@ -20,8 +23,8 @@ const Responsive = () => {
   };
 
   return (
-    <div className="container-fluid p-5 ">
-      <h2>Responsive</h2>
+    <div  className="container-fluid p-5 SliderContainer">
+      <h2 className="SliderContainer">{props.title}</h2>
       <Slider {...settings}>
         <div style={{ margin: '0 5px' }}>
           <Card style={{ width: '15.5rem' }}>
