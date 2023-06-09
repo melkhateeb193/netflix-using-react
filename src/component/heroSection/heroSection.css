@@ -16,6 +16,8 @@
 
 .parent {
 background-image: linear-gradient(center bottom center, #0071eb);  
+margin-bottom: 10rem;
+
 }
 
 .title {
@@ -103,17 +105,16 @@ background-image: linear-gradient(center bottom center, #0071eb);
   width: 2.5rem;
   height: 2.5rem;
   opacity: 0.8;
-  margin: 0 !important;
-}
-
-.title__aside--btn__icon {
-  padding: 0 !important;
   margin-right: 1rem !important;
 }
 
 .title__aside--btn__icon {
-  /* margin: 0 !important; */
-  margin-left: 0.42rem;
+  padding: 0 !important;
+  
+}
+
+.title__aside--btn__icon {
+  margin-left: 0.42rem !important;
 }
 
 .title__aside--btn:hover {
