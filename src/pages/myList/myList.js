@@ -52,17 +52,10 @@ function MyList() {
     <>
       <Header></Header>
 
-      <nav
-        className={isScrolled ? "nav2 scrolledNav2" : "nav2"}
-        // className="nav2"
-      >
-        <div className="row">
-          <div className="col">
-            <a className="navbar-brand brand2" href="#">
-              My List
-            </a>
-          </div>
-        </div>
+      <nav className={isScrolled ? "nav2 scrolledNav2" : "nav2"}>
+        <a className="navbar-brand brand2" href="#">
+          My List
+        </a>
       </nav>
 
       <div className="container-fluid mt-5">
