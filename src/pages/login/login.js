@@ -2,12 +2,12 @@
 import React, { useEffect, useState } from "react";
 import "./login.css";
 import { useNavigate } from "react-router-dom"; 
-import { useDispatch, useSelector } from "react-redux"; 
-import { changeLoader } from "../../store/actions/loader";
+// import { useDispatch, useSelector } from "react-redux"; 
+// import { changeLoader } from "../../store/actions/loader";
 export default function Login() { 
 
-  var loader = useSelector((state) => state.loader.loader);
-  const dispatch =useDispatch();
+  // var loader = useSelector((state) => state.loader.loader);
+  // const dispatch =useDispatch();
   const [user, setUser] = useState([
     {
       email: "",
@@ -26,10 +26,10 @@ export default function Login() {
     navigate("/home");  
     
   };
-  const handleloader = () => { 
-    dispatch(changeLoader(loader= true )); 
+  // const handleloader = () => { 
+  //   dispatch(changeLoader(loader= true )); 
     
-  };
+  // };
   const handleChange = (ev) => {
     if (ev.target.name === "email") {
       setUser({ ...user, email: ev.target.value });
@@ -124,7 +124,7 @@ export default function Login() {
             />
             <p className="text-danger">{error.passError}</p>
           </div>
-          <button type="submit" className="btn  w-100 p-2 mb-3" onSubmit={handleloader}>
+          <button type="submit" className="btn  w-100 p-2 mb-3"  >
             Log In
           </button>
           <div className="mb-3 form-check d-flex justify-content-between">

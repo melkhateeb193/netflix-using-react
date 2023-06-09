@@ -3,11 +3,11 @@ import React, { useState } from "react";
 import "./SignUp.css";
 import { useNavigate } from "react-router-dom";
 
-import { useDispatch, useSelector } from "react-redux"; 
-import { changeLoader } from "../../store/actions/loader";
+// import { useDispatch, useSelector } from "react-redux"; 
+// import { changeLoader } from "../../store/actions/loader";
 export default function SignUp() {
-  var loader = useSelector((state) => state.loader.loader);
-  const dispatch =useDispatch();
+  // var loader = useSelector((state) => state.loader.loader);
+  // const dispatch =useDispatch();
   const [user, setUser] = useState([
     {
         name:"",
@@ -31,10 +31,10 @@ export default function SignUp() {
 
     navigate('/home');
   };
-  const handleloader = () => { 
-    dispatch(changeLoader(loader= true )); 
+  // const handleloader = () => { 
+  //   dispatch(changeLoader(loader= true )); 
     
-  };
+  // };
   const LogInNav =()=>{
 navigate('/login');
   }
@@ -187,7 +187,7 @@ navigate('/login');
             /> 
             <p className="text-danger">{error.confirmpasserror}</p>
           </div>
-          <button type="submit" className="btn  w-100 p-2 mb-3" onSubmit={handleloader}>Sign In</button>
+          <button type="submit" className="btn  w-100 p-2 mb-3" >Sign In</button>
           <button type="button" onClick={LogInNav} className="btn  w-100 p-2 mb-3">Logn In</button>
          
         </form>

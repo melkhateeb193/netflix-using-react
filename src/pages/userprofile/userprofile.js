@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import "./userprofile.css";
 
-import { useDispatch, useSelector } from "react-redux";
-import { changeLoader } from "../../store/actions/loader";
+// import { useDispatch, useSelector } from "react-redux";
+// import { changeLoader } from "../../store/actions/loader";
 function Userprofile() {
-  var loader = useSelector((state) => state.loader.loader);
-  const dispatch = useDispatch();
+  // var loader = useSelector((state) => state.loader.loader);
+  // const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(changeLoader((loader = true)));
+    // dispatch(changeLoader((loader = true)));
   }, []);
   return (
     <div className="container p-5 d-flex flex-column justify-content-center align-items-center text-center">
@@ -50,7 +50,7 @@ function Userprofile() {
           <div className="box">
             <a href="/login">
               {" "}
-              <img className="img"src="images/smile1.png" alt="" />
+              <img className="img"src="images/smile1.png" alt=""/>
             </a>
           </div>
           <p>

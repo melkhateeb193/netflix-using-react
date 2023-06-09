@@ -10,11 +10,9 @@ import NewPopular from "./pages/new  & popular/new-popular";
 import Moovies from "./pages/movies/movies";
 import Movies from "./pages/BrowseByLanguages/Movies";
 import Userprofile from "./pages/userprofile/userprofile";
-import { Route, Routes } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { Route, Routes } from "react-router-dom"; 
 
-function App() {
-  var loader = useSelector((state) => state.loader.loader);
+function App() { 
   return (
     <>
       <div className="App">
@@ -24,7 +22,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
  
           <Route path="/Userprofile" element={<Userprofile />} />
-          {loader && (<>  <Route path="/home" element={<Homepage />} />
+           <Route path="/home" element={<Homepage />} />
             <Route path="/myList" element={<MyList />} />
             <Route path="/tvShow" element={<TvShow />} />
             <Route path="/new" element={<NewPopular />} />
@@ -32,7 +30,7 @@ function App() {
             <Route path="/movieby" element={<Movies />} />
            
             <Route path="*" element={<NotFound />} />
-            </>)}
+           
           </Routes>
         
       </div>
