@@ -5,7 +5,9 @@ import Navbar from "react-bootstrap/Navbar";
 import NavLink from "react-bootstrap/NavLink";
 import Form from "react-bootstrap/Form";
 import "./navbar.css";
-import { Link } from "@mui/material";
+import { UseAuth } from "../../privateRaoute/protectedRoutes";
+import { fa0 } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -49,7 +51,7 @@ function Header() {
     handleInputFocus();
   };
 
-  console.log(searchValue);
+  // console.log(searchValue);
   return (
     <>
       <div className={isScrolled ? "sticky scrolled" : "sticky"}>
@@ -80,22 +82,22 @@ function Header() {
               className="navbar-collapse block"
             >
               <Nav className="me-auto  mb-2 mb-lg-0">
-                <NavLink className="nav__link" as={Link} to="/">
+                <NavLink className="nav__link" as={Link} to="/home">
                   Home
                 </NavLink>
-                <NavLink className="nav__link" as={Link} to="/">
+                <NavLink className="nav__link" as={Link} to="/tvShow">
                   TV Shows
                 </NavLink>
-                <NavLink className="nav__link" as={Link} to="/">
+                <NavLink className="nav__link" as={Link} to="/movie">
                   Movies
                 </NavLink>
-                <NavLink className="nav__link" as={Link} to="/">
+                <NavLink className="nav__link" as={Link} to="/new">
                   New & Popular
                 </NavLink>
-                <NavLink className="nav__link" as={Link} to="/">
+                <NavLink className="nav__link" as={Link} to="/myList">
                   My List
                 </NavLink>
-                <NavLink className="nav__link" as={Link} to="/">
+                <NavLink className="nav__link" as={Link} to="/movieby">
                   Browse by Languages
                 </NavLink>
               </Nav>
@@ -132,7 +134,7 @@ function Header() {
                 </Form>
                 {/* the end ot the search component */}
 
-                <NavLink className="nav__link" as={Link} to="/">
+                <NavLink className="nav__link" as={Link} to="/Userprofile">
                   Kids
                 </NavLink>
 
@@ -229,7 +231,7 @@ function Header() {
                           className="profile__menu--listImg2"
                           src="./icons/pen.svg"
                         />
-                        <a className="profile__menu--btn" href="#">
+                        <a className="profile__menu--btn" href="/Userprofile">
                           Manage Profiles
                         </a>
                       </li>
@@ -238,7 +240,7 @@ function Header() {
                           className="profile__menu--listImg2"
                           src="./icons/transfer.svg"
                         />
-                        <a className="profile__menu--btn" href="#">
+                        <a className="profile__menu--btn" href="/Userprofile">
                           Transfer Profile
                         </a>
                       </li>
@@ -247,7 +249,7 @@ function Header() {
                           className="profile__menu--listImg2"
                           src="./icons/profile.svg"
                         />
-                        <a className="profile__menu--btn" href="#">
+                        <a className="profile__menu--btn" href="/Userprofile">
                           Account
                         </a>
                       </li>
@@ -263,7 +265,11 @@ function Header() {
                     </ul>
                     <ul className="profile__menu--listEnd">
                       <li className="profile__menu--listItem">
-                        <a className="profile__menu--btn" href="/index.html">
+                        <a className="profile__menu--btn" href="/login" onClick={
+                          ()=>{
+                            
+                          }
+                        }>
                           Sign out of Netflix
                         </a>
                       </li>

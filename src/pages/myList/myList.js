@@ -5,7 +5,7 @@ import Row from "react-bootstrap/Row";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import getAllMovies from "../../store/actions/firestore";
-import Header from "../navbar/navbar";
+import Header from "../../component/navbar/navbar";
 import { removeFromList } from "../../store/actions/RemoveFromList";
 
 function MyList() {
@@ -32,10 +32,15 @@ function MyList() {
 
   return (
     <>
+      
       <Header></Header>
-      <div className="container-fluid">
+
+      <div className="container-fluid mt-5">
         <div className="list-body px-5 mt-4">
-          <p className="my-list">My List</p>
+          <div className="row">
+          <p className="my-list mt-4">My List</p>
+          </div>
+          
           <Row xs={6} md={6} className="main-design g-2  pt-4">
             {movies.map((movie) => (
               <Col key={movie.id}>

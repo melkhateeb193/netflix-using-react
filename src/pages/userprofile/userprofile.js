@@ -9,7 +9,7 @@ function Userprofile() {
             <div className="box">
               <a href="/Home/index.html">
                 {" "}
-                <img src="images/smile1.png" alt="" />
+                <img className='user-image' src="images/smile1.png" alt="" />
               </a>
             </div>
             <p>
@@ -20,7 +20,7 @@ function Userprofile() {
             <div className="box">
               <a href="/Home/index.html">
                 {" "}
-                <img src="images/smile2.png" alt="" />{" "}
+                <img className='user-image' src="images/smile2.png" alt="" />{" "}
               </a>
             </div>
             <p>
@@ -31,7 +31,7 @@ function Userprofile() {
             <div className="box">
               <a href="/Home/index.html">
                 {" "}
-                <img src="images/smile3.png" alt="" />{" "}
+                <img className='user-image' src="images/smile3.png" alt="" />{" "}
               </a>
             </div>
             <p>
@@ -42,7 +42,7 @@ function Userprofile() {
             <div className="box">
               <a href="/Home/index.html">
                 {" "}
-                <img src="images/smile4.png" alt="" />{" "}
+                <img className='user-image' src="images/smile4.png" alt="" />{" "}
               </a>
             </div>
             <p>
