@@ -9,17 +9,18 @@
 }
 
 .Browse__secondaryNavbar {
-    position: absolute;
-    top: 4rem;
-    z-index: 90;
-    width: 100%;
-    background-color: transparent;
-  }
+  position: absolute;
+  top: 1rem;
+  z-index: 90;
+  width: 100%;
+  background-color: transparent;
+}
 
 .btn11 {
   color: white !important;
   border: 2px solid white !important;
   width: 100% !important;
+  background-color: black;
 }
 .btn11:hover {
   color: white !important;
@@ -101,8 +102,11 @@
   }
 }
 
-.test {
-  height: 1400px;
-  width: 1400px;
-  background-color: aquamarine;
+select {
+  cursor: pointer;
+  background-color: black !important;
+  border: 1px solid white;
+  color: white;
+  margin-left: 20px;
+  padding: 5px;
 }

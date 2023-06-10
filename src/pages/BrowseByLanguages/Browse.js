@@ -30,14 +30,7 @@ export default function Browse() {
             : "Browse__secondaryNavbar"
         }
       >
-        <div
-          className="immg3 contianer-fluid m-4 ps-5 pe-5 pt-0 row "
-          //   className={
-          //     isScrolled
-          //       ? "immg3 contianer-fluid m-4 ps-5 pe-5 pt-0 row Browse__scrolled"
-          //       : "immg3 contianer-fluid m-4 ps-5 pe-5 pt-0 row"
-          //   }
-        >
+        <div className="immg3 contianer-fluid m-4 ps-5 pe-5 pt-5 row ">
           <div className="col-md-3 immg4">
             <h3>Browse By Language</h3>
           </div>
@@ -47,162 +40,22 @@ export default function Browse() {
                 <p>Select Your Pereferences</p>
               </div>
               <div className="col-md-4 edit m-0">
-                <div className="dropdown ">
-                  <a
-                    className="btn btn11 btn-sm dropdown-toggle"
-                    href="#"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Languages
-                  </a>
-
-                  <ul
-                    className="dropdown-menu"
-                    aria-labelledby="dropdownMenuLink"
-                  >
-                    <li>
-                      <a
-                        className="dropdown-item"
-                        href="./browseByLanguage.html"
-                      >
-                        Original Language
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="./browsebbbols.html">
-                        Dabbing
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="./subtitle.html">
-                        Subtitles
-                      </a>
-                    </li>
-                  </ul>
+                <div>
+                  <select className="btn btn11 btn-sm" href="#" role="button">
+                    <option value={""}>Original Language</option>
+                    <option value="dubbing">Dubbing</option>
+                    <option value="subtitles">Subtitles</option>
+                  </select>
                 </div>
               </div>
 
               <div className="col-md-4 edit m-0">
-                <div className="dropdown">
-                  <a
-                    className="btn btn11 btn-sm dropdown-toggle"
-                    href="#"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    English
-                  </a>
-                  <ul
-                    className="dropdown-menu scrollable-menu"
-                    aria-labelledby="dropdownMenuLink"
-                  >
-                    <li>
-                      <a
-                        className="dropdown-item"
-                        href="./browseByLanguage.html"
-                      >
-                        English
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="./browseArabic.html">
-                        Arabic
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Fernch
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        German
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Spanish
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        English
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Arabic
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Fernch
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        German
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Spanish
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        English
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Arabic
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Fernch
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        German
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Spanish
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        English
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Arabic
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Fernch
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        German
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Spanish
-                      </a>
-                    </li>
-                  </ul>
+                <div>
+                  <select className="btn btn11 btn-sm" href="#" role="button">
+                    <option value={""}>English</option>
+                    <option value="arabic">Arabic</option>
+                    <option value="french">French</option>
+                  </select>
                 </div>
               </div>
             </div>
@@ -214,42 +67,13 @@ export default function Browse() {
                 <p>Sort By</p>
               </div>
               <div className="col-md-8 edit">
-                <div className="dropdown ">
-                  <a
-                    className="btn btn11 btn-sm dropdown-toggle"
-                    href="#"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Suggestions
-                  </a>
-                  <ul
-                    className="dropdown-menu"
-                    aria-labelledby="dropdownMenuLink"
-                  >
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        {" "}
-                        Suggestions For you
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Year Released
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        A-Z
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Z-A
-                      </a>
-                    </li>
-                  </ul>
+                <div>
+                  <select className="btn btn11 btn-sm" href="#" role="button">
+                    <option value={""}>Suggestion For You</option>
+                    <option value="year">Year Released</option>
+                    <option value="a-Z">A - Z</option>
+                    <option value="z-A">Z - A</option>
+                  </select>
                 </div>
               </div>
             </div>
