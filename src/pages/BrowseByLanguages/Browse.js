@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import SliderProgress from "../../component/slider/slider";
 import "./browse.css";
 
 export default function Browse() {

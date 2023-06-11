@@ -1,8 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./heroSection.css";
-import { useDispatch, useSelector } from "react-redux";
-import getAllMovies from "../../store/actions/firestore";
-import { async } from "q";
 import { useForkRef } from "@mui/material";
 
 function HereSection() {
@@ -24,7 +21,7 @@ function HereSection() {
   // kareem's work stars here
   // const movies = useSelector((state) => state.movies.movies);
   // const dispatch = useDispatch();
-  // const [imgLink, setImageLink] = useState("./images/interstellar.webp");
+  // const [img alt=""Link, setImageLink] = useState("./images/interstellar.webp");
 
   // useEffect(() => {
   //   console.log(movies);
@@ -33,20 +30,20 @@ function HereSection() {
   //   // });
   //   // console.log(movies[10].data().link);
 
-  //   let imgNum = Math.floor(Math.random() * 50);
+  //   let img alt=""Num = Math.floor(Math.random() * 50);
   //   if (movies.length == 0) {
   //     console.log(true);
   //   } else {
   //     console.log(false);
   //     setImageLink(
-  //       movies[imgNum].data().link
-  //         ? movies[imgNum].data().link
-  //         : movies[imgNum].data().Link
+  //       movies[img alt=""Num].data().link
+  //         ? movies[img alt=""Num].data().link
+  //         : movies[img alt=""Num].data().Link
   //     );
-  //     console.log(movies[imgNum].data().name);
-  //     console.log(movies[imgNum].data());
+  //     console.log(movies[img alt=""Num].data().name);
+  //     console.log(movies[img alt=""Num].data());
   //   }
-  // }, [movies, imgLink]);
+  // }, [movies, img alt=""Link]);
 
   // useEffect(() => {
   //   dispatch(getAllMovies("NetflixClone"));
@@ -79,6 +76,7 @@ function HereSection() {
             {/* this is for the logo */}
 
             <img
+              alt=""
               className="title__body--logo"
               src="./images/Interstellar-logo.png"
             />
@@ -93,6 +91,7 @@ function HereSection() {
 
             <button className="title__body--button btn1">
               <img
+                alt=""
                 className="title__body--button__element"
                 src="./icons/play.svg"
               />
@@ -102,6 +101,7 @@ function HereSection() {
             </button>
             <button className="title__body--button btn2">
               <img
+                alt=""
                 className="title__body--button__element"
                 src="./icons/info.svg"
               />
@@ -115,6 +115,7 @@ function HereSection() {
               // onClick={handleRestart}
             >
               <img
+                alt=""
                 className="title__aside--btn__icon"
                 src="./icons/sound up.svg"
               />

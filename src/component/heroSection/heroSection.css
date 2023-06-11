@@ -86,7 +86,7 @@
   padding: 0 !important;
   margin: 0 !important;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   width: 5.875rem;
   height: 2.159rem;
   margin-top: 35rem !important;
