@@ -52,7 +52,7 @@ const Responsive = (props) => {
   return (
     <div className="container-fluid px-5 py-3 SliderContainer">
       <div className="SliderContainer">
-        <h5>{props.title}</h5>
+        <h3>{props.title}</h3>
       </div>
       <Slider {...settings}>
         <div className="slider__element">

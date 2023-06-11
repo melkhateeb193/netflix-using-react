@@ -6,10 +6,19 @@ function HereSection() {
   var videoPlaceHolder = "https://www.w3schools.com/html/mov_bbb.mp4";
   const [isMuted, setIsMuted] = useState(false);
   const videoRef = useForkRef(null);
-
+  const [soundIcon, setSoundIcon] = useState("./icons/sound up.svg");
   const handelIsMuted = () => {
     setIsMuted((currentState) => !currentState);
+    if(isMuted === false){
+      setSoundIcon("./icons/sound down.svg");
+    }else if(isMuted === true){
+      setSoundIcon("./icons/sound up.svg");
+    }
   };
+
+  // const handelHeroSoundAndReload = () => {
+
+  // };
 
   // const [currentTime, setCurrentTime] = useState(0);
 
@@ -117,7 +126,7 @@ function HereSection() {
               <img
                 alt=""
                 className="title__aside--btn__icon"
-                src="./icons/sound up.svg"
+                src={soundIcon}
               />
             </button>
             <span className="title__aside--maturityRating">13+</span>
