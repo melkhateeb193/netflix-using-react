@@ -4,7 +4,7 @@ import { Dropdown } from "react-bootstrap";
 import { FaGlobe } from "react-icons/fa";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Accordion from "react-bootstrap/Accordion";
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
 
 function Mainpagebfl() {
   return (
@@ -27,8 +27,12 @@ function Mainpagebfl() {
             </svg>
             <div className="d-flex">
               <Dropdown>
-                <Dropdown.Toggle variant="secondary" id="dropdown-basic">
-                  <FaGlobe className="pe-1" />
+                <Dropdown.Toggle
+                  variant="secondary"
+                  id="dropdown-basic"
+                  className="langBtn"
+                >
+                  <FaGlobe className="pe-1 mBtn" />
                   English
                 </Dropdown.Toggle>
 
@@ -37,9 +41,9 @@ function Mainpagebfl() {
                   <Dropdown.Item href="#">English</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
-              <button className="btn ms-3" type="submit">
+              <button className="btn ms-3 mBtn d-flex" type="submit">
                 {" "}
-                <Link to="/login">sign In</Link> 
+                <Link to="/login">sign In</Link>
               </button>
             </div>
           </div>
@@ -63,8 +67,7 @@ function Mainpagebfl() {
                 placeholder="Email address"
               />
               <button className="d-flex justify-content-center align-items-center btn pe-4 ps-3">
-              
-                <Link to="/login">Get Started</Link> 
+                <Link to="/login">Get Started</Link>
                 <FontAwesomeIcon icon="fa-solid fa-chevron-right text-white" />
               </button>
             </div>
@@ -145,8 +148,13 @@ function Mainpagebfl() {
               Frequently Asked Questions
             </h1>
             <Accordion>
-              <Accordion.Item eventKey="0" className="accordion accordion-flush p  mb-3">
-                <Accordion.Header className="white-header">What is Netflix ?</Accordion.Header>
+              <Accordion.Item
+                eventKey="0"
+                className="accordion accordion-flush p  mb-3"
+              >
+                <Accordion.Header className="white-header">
+                  What is Netflix ?
+                </Accordion.Header>
                 <Accordion.Body>
                   Netflix is a streaming service that offers a wide variety of
                   award-winning TV shows, movies, anime, documentaries, and more
@@ -156,9 +164,11 @@ function Mainpagebfl() {
                   something new to discover and new TV shows and movies are
                   added every week!
                 </Accordion.Body>
-                
               </Accordion.Item>
-              <Accordion.Item eventKey="1" className="accordion accordion-flush p mb-3">
+              <Accordion.Item
+                eventKey="1"
+                className="accordion accordion-flush p mb-3"
+              >
                 <Accordion.Header>How much does Netflix cost?</Accordion.Header>
                 <Accordion.Body>
                   Watch Netflix on your smartphone, tablet, Smart TV, laptop, or
@@ -166,7 +176,10 @@ function Mainpagebfl() {
                   from EGP70 to EGP165 a month. No extra costs, no contracts.
                 </Accordion.Body>
               </Accordion.Item>
-              <Accordion.Item eventKey="2" className="accordion accordion-flush p mb-3">
+              <Accordion.Item
+                eventKey="2"
+                className="accordion accordion-flush p mb-3"
+              >
                 <Accordion.Header> Where can i watch?</Accordion.Header>
                 <Accordion.Body>
                   Watch anywhere, anytime. Sign in with your Netflix account to
@@ -180,7 +193,10 @@ function Mainpagebfl() {
                   anywhere.
                 </Accordion.Body>
               </Accordion.Item>
-              <Accordion.Item eventKey="3" className="accordion accordion-flush p  mb-3">
+              <Accordion.Item
+                eventKey="3"
+                className="accordion accordion-flush p  mb-3"
+              >
                 <Accordion.Header>How do I cancel?</Accordion.Header>
                 <Accordion.Body>
                   Netflix is flexible. There are no pesky contracts and no
@@ -189,7 +205,10 @@ function Mainpagebfl() {
                   account anytime.
                 </Accordion.Body>
               </Accordion.Item>
-              <Accordion.Item eventKey="4" className="accordion accordion-flush p  mb-3">
+              <Accordion.Item
+                eventKey="4"
+                className="accordion accordion-flush p  mb-3"
+              >
                 <Accordion.Header>Is Netflix good for kids?</Accordion.Header>
                 <Accordion.Body>
                   The Netflix Kids experience is included in your membership to
@@ -200,7 +219,10 @@ function Mainpagebfl() {
                   titles you don’t want kids to see.
                 </Accordion.Body>
               </Accordion.Item>
-              <Accordion.Item eventKey="5" className="accordion accordion-flush p  mb-3">
+              <Accordion.Item
+                eventKey="5"
+                className="accordion accordion-flush p  mb-3"
+              >
                 <Accordion.Header>
                   What can I watch on Netflix?
                 </Accordion.Header>
@@ -225,7 +247,7 @@ function Mainpagebfl() {
               />
               <button className="d-flex justify-content-center align-items-center btn pe-4 ps-3">
                 {" "}
-                <Link to="/login">Get Started</Link> 
+                <Link to="/login">Get Started</Link>
                 <i className="fa-solid fa-chevron-right ms-1 text-white" />
               </button>
             </div>
@@ -233,58 +255,57 @@ function Mainpagebfl() {
         </section>
       </main>
       <footer className="mt-5">
-  <div className="container pt-5">
-    <p className="text-white pt-3 pb-3" id="QuestionFooter">
-      Questions? Contact us.
-    </p>
-    <div className="row ">
-      <div className="col-md-3 ">
-        <ul className="text-white" id="footerUl">
-          <li>FAQ</li>
-          <li>Investor Relations</li>
-          <li>Privacy</li>
-          <li>Speed Test</li>
-        </ul>
-      </div>
-      <div className="col-md-3">
-        <ul className="text-white" id="footerUl">
-          <li>Help Center</li>
-          <li>Jobs</li>
-          <li>Cookie Preferences</li>
-          <li>Legal Notices</li>
-        </ul>
-      </div>
-      <div className="col-md-3">
-        <ul className="text-white" id="footerUl">
-          <li>Account</li>
-          <li>Investor Relations</li>
-          <li>Corporate Information</li>
-          <li>Only on Netflix</li>
-        </ul>
-      </div>
-      <div className="col-md-3">
-        <ul className="text-white" id="footerUl">
-          <li>Media Center</li>
-          <li>Terms of Use</li>
-          <li>Contact Us</li>
-        </ul>
-      </div>
-    </div>
-    <Dropdown className="mb-3">
-                <Dropdown.Toggle variant="secondary" id="dropdown-basic">
-                  <FaGlobe className="pe-1" />
-                  English
-                </Dropdown.Toggle>
+        <div className="container pt-5">
+          <p className="text-white pt-3 pb-3" id="QuestionFooter">
+            Questions? Contact us.
+          </p>
+          <div className="row ">
+            <div className="col-md-3 ">
+              <ul className="text-white" id="footerUl">
+                <li>FAQ</li>
+                <li>Investor Relations</li>
+                <li>Privacy</li>
+                <li>Speed Test</li>
+              </ul>
+            </div>
+            <div className="col-md-3">
+              <ul className="text-white" id="footerUl">
+                <li>Help Center</li>
+                <li>Jobs</li>
+                <li>Cookie Preferences</li>
+                <li>Legal Notices</li>
+              </ul>
+            </div>
+            <div className="col-md-3">
+              <ul className="text-white" id="footerUl">
+                <li>Account</li>
+                <li>Investor Relations</li>
+                <li>Corporate Information</li>
+                <li>Only on Netflix</li>
+              </ul>
+            </div>
+            <div className="col-md-3">
+              <ul className="text-white" id="footerUl">
+                <li>Media Center</li>
+                <li>Terms of Use</li>
+                <li>Contact Us</li>
+              </ul>
+            </div>
+          </div>
+          <Dropdown className="mb-3">
+            <Dropdown.Toggle variant="secondary" id="dropdown-basic" className="langBtn">
+              <FaGlobe className="pe-1" />
+              English
+            </Dropdown.Toggle>
 
-                <Dropdown.Menu>
-                  <Dropdown.Item href="#">العربيه</Dropdown.Item>
-                  <Dropdown.Item href="#">English</Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-    <p className="mb-0">Netflix Egypt</p>
-  </div>
-</footer>
-
+            <Dropdown.Menu>
+              <Dropdown.Item href="#">العربيه</Dropdown.Item>
+              <Dropdown.Item href="#">English</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+          <p className="mb-0">Netflix Egypt</p>
+        </div>
+      </footer>
     </>
   );
 }

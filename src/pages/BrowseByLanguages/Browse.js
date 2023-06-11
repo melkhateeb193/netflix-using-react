@@ -29,7 +29,7 @@ export default function Browse() {
             : "Browse__secondaryNavbar"
         }
       >
-        <div className="immg3 contianer-fluid m-4 ps-5 pe-5 pt-5 row ">
+        <div className="immg3 container-fluid  ps-5 pe-5 pt-5 row ">
           <div className="col-md-3 immg4">
             <h3>Browse By Language</h3>
           </div>

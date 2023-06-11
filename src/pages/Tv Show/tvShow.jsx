@@ -9,6 +9,26 @@ function TvShows() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isList, setIsList] = useState(false);
   const [isOpened, setIsOpened] = useState(false);
+  const [sliders, setSliders] = useState([
+    { title: "Top Picks for you" },
+    { title: "Trending Now" },
+    { title: "Middle Eastern tvShows" },
+    { title: "Modern Classic Movies based on Books" },
+    { title: "Blockbuster tvShows" },
+    { title: "Mystery tvShows" },
+    { title: "Continue Watching for you" },
+    { title: "Comedies" },
+    { title: "Movies Based on Real Life" },
+    { title: "Romantic Drama Movies" },
+    { title: "Top 10 Movies in Egypt Today" },
+    { title: "Award-Winning Films" },
+    { title: "Egyptian Movies" },
+    { title: "Comedy Movies" },
+    { title: "Feel-good Movies" },
+    { title: "Emotional Movies" },
+    { title: "Critically-acclaimed Heartfelt Movies" },
+    { title: "My List" },
+  ]);
 
   const handleGenres = () => {
     setIsOpened((currentState) => !currentState);
@@ -215,30 +235,14 @@ function TvShows() {
           <HereSection />
         </div>
         <div className="tvShows__body">
-          <SliderProgress title="Top Picks for you" />
-          <SliderProgress title="Trending Now" />
-          <SliderProgress title="Middle Eastern tvShows" />
-          <SliderProgress title="Modern Classic tvShows based on Books" />
-          <SliderProgress title="Blockbuster tvShows" />
-          <SliderProgress title="Mystery tvShows" />
-          <SliderProgress title="Continue Watching for Elsa" />
-          <SliderProgress title="Comedies" />
-          <SliderProgress title="tvShows Based on Real Life" />
-          <SliderProgress title="Romantic Drama tvShows" />
-          <SliderProgress title="Top 10 tvShows in Egypt Today" />
-          <SliderProgress title="Award-Winning Films" />
-          <SliderProgress title="Egyptian tvShows" />
-          <SliderProgress title="Comedy tvShows" />
-          <SliderProgress title="Feel-good tvShows" />
-          <SliderProgress title="Raunchy Comedy tvShows" />
-          <SliderProgress title="Emotional tvShows" />
-          <SliderProgress title="Critically-acclaimed Heartfelt tvShows" />
-          <SliderProgress title="My List" />
+          {sliders.map((slider, index) => (
+            <div key={index}>
+              <SliderProgress title={slider.title} />
+            </div>
+          ))}
         </div>
       </div>
-      <div className="page__footer">
-        <Footer />
-      </div>
+      <Footer />
     </>
   );
 }

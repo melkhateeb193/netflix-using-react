@@ -1,3 +1,8 @@
+.SliderContainer{
+  position: relative;
+  z-index: 50;
+}
+
 .slider__element {
   margin: 0.75rem 0;
 }

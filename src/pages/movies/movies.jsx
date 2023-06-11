@@ -9,6 +9,60 @@ function Movies() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isList, setIsList] = useState(false);
   const [isOpened, setIsOpened] = useState(false);
+  const [inGenres, setInGenres] = useState(true);
+  const [sliders, setSliders] = useState([
+    { title: "Top Picks for you" },
+    { title: "Trending Now" },
+    { title: "Middle Eastern Movies" },
+    { title: "Modern Classic Movies based on Books" },
+    { title: "Blockbuster Movies" },
+    { title: "Mystery Movies" },
+    { title: "Continue Watching for you" },
+    { title: "Comedies" },
+    { title: "Movies Based on Real Life" },
+    { title: "Romantic Drama Movies" },
+    { title: "Top 10 Movies in Egypt Today" },
+    { title: "Award-Winning Films" },
+    { title: "Egyptian Movies" },
+    { title: "Comedy Movies" },
+    { title: "Feel-good Movies" },
+    { title: "Emotional Movies" },
+    { title: "Critically-acclaimed Heartfelt Movies" },
+    { title: "My List" },
+  ]);
+  const [genres, setGenres] = useState([
+    { title: "Action" },
+    { title: "Dramas" },
+    { title: "Romance" },
+    { title: "Anime" },
+    { title: "Earth Month" },
+    { title: "Sci-Fi" },
+    { title: "Award-Winning" },
+    { title: "Egyptian Movies" },
+    { title: "Shorts" },
+    { title: "Children & Family" },
+    { title: "Fantasy" },
+    { title: "Sports" },
+    { title: "Classics" },
+    { title: "Hollywood" },
+    { title: "Stand-Up Comedy" },
+    { title: "Comedies" },
+    { title: "Horror" },
+    { title: "Thriller" },
+    { title: "Crime" },
+    { title: "Independent" },
+    { title: "" },
+    { title: "Documentaries" },
+    { title: "Music & Musicals" },
+  ]);
+
+  const back = () => {
+    setInGenres(true);
+    setIsOpened(false);
+  };
+
+  // const openGenre = (e)={
+  // }
 
   const handleGenres = () => {
     setIsOpened((currentState) => !currentState);
@@ -43,11 +97,32 @@ function Movies() {
           <nav className="navbar">
             <div className="row">
               <div className="col">
+                <a
+                  className={
+                    inGenres
+                      ? "navbar-brand insideGenres"
+                      : "navbar-brand insideGenres displayNone"
+                  }
+                  href="#"
+                  onClick={() => setInGenres(false)}
+                >
+                  Movies &raquo;
+                </a>
+                <a
+                  className={
+                    inGenres
+                      ? "navbar-brand brand2"
+                      : "navbar-brand brand2 displayNone"
+                  }
+                  href="#"
+                >
+                  Genres
+                </a>
                 <a className="navbar-brand brand2" href="#">
                   Movies
                 </a>
               </div>
-              <div className="col">
+              <div className={inGenres ? "col displayNone" : "col"}>
                 <div
                   className={isList ? "genres displayNone" : "genres"}
                   role="button"
@@ -63,119 +138,17 @@ function Movies() {
                     isOpened ? "genres__grid genres__openGrid" : "genres__grid"
                   }
                 >
-                  <div className="genres__grid--item">
-                    <a className="genres__grid--link" href="#">
-                      Action
-                    </a>
-                  </div>
-                  <div className="genres__grid--item">
-                    <a className="genres__grid--link" href="#">
-                      Dramas
-                    </a>
-                  </div>
-                  <div className="genres__grid--item">
-                    <a className="genres__grid--link" href="#">
-                      Romance
-                    </a>
-                  </div>
-                  <div className="genres__grid--item">
-                    <a className="genres__grid--link" href="#">
-                      Anime
-                    </a>
-                  </div>
-                  <div className="genres__grid--item">
-                    <a className="genres__grid--link" href="#">
-                      Earth Month
-                    </a>
-                  </div>
-                  <div className="genres__grid--item">
-                    <a className="genres__grid--link" href="#">
-                      Sci-Fi
-                    </a>
-                  </div>
-                  <div className="genres__grid--item">
-                    <a className="genres__grid--link" href="#">
-                      Award-Winning
-                    </a>
-                  </div>
-                  <div className="genres__grid--item">
-                    <a className="genres__grid--link" href="#">
-                      Egyptian Movies
-                    </a>
-                  </div>
-                  <div className="genres__grid--item">
-                    <a className="genres__grid--link" href="#">
-                      Shorts
-                    </a>
-                  </div>
-                  <div className="genres__grid--item">
-                    <a className="genres__grid--link" href="#">
-                      Children & Family
-                    </a>
-                  </div>
-                  <div className="genres__grid--item">
-                    <a className="genres__grid--link" href="#">
-                      Fantasy
-                    </a>
-                  </div>
-                  <div className="genres__grid--item">
-                    <a className="genres__grid--link" href="#">
-                      Sports
-                    </a>
-                  </div>
-                  <div className="genres__grid--item">
-                    <a className="genres__grid--link" href="#">
-                      Classics
-                    </a>
-                  </div>
-                  <div className="genres__grid--item">
-                    <a className="genres__grid--link" href="#">
-                      Hollywood
-                    </a>
-                  </div>
-                  <div className="genres__grid--item">
-                    <a className="genres__grid--link" href="#">
-                      Stand-Up Comedy
-                    </a>
-                  </div>
-                  <div className="genres__grid--item">
-                    <a className="genres__grid--link" href="#">
-                      Comedies
-                    </a>
-                  </div>
-                  <div className="genres__grid--item">
-                    <a className="genres__grid--link" href="#">
-                      Horror
-                    </a>
-                  </div>
-                  <div className="genres__grid--item">
-                    <a className="genres__grid--link" href="#">
-                      Thriller
-                    </a>
-                  </div>
-                  <div className="genres__grid--item">
-                    <a className="genres__grid--link" href="#">
-                      Crime
-                    </a>
-                  </div>
-                  <div className="genres__grid--item">
-                    <a className="genres__grid--link" href="#">
-                      Independent
-                    </a>
-                  </div>
-                  <div className="genres__grid--item">
-                    <a className="genres__grid--link" href="#"></a>
-                  </div>
-                  <div className="genres__grid--item">
-                    <a className="genres__grid--link" href="#">
-                      Documentaries
-                    </a>
-                  </div>
-                  <div className="genres__grid--item">
-                    <a className="genres__grid--link" href="#">
-                      Music & Musicals
-                    </a>
-                  </div>
+                  {genres.map((genre, index) => (
+                    <div className="genres__grid--item" key={index}>
+                      <a
+                        className="genres__grid--link"
+                        value={genre.title}
+                        onClick={back}
+                      >
+                        {genre.title}
+                      </a>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -215,30 +188,14 @@ function Movies() {
           <HereSection />
         </div>
         <div className="movies__body">
-          <SliderProgress title="Top Picks for you" />
-          <SliderProgress title="Trending Now" />
-          <SliderProgress title="Middle Eastern Movies" />
-          <SliderProgress title="Modern Classic Movies based on Books" />
-          <SliderProgress title="Blockbuster Movies" />
-          <SliderProgress title="Mystery Movies" />
-          <SliderProgress title="Continue Watching for Elsa" />
-          <SliderProgress title="Comedies" />
-          <SliderProgress title="Movies Based on Real Life" />
-          <SliderProgress title="Romantic Drama Movies" />
-          <SliderProgress title="Top 10 Movies in Egypt Today" />
-          <SliderProgress title="Award-Winning Films" />
-          <SliderProgress title="Egyptian Movies" />
-          <SliderProgress title="Comedy Movies" />
-          <SliderProgress title="Feel-good Movies" />
-          <SliderProgress title="Raunchy Comedy Movies" />
-          <SliderProgress title="Emotional Movies" />
-          <SliderProgress title="Critically-acclaimed Heartfelt Movies" />
-          <SliderProgress title="My List" />
+          {sliders.map((slider, index) => (
+            <div key={index}>
+              <SliderProgress title={slider.title} />
+            </div>
+          ))}
         </div>
       </div>
-      <div className="page__footer">
-        <Footer />
-      </div>
+      <Footer />
     </>
   );
 }

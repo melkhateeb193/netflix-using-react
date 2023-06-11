@@ -10,7 +10,7 @@
 
 .Browse__secondaryNavbar {
   position: absolute;
-  top: 1rem;
+  top: 2rem;
   z-index: 90;
   width: 100%;
   background-color: transparent;
@@ -21,6 +21,8 @@
   border: 2px solid white !important;
   width: 100% !important;
   background-color: black;
+  border-radius: 0 !important;
+  text-align: start !important;
 }
 .btn11:hover {
   color: white !important;
