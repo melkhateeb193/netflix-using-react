@@ -10,7 +10,7 @@ function Movies() {
   const [isList, setIsList] = useState(false);
   const [isOpened, setIsOpened] = useState(false);
   const [inGenres, setInGenres] = useState(false);
-  const [genersTitle, setGenresTitle] = useState("Genres");
+  const [genresTitle, setGenresTitle] = useState("");
   const [sliders, setSliders] = useState([
     { title: "Top Picks for you" },
     { title: "Trending Now" },
@@ -32,7 +32,6 @@ function Movies() {
     { title: "My List" },
   ]);
   const [genres, setGenres] = useState([
-    // { title: "Genres" },
     { title: "Action" },
     { title: "Dramas" },
     { title: "Romance" },
@@ -118,7 +117,7 @@ function Movies() {
                   }
                   href="#"
                 >
-                  {genersTitle}
+                  {genresTitle}
                 </a>
                 <a className="navbar-brand brand2" href="#">
                   Movies
@@ -145,7 +144,7 @@ function Movies() {
                       <a
                         className="genres__grid--link"
                         value={genre.title}
-                        onClick={() => { 
+                        onClick={() => {
                           back();
                           setGenresTitle(genre.title);
                         }}
