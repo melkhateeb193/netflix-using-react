@@ -23,11 +23,13 @@ import Movies from "./pages/movies/movies";
 import TvShows from "./pages/Tv Show/tvShow";
 import NewPopular from "./pages/new  & popular/new-popular";
 import BrowseMovies from "./pages/BrowseByLanguages/browseMovies";
+// import Responsive from "./component/slider/slider";
 
 function App() {
   return (
     <>
       <div className="App">
+        {/* <Responsive></Responsive> */}
         <Routes>
           <Route path="/" element={<Mainpagebfl />} />
           <Route path="/login" element={<Login />} />

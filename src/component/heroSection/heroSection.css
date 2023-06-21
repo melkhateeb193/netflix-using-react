@@ -2,8 +2,14 @@
   .parent {
     display: none;
   }
+  .background-video {
+    display: none;
+  }
 }
 @media only screen and (max-width: 990px) {
+  .background-video {
+    display: none;
+  }
   .parent {
     display: none;
   }
@@ -130,4 +136,8 @@
 
 .btn2 {
   background-color: #808080;
+}
+
+.none{
+  display: none;
 }

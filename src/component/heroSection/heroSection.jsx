@@ -1,31 +1,35 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./heroSection.css";
-import { useForkRef } from "@mui/material";
 
 function HereSection() {
   var videoPlaceHolder = "https://www.w3schools.com/html/mov_bbb.mp4";
   const [isMuted, setIsMuted] = useState(false);
-  const videoRef = useForkRef(null);
+  const videoRef = useRef();
+  const [currentTime, setCurrentTime] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(true);
   const [soundIcon, setSoundIcon] = useState("./icons/sound up.svg");
+
   const handelIsMuted = () => {
     setIsMuted((currentState) => !currentState);
-    if(isMuted === false){
+    if (isMuted === false) {
       setSoundIcon("./icons/sound down.svg");
-    }else if(isMuted === true){
+    } else if (isMuted === true) {
       setSoundIcon("./icons/sound up.svg");
     }
   };
 
-  // const handelHeroSoundAndReload = () => {
+  const handleRestart = () => {
+    videoRef.current.currentTime = 0;
+    videoRef.current.play();
+  };
 
-  // };
+  const showRestart = () => {
+    if (videoRef.current.currentTime >= 10) {
+      setIsPlaying(false);
+    }
+  };
 
-  // const [currentTime, setCurrentTime] = useState(0);
 
-  // const handleRestart = () => {
-  //   videoRef.current.currentTime = 0;
-  //   videoRef.current.play();
-  // };
 
   // kareem's work stars here
   // const movies = useSelector((state) => state.movies.movies);
@@ -68,11 +72,9 @@ function HereSection() {
           <video
             className="background-video"
             ref={videoRef}
-            loop={true}
+            loop={false}
             autoPlay={true}
             muted={isMuted}
-            // currentTime={currentTime}
-            // onTimeUpdate={(event) => setCurrentTime(event.target.currentTime)}
           >
             <source src={videoPlaceHolder} type="video/mp4" />
 
@@ -119,15 +121,28 @@ function HereSection() {
           </div>
           <div class="title__aside col">
             <button
-              class="title__aside--btn text-center"
-              onClick={handelIsMuted}
-              // onClick={handleRestart}
+              className={
+                isPlaying
+                  ? "title__aside--btn text-center none"
+                  : "title__aside--btn text-center "
+              }
+              onClick={handleRestart}
             >
               <img
                 alt=""
                 className="title__aside--btn__icon"
-                src={soundIcon}
+                src="./icons/restart.svg"
               />
+            </button>
+            <button
+              className={
+                isPlaying
+                  ? "title__aside--btn text-center "
+                  : "title__aside--btn text-center none"
+              }
+              onClick={handelIsMuted}
+            >
+              <img alt="" className="title__aside--btn__icon" src={soundIcon} />
             </button>
             <span className="title__aside--maturityRating">13+</span>
           </div>
